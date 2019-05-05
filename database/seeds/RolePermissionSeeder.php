@@ -39,6 +39,12 @@ class RolePermissionSeeder extends Seeder
       Permission::create(['name'=>'Update Karyawan']);
       Permission::create(['name'=>'Delete Karyawan']);
 
+      Permission::create(['name'=>'Link UserAdmin']);
+      Permission::create(['name'=>'Create UserAdmin']);
+      Permission::create(['name'=>'Read UserAdmin']);
+      Permission::create(['name'=>'Update UserAdmin']);
+      Permission::create(['name'=>'Delete UserAdmin']);
+
 
 
 
