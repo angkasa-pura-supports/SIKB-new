@@ -52,8 +52,8 @@
                 </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                      <i class="ti-settings"></i>
-                      <span class="hide-menu">Akses</span>
+                      <i class="ti-light-bulb"></i>
+                      <span class="hide-menu">Akses Role</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('access-role.index') }}">Roles</a></li>
@@ -77,14 +77,29 @@
                         <li><a href="#">Mesin Potong Rumput-Dorong</a></li>
                     </ul>
                 </li>
-              <li> <a class=class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-view-list"></i><span class="hide-menu">Report</span></a>
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                      <i class="ti-view-list"></i>
+                      <span class="hide-menu">Report</span>
+                    </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="#">L P P</a></li>
-                        <li><a href="#">Laporan Kerusakan</a></li>
-                        <li><a href="#">Laporan Harian</a></li>
-                        <li><a href="#">Laporan Mingguan</a></li>
-                        <li><a href="#">Laporan Bulanan</a></li>
-                        <li><a href="#">Laporan BAPP</a></li>
+                      <li><a href="#">L P P</a></li>
+                      <li><a href="#">Laporan Kerusakan</a></li>
+                      <li><a href="#">Laporan Harian</a></li>
+                      <li><a href="#">Laporan Mingguan</a></li>
+                      <li><a href="#">Laporan Bulanan</a></li>
+                      <li><a href="#">Laporan BAPP</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
+                      <i class="ti-user"></i>
+                      <span class="hide-menu">User</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('access-role.index') }}">Roles</a></li>
+                        <li><a href="{{ route('access-permission.index') }}">Permission</a></li>
                     </ul>
                 </li>
                   {{--
