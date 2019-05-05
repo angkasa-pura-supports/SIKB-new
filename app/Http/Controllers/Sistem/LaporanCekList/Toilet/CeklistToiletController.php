@@ -323,6 +323,13 @@ class CeklistToiletController extends Controller
         return view('content.laporanCeklist.toilet.show', compact('data', 'ceklist'));
     }
 
+    public function print($id)
+    {
+        $data = CeklistToilet::findOrFail($id);
+        $ceklist = UploadCeklistToilet::where('ceklist_toilet_id', $data->id)->get();
+        return view('content.laporanCeklist.toilet.print', compact('data', 'ceklist'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

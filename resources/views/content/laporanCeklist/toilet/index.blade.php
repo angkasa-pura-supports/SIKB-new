@@ -68,7 +68,7 @@
                       <td>
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                           <a href="{{ route('laporanCeklist-toilet.show', $value->id) }}" class="btn btn-info"><i class="fa fa-search"></i></a>
-                          <a href="#" class="btn btn-warning"><i class="fa fa-print"></i></a>
+                          <a href="{{ route('laporanCeklist-toilet.print', $value->id) }}" class="btn btn-warning"><i class="fa fa-print"></i></a>
                         </div>
                       </td>
                     </tr>
