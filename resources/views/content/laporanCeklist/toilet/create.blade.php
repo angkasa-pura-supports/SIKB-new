@@ -237,8 +237,8 @@
                     <tr>
                       <td>7</td>
                       <td>
-                        {!! Form::hidden('ceklist7', 'Whasbasin') !!}
-                        Whasbasin
+                        {!! Form::hidden('ceklist7', 'Washbasin') !!}
+                        Washbasin
                       </td>
                       <td>
                         {!! Form::file('upload7', ['class'=>'form-control']) !!}
@@ -293,8 +293,8 @@
                     <tr>
                       <td>10</td>
                       <td>
-                        {!! Form::hidden('ceklist10', 'Tisuue Roll') !!}
-                        Tisuue Roll
+                        {!! Form::hidden('ceklist10', 'Tissue Roll') !!}
+                        Tissue Roll
                       </td>
                       <td>
                         {!! Form::file('upload10', ['class'=>'form-control']) !!}
@@ -331,8 +331,8 @@
                     <tr>
                       <td>12</td>
                       <td>
-                        {!! Form::hidden('ceklist12', 'Handriyer') !!}
-                        Handriyer
+                        {!! Form::hidden('ceklist12', 'Handdryer') !!}
+                        Handdryer
                       </td>
                       <td>
                         {!! Form::file('upload12', ['class'=>'form-control']) !!}

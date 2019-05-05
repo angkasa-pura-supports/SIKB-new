@@ -38,7 +38,7 @@
             <td rowspan="4" style="width:180px">TANGGAL<br>&<br>JAM</td>
           </tr>
           <tr>
-            <td style="height:35px;width:80px" rowspan="2">INSPEKSI</td>
+            <td style="height:35px;width:50px" rowspan="2">INSPEKSI</td>
             <td colspan="2"><img src="{{ asset('print/toilet/keharuman.png') }}" height="35px"></td>
             <td colspan="2"><img src="{{ asset('print/toilet/lantai.png') }}" height="35px"></td>
             <td colspan="2"><img src="{{ asset('print/toilet/toiletbowl.png') }}" height="35px"></td>
@@ -53,7 +53,8 @@
             <td colspan="2"><img src="{{ asset('print/toilet/handryer.png') }}" height="35px"></td>
             <td colspan="2"><img src="{{ asset('print/toilet/pintu.png') }}" height="35px"></td>
             <td colspan="2"><img src="{{ asset('print/toilet/janitor.png') }}" height="35px"></td>
-            <td colspan="2">Tandatangan</td>
+            <td style="width:35px" rowspan="3">NAMA</td>
+            <td style="width:35px" rowspan="3">TTD</td>
           </tr>
           <tr>
             <td colspan="2">Keharuman</td>
@@ -67,10 +68,9 @@
             <td colspan="2">Kloset</td>
             <td colspan="2">Tissue Roll</td>
             <td colspan="2">Urinal</td>
-            <td colspan="2"><i>Handryer</i></td>
+            <td colspan="2"><i>Handdryer</i></td>
             <td colspan="2">Pintu</td>
             <td colspan="2">Janitor</td>
-            <td colspan="2">Nama</td>
           </tr>
           <tr>
             <td>SHIFT</td>
@@ -102,44 +102,172 @@
             <td style="width:35px">Pria</td>
             <td style="width:35px">Wanita</td>
             <td style="width:35px">Pria</td>
-            <td style="width:35px">Wanita</td>
-            <td style="width:35px">Pria</td>
+
           </tr>
           {{-- Ceklist : &#10003;
           X : &#10007; --}}
           <tr>
-            <td>05-10-2019 10:15:56</td>
-            <td>Shift 1</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
-            <td>&#10003;</td>
-            <td>&#10007;</td>
+            <td>{{ date("d-m-Y h:m:s", strtotime($data->created_at)) }}</td>
+            <td>{{ $data->shift }}</td>
+            @foreach ($ceklist as $value)
+              @if ($value->nama_ceklist == "Keharuman")
+                @if ($value->status_wanita == "Wangi")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Wangi")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Lantai")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Toilet Bowl")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Dinding")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Tempat Sampah")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Cermin")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Washbasin")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Sabun Cuci Tangan")
+                @if ($value->status_wanita == "Ada")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Ada")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Kloset")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Tissue Roll")
+                @if ($value->status_wanita == "Ada")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Ada")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Urinal")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Handdryer")
+                @if ($value->status_wanita == "Ada")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Ada")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Pintu")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @elseif ($value->nama_ceklist == "Janitor")
+                @if ($value->status_wanita == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+                @if ($value->status_pria == "Bersih")
+                  <td>&#10003;</td>
+                @else
+                  <td>&#10007;</td>
+                @endif
+              @endif
+            @endforeach
+            <td>{{ $data->petugas }}</td>
+            <td></td>
           </tr>
           @for ($i=1; $i <= 31; $i++)
             <tr>
