@@ -38,7 +38,7 @@
             <td rowspan="4" style="width:180px">TANGGAL<br>&<br>JAM</td>
           </tr>
           <tr>
-            <td style="height:35px"></td>
+            <td style="height:35px;width:80px" rowspan="2">INSPEKSI</td>
             <td colspan="2"><img src="{{ asset('print/toilet/keharuman.png') }}" height="35px"></td>
             <td colspan="2"><img src="{{ asset('print/toilet/lantai.png') }}" height="35px"></td>
             <td colspan="2"><img src="{{ asset('print/toilet/toiletbowl.png') }}" height="35px"></td>
@@ -56,7 +56,6 @@
             <td colspan="2">Tandatangan</td>
           </tr>
           <tr>
-            <td style="height:35px;width:80px">INSPEKSI</td>
             <td colspan="2">Keharuman</td>
             <td colspan="2">Lantai</td>
             <td colspan="2"><i>Toilet Bowl</i></td>
