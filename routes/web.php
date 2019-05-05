@@ -35,9 +35,10 @@ Route::post('KontrakPekerjaan/{id}/edit', 'Sistem\Master\KontrakPekerjaanControl
 Route::delete('KontrakPekerjaan/{id}', 'Sistem\Master\KontrakPekerjaanController@destroy')->name('KontrakPekerjaan.destroy');
 
 //Ceklis
-Route::get('Ceklist_Toilet','Sistem\LaporanCekList\Toilet\CeklistToiletController@index')->name('Ceklist_Toilet.index');
-Route::get('Ceklist_Toilet/create','Sistem\LaporanCekList\Toilet\CeklistToiletController@create')->name('Ceklist_Toilet.create');
-Route::post('Ceklist_Toilet', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@store')->name('Ceklist_Toilet.store');
+Route::get('laporanCeklist-toilet','Sistem\LaporanCekList\Toilet\CeklistToiletController@index')->name('laporanCeklist-toilet.index');
+Route::get('laporanCeklist-toilet/create','Sistem\LaporanCekList\Toilet\CeklistToiletController@create')->name('laporanCeklist-toilet.create');
+Route::post('laporanCeklist-toilet', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@store')->name('laporanCeklist-toilet.store');
+Route::get('laporanCeklist-toilet/{id}', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@show')->name('laporanCeklist-toilet.show');
 //karyawan
 Route::get('data_karyawan','Sistem\Master\KaryawanController@index')->name('data_karyawan.index')->middleware('permission:Link Karyawan');
 Route::get('data_karyawan/create','Sistem\Master\KaryawanController@create')->name('data_karyawan.create')->middleware('permission:Create Karyawan');

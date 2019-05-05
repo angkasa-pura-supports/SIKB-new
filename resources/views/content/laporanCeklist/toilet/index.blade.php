@@ -17,7 +17,7 @@
             <li class="breadcrumb-item active">Ceklist Toilet</li>
           </ol>
           {{-- @can('Create Bandara') --}}
-            <a href="{{ route('Ceklist_Toilet.create')}}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Ceklist Toilet</a>
+            <a href="{{ route('laporanCeklist-toilet.create')}}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Ceklist Toilet</a>
           {{-- @endcan --}}
         </div>
       </div>
@@ -64,9 +64,12 @@
                       <td>{{ $value->pengawas->nama_karyawan }}</td>
                       <td>{{ $value->petugas }}</td>
                       <td>{{ $value->shift }}</td>
-                      <td>{{ $value->tanggal_input }}</td>
+                      <td>{{ date("d-m-Y", strtotime($value->tanggal_input)) }}</td>
                       <td>
-                        <a href="#" class="btn btn-info btn-xs">Ubah</a>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                          <a href="{{ route('laporanCeklist-toilet.show', $value->id) }}" class="btn btn-info"><i class="fa fa-search"></i></a>
+                          <a href="#" class="btn btn-warning"><i class="fa fa-print"></i></a>
+                        </div>
                       </td>
                     </tr>
                   @endforeach

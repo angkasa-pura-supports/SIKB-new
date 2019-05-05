@@ -21,7 +21,7 @@ class CeklistToiletController extends Controller
     public function index()
     {
         $data = CeklistToilet::all();
-        return view('content.Ceklist_Toilet.index', compact('data'));
+        return view('content.laporanCeklist.toilet.index', compact('data'));
     }
 
     /**
@@ -35,7 +35,7 @@ class CeklistToiletController extends Controller
         $lokasiToilet = LokasiToilet::pluck('nama_toilet', 'id');
         $jabatan = ['Supervisor', 'Senior Leader', 'Team Leader'];
         $pengawas = karyawan::whereIn('Jabatan', $jabatan)->pluck('nama_karyawan', 'id');
-        return view('content.Ceklist_Toilet.create', compact('bandara', 'lokasiToilet', 'pengawas'));
+        return view('content.laporanCeklist.toilet.create', compact('bandara', 'lokasiToilet', 'pengawas'));
     }
 
     /**
@@ -115,7 +115,7 @@ class CeklistToiletController extends Controller
         $upload2->ceklist_toilet_id = $data->id;
         $upload2->nama_ceklist = $request->ceklist2;
         if ($request->hasFile('upload2')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload2');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -130,7 +130,7 @@ class CeklistToiletController extends Controller
         $upload3->ceklist_toilet_id = $data->id;
         $upload3->nama_ceklist = $request->ceklist3;
         if ($request->hasFile('upload3')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload3');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -145,7 +145,7 @@ class CeklistToiletController extends Controller
         $upload4->ceklist_toilet_id = $data->id;
         $upload4->nama_ceklist = $request->ceklist4;
         if ($request->hasFile('upload4')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload4');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -160,7 +160,7 @@ class CeklistToiletController extends Controller
         $upload5->ceklist_toilet_id = $data->id;
         $upload5->nama_ceklist = $request->ceklist5;
         if ($request->hasFile('upload5')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload5');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -175,7 +175,7 @@ class CeklistToiletController extends Controller
         $upload6->ceklist_toilet_id = $data->id;
         $upload6->nama_ceklist = $request->ceklist6;
         if ($request->hasFile('upload6')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload6');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -190,7 +190,7 @@ class CeklistToiletController extends Controller
         $upload7->ceklist_toilet_id = $data->id;
         $upload7->nama_ceklist = $request->ceklist7;
         if ($request->hasFile('upload7')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload7');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -205,7 +205,7 @@ class CeklistToiletController extends Controller
         $upload8->ceklist_toilet_id = $data->id;
         $upload8->nama_ceklist = $request->ceklist8;
         if ($request->hasFile('upload8')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload8');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -220,7 +220,7 @@ class CeklistToiletController extends Controller
         $upload9->ceklist_toilet_id = $data->id;
         $upload9->nama_ceklist = $request->ceklist9;
         if ($request->hasFile('upload9')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload9');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -235,7 +235,7 @@ class CeklistToiletController extends Controller
         $upload10->ceklist_toilet_id = $data->id;
         $upload10->nama_ceklist = $request->ceklist10;
         if ($request->hasFile('upload10')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload10');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -250,7 +250,7 @@ class CeklistToiletController extends Controller
         $upload11->ceklist_toilet_id = $data->id;
         $upload11->nama_ceklist = $request->ceklist11;
         if ($request->hasFile('upload11')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload11');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -265,7 +265,7 @@ class CeklistToiletController extends Controller
         $upload12->ceklist_toilet_id = $data->id;
         $upload12->nama_ceklist = $request->ceklist12;
         if ($request->hasFile('upload12')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload12');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -280,7 +280,7 @@ class CeklistToiletController extends Controller
         $upload13->ceklist_toilet_id = $data->id;
         $upload13->nama_ceklist = $request->ceklist13;
         if ($request->hasFile('upload13')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload13');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -295,7 +295,7 @@ class CeklistToiletController extends Controller
         $upload14->ceklist_toilet_id = $data->id;
         $upload14->nama_ceklist = $request->ceklist14;
         if ($request->hasFile('upload14')) {
-          $dir = 'uploads/toilet';
+          $dir = 'uploads/ceklist/toilet';
           $file = $request->file('upload14');
           $ext = $file->getClientOriginalExtension();
           $newName = rand(100000,1001238912).".".$ext;
@@ -318,7 +318,9 @@ class CeklistToiletController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = CeklistToilet::findOrFail($id);
+        $ceklist = UploadCeklistToilet::where('ceklist_toilet_id', $data->id)->get();
+        return view('content.laporanCeklist.toilet.show', compact('data', 'ceklist'));
     }
 
     /**
