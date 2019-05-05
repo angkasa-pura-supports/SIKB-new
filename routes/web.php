@@ -46,3 +46,11 @@ Route::post('master-karyawan', 'Sistem\Master\KaryawanController@store')->name('
 Route::get('master-karyawan/{id}/edit', 'Sistem\Master\KaryawanController@edit')->name('master-karyawan.edit')->middleware('permission:Update Karyawan');
 Route::put('master-karyawan{id}', 'Sistem\Master\KaryawanController@update')->name('master-karyawan.update')->middleware('permission:Update Karyawan');
 Route::delete('master-karyawan/{id}', 'Sistem\Master\KaryawanController@destroy')->name('master-karyawan.destroy')->middleware('permission:Delete Karyawan');
+
+//UserAdmin
+Route::get('UserAdmin','Sistem\UserAdminController@index')->name('UserAdmin.index')->middleware('permission:Link UserAdmin');
+Route::get('UserAdmin/create','Sistem\UserAdminController@create')->name('UserAdmin.create')->middleware('permission:Create UserAdmin');
+Route::post('UserAdmin','Sistem\UserAdminController@store')->name('UserAdmin.store')->middleware('permission:Create UserAdmin');
+Route::get('UserAdmin/{id}/edit','Sistem\UserAdminController@edit')->name('UserAdmin.edit')->middleware('permission:Update UserAdmin');
+Route::put('UserAdmin{id}','Sistem\UserAdminController@update')->name('UserAdmin.update')->middleware('permission:Update UserAdmin');
+Route::delete('UserAdmin/{id}','Sistem\UserAdminController@destroy')->name('UserAdmin.destroy')->middleware('permission:Delete UserAdmin');

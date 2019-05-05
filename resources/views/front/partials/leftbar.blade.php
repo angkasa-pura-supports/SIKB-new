@@ -95,11 +95,10 @@
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                       <i class="ti-user"></i>
-                      <span class="hide-menu">User</span>
+                      <span class="hide-menu">User Setting</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{ route('access-role.index') }}">Roles</a></li>
-                        <li><a href="{{ route('access-permission.index') }}">Permission</a></li>
+                        <li><a href="{{ route('UserAdmin.index') }}">User Admin</a></li>
                     </ul>
                 </li>
                   {{--
