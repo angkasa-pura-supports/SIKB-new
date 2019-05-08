@@ -29,12 +29,12 @@
                         <img src="{{ asset('img/ap1.png') }}" alt="Home" height="70px"/>
                       </center> --}}
                     </a>
-                    <div class="m-t-40 form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                    <div class="m-t-40 form-group{{ $errors->has('username') ? ' has-error' : '' }}">
                         <div class="col-xs-12">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required placeholder="Email">
-                            @if ($errors->has('email'))
+                            <input id="email" type="text" class="form-control" name="username" value="{{ old('username') }}" required placeholder="Username">
+                            @if ($errors->has('username'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('email') }}</strong>
+                                    <strong>{{ $errors->first('username') }}</strong>
                                 </span>
                             @endif
                         </div>
