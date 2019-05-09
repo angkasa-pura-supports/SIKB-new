@@ -32,10 +32,7 @@
                   <tr>
                     <th>No</th>
                     <th>Nik</th>
-                    <th>Nama Karyawan</th>
-                    <th>Jabatan</th>
-                    <th>Username</th>
-                    <th>Email</th>
+                    <th>Nama</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -43,30 +40,31 @@
                   <tr>
                     <th>No</th>
                     <th>Nik</th>
-                    <th>Nama Karyawan</th>
-                    <th>Jabatan</th>
-                    <th>Username</th>
-                    <th>Email</th>
+                    <th>Nama</th>
                     <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  {{-- @php
+                  @php
                     $no=0;
                   @endphp
                   @foreach ($data as $value)
-                    <tr>
-                      <td>{{ $no=$no+1 }}</td>
-                      <td>{{ $value->threeletter }}</td>
-                      <td>{{ $value->nama_bandara }}</td>
-                      <td>
-                        {!! Form::open(['route'=>['master-bandara.destroy', $value->id], 'method'=>'DELETE']) !!}
-                          <a href="{{ route('master-bandara.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
-                          {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
-                        {!! Form::close() !!}
-                      </td>
-                    </tr>
-                  @endforeach --}}
+                    @if ($value->name == "Admin")
+                    @else
+                      <tr>
+                        <td>{{ $no=$no+1 }}</td>
+                        <td>{{ $value->username }}</td>
+                        <td>{{ $value->name }}</td>
+                        <td>
+                          {{-- {!! Form::open(['route'=>['master-bandara.destroy', $value->id], 'method'=>'DELETE']) !!}
+                            <a href="{{ route('master-bandara.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
+                            {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
+                          {!! Form::close() !!} --}}
+                        </td>
+                      </tr>
+                    @endif
+
+                  @endforeach
                 </tbody>
               </table>
             </div>
