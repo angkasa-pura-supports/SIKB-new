@@ -17,7 +17,7 @@ class BandaraController extends Controller
     public function index()
     {
         $data = Bandara::all();
-        return view('content.Bandara.index', compact('data'));
+        return view('content.bandara.index', compact('data'));
     }
 
     /**
@@ -28,7 +28,7 @@ class BandaraController extends Controller
     public function create()
     {
 
-        return view('content.Bandara.create');
+        return view('content.bandara.create');
     }
 
     /**

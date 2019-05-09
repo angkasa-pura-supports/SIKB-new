@@ -18,7 +18,7 @@
             <p class="loader__label">SIKB</p>
         </div>
     </div>
-    {{-- <section id="wrapper" class="login-register login-sidebar" style="background-image:url({{ asset('assets/images/background/login-register.jpg') }});"> --}}
+    <section id="wrapper" class="login-register login-sidebar" style="background-image:url({{ asset('assets/images/background/login-register.jpg') }});">
     <section id="wrapper" class="login-register login-sidebar">
         <div class="login-box card" style="opacity: 0.8;">
             <div class="card-body">
