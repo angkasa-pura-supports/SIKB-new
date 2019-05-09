@@ -307,7 +307,7 @@ class CeklistToiletController extends Controller
         $upload14->save();
 
         Alert::success('Data berhasil disimpan!');
-        return redirect('Ceklist_Toilet');
+        return redirect('laporanCeklist-toilet');
     }
 
     /**
