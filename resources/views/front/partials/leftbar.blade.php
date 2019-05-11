@@ -83,6 +83,7 @@
                       <span class="hide-menu">Report</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
+                      <li><a href="{{route ('ReportCeklistToilet.index')}}">Report Ceklist</a></li>
                       <li><a href="#">L P P</a></li>
                       <li><a href="#">Laporan Kerusakan</a></li>
                       <li><a href="#">Laporan Harian</a></li>

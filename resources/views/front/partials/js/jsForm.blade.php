@@ -149,6 +149,7 @@ jQuery(document).ready(function() {
 <script>
 // MAterial Date picker
 $('#mdate').bootstrapMaterialDatePicker({ weekStart: 0, time: false });
+$('#mdate1').bootstrapMaterialDatePicker({ weekStart: 0, time: false });
 $('#timepicker').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: false });
 $('#mulai').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: false });
 $('#selesai').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: false });
