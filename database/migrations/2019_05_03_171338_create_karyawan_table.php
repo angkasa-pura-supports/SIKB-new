@@ -17,6 +17,7 @@ class CreateKaryawanTable extends Migration
             $table->increments('id');
             $table->string('Nik');
             $table->string('nama_karyawan');
+            $table->string('jk');
             $table->string('Jabatan');
             $table->string('Unit_Kerja');
             $table->timestamps();

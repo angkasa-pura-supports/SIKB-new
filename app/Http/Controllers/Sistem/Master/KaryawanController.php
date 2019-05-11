@@ -42,6 +42,7 @@ class KaryawanController extends Controller
       $this->validate($request, [
         'Nik'  => 'required',
         'nama_karyawan' => 'required',
+        'jk' => 'required',
         'Jabatan' => 'required',
         'Unit_Kerja' => 'required',
       ]);
@@ -85,6 +86,7 @@ class KaryawanController extends Controller
       $this->validate($request, [
         'Nik'  => 'required',
         'nama_karyawan' => 'required',
+        'jk' => 'required',
         'Jabatan' => 'required',
         'Unit_Kerja' => 'required',
       ]);

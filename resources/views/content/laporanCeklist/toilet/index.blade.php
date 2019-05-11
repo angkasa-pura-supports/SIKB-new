@@ -16,9 +16,7 @@
             <li class="breadcrumb-item"><a href="javascript:void(0)">Laporan Ceklist</a></li>
             <li class="breadcrumb-item active">Ceklist Toilet</li>
           </ol>
-          {{-- @can('Create Bandara') --}}
-            <a href="{{ route('laporanCeklist-toilet.create')}}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Ceklist Toilet</a>
-          {{-- @endcan --}}
+          <a href="{{ route('laporanCeklist-toilet.create')}}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Ceklist Toilet</a>
         </div>
       </div>
     </div>
@@ -26,6 +24,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
+
             <div class="table-responsive m-t-40">
               <table id="example23" class="table table-bordered table-striped">
                 <thead>
@@ -67,8 +66,15 @@
                       <td>{{ date("d-m-Y", strtotime($value->tanggal_input)) }}</td>
                       <td>
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          <a href="{{ route('laporanCeklist-toilet.show', $value->id) }}" class="btn btn-info"><i class="fa fa-search"></i></a>
-                          <a href="{{ route('laporanCeklist-toilet.print', $value->id) }}" class="btn btn-warning"><i class="fa fa-print"></i></a>
+                          @php
+                            $jumlahCeklist = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->count();
+                          @endphp
+                          @if ($jumlahCeklist == 14)
+                          @else
+                            <a href="{{ route('laporanCeklist-toilet.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
+                          @endif
+                          <a href="{{ route('laporanCeklist-toilet.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
+                          <a href="{{ route('laporanCeklist-toilet.print', $value->id) }}" class="btn btn-warning" title="Print"><i class="fa fa-print"></i></a>
                         </div>
                       </td>
                     </tr>

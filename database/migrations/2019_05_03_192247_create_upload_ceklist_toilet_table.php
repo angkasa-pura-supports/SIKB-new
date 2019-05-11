@@ -19,8 +19,8 @@ class CreateUploadCeklistToiletTable extends Migration
             $table->foreign('ceklist_toilet_id')->references('id')->on('ceklist_toilet')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nama_ceklist');
             $table->string('berkas_ceklist');
-            $table->string('status_pria');
-            $table->string('status_wanita');
+            $table->string('status_pria')->nullable();
+            $table->string('status_wanita')->nullable();
             $table->timestamps();
         });
     }
