@@ -31,8 +31,25 @@
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('nama_ceklist') ? ' has-danger' : '' }}">
                     {!! Form::label('nama_ceklist', 'Jenis Checklist', ['class'=>'control-label']) !!}
-
-                    {!! Form::select('nama_ceklist', [
+                    <select class="select2 form-control custom-select" name="nama_ceklist" id="pilihValue" placeholder="Masukkan sesuatu...">
+                      <option selected disabled>--Pilih--</option>
+                      @php
+                        $sudahDipilih = App\UploadCeklistToilet::where('ceklist_toilet_id', $idCeklist->id)->get();
+                        $listUpload = [];
+                        foreach ($sudahDipilih as $pilih) {
+                          $listUpload[]=$pilih->nama_ceklist;
+                        }
+                        $inspeksi = ['Keharuman', 'Lantai', 'Toilet Bowl', 'Dinding', 'Tempat Sampah', 'Cermin', 'Washbasin', 'Sabun Cuci Tangan',
+                        'Kloset', 'Tissue Roll', 'Urinal', 'Handdryer', 'Pintu', 'Janitor'];
+                      @endphp
+                      @foreach ($inspeksi as $value)
+                        @if (in_array($value, $listUpload))
+                        @else
+                          <option value="{{ $value }}">{{ $value }}</option>
+                        @endif
+                      @endforeach
+                    </select>
+                    {{-- {!! Form::select('nama_ceklist', [
                       'Keharuman'=>'Keharuman',
                       'Lantai'=>'Lantai',
                       'Toilet Bowl'=>'Toilet Bowl',
@@ -46,7 +63,7 @@
                       'Urinal'=>'Urinal',
                       'Handdryer'=>'Handdryer',
                       'Pintu'=>'Pintu',
-                      'Janitor'=>'Janitor'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...', 'id'=>'pilihValue']);!!}
+                      'Janitor'=>'Janitor'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...', 'id'=>'pilihValue']);!!} --}}
                     @if ($errors->has('nama_ceklist'))
                       <small class="form-control-feedback">
                         {{ $errors->first('nama_ceklist') }}
