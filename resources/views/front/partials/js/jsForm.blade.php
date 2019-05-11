@@ -155,7 +155,8 @@ $('#mulai').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: fal
 $('#selesai').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: false });
 $('#editMulai').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: false });
 $('#editSelesai').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: false });
-$('#date-format').bootstrapMaterialDatePicker({ format: 'dddd DD MMMM YYYY - HH:mm' });
+$('#date-format').bootstrapMaterialDatePicker({ format: 'DD-MM-YYYY  HH:mm:ss' });
+$('#date-format1').bootstrapMaterialDatePicker({ format: 'DD-MM-YYYY  HH:mm:ss' });
 
 $('#min-date').bootstrapMaterialDatePicker({ format: 'DD/MM/YYYY HH:mm', minDate: new Date() });
 $('#min-date1').bootstrapMaterialDatePicker({ format: 'DD/MM/YYYY HH:mm', minDate: new Date() });

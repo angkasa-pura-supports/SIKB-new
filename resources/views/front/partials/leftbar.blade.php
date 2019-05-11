@@ -10,10 +10,7 @@
                         <span class="hide-menu">{{ Auth::user()->name }}</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="javascript:void(0)"><i class="ti-user"></i> My Profile</a></li>
-                        <li><a href="javascript:void(0)"><i class="ti-wallet"></i> My Balance</a></li>
-                        <li><a href="javascript:void(0)"><i class="ti-email"></i> Inbox</a></li>
-                        <li><a href="javascript:void(0)"><i class="ti-settings"></i> Account Setting</a></li>
+
                         <li>
                           <a href="{{ route('logout') }}"
                               onclick="event.preventDefault();
@@ -63,7 +60,7 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Laporan Ceklist</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('laporanCeklist-toilet.index') }}">Toilet</a></li>
-                        <li><a href="#">Blower</a></li>
+                        <li><a href="#">Peralatan</a></li>
                         {{-- <li><a href="#">Brush Vacuum Cleaner</a></li>
                         <li><a href="#">Carpet Extractor</a></li>
                         <li><a href="#">Automactic Scrubber</a></li>

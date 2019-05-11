@@ -1,5 +1,5 @@
 @extends('front.layouts.front')
-@section('title', 'Kontrak Pekerjaan')
+@section('title', 'Report Ceklist')
 @section('cssAssets')
   @include('front.partials.css.cssForm')
 @endsection
@@ -33,7 +33,7 @@
                                       <div class="col-md-6">
                                           <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
                                             {!! Form::label('Dari', 'Dari', ['class'=>'control-label']) !!}
-                                            {!! Form::text('masa_berlaku', null, ['class'=>'form-control', 'id'=>'min-date', 'placeholder'=>'yyyy-mm-dd']) !!}
+                                            {!! Form::text('masa_berlaku', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd']) !!}
                                             @if ($errors->has('masa_berlaku'))
                                               <small class="form-control-feedback">
                                                 {{ $errors->first('masa_berlaku') }}
@@ -45,7 +45,7 @@
                                       <div class="col-md-6">
                                           <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
                                             {!! Form::label('Sampai', 'Sampai', ['class'=>'control-label']) !!}
-                                            {!! Form::text('masa_berlaku', null, ['class'=>'form-control', 'id'=>'min-date1', 'placeholder'=>'yyyy-mm-dd']) !!}
+                                            {!! Form::text('masa_berlaku', null, ['class'=>'form-control', 'id'=>'mdate1', 'placeholder'=>'yyyy-mm-dd']) !!}
                                             @if ($errors->has('masa_berlaku'))
                                               <small class="form-control-feedback">
                                                 {{ $errors->first('masa_berlaku') }}
