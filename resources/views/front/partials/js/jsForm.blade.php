@@ -158,6 +158,8 @@ $('#editSelesai').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, dat
 $('#date-format').bootstrapMaterialDatePicker({ format: 'dddd DD MMMM YYYY - HH:mm' });
 
 $('#min-date').bootstrapMaterialDatePicker({ format: 'DD/MM/YYYY HH:mm', minDate: new Date() });
+$('#min-date1').bootstrapMaterialDatePicker({ format: 'DD/MM/YYYY HH:mm', minDate: new Date() });
+
 // Clock pickers
 $('#single-input').clockpicker({
     placement: 'bottom',
