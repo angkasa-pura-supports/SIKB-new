@@ -57,3 +57,6 @@ Route::post('UserAdmin','Sistem\UserAdminController@store')->name('UserAdmin.sto
 Route::get('UserAdmin/{id}/edit','Sistem\UserAdminController@edit')->name('UserAdmin.edit')->middleware('permission:Update UserAdmin');
 Route::put('UserAdmin{id}','Sistem\UserAdminController@update')->name('UserAdmin.update')->middleware('permission:Update UserAdmin');
 Route::delete('UserAdmin/{id}','Sistem\UserAdminController@destroy')->name('UserAdmin.destroy')->middleware('permission:Delete UserAdmin');
+
+//ReportCeklistToilet
+Route::get('ReportCeklistToilet', 'Sistem\LaporanCekList\ReportCeklistToiletController@index')->name('ReportCeklistToilet.index');
