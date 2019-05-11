@@ -16,14 +16,18 @@
             <li class="breadcrumb-item"><a href="javascript:void(0)">Master Data</a></li>
             <li class="breadcrumb-item active">karyawan</li>
           </ol>
-          {{-- @can('Create Bandara') --}}
-            <a href="{{ route('data_karyawan.create') }}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create New</a>
-          {{-- @endcan --}}
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-actions">
+              <a href="{{ route('data_karyawan.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Data</a>
+            </div>
+          </div>
+        </div>
         <div class="card">
           <div class="card-body">
             <div class="table-responsive m-t-40">

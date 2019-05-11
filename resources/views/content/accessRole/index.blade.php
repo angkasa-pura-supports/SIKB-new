@@ -16,12 +16,18 @@
             <li class="breadcrumb-item">Akses</li>
             <li class="breadcrumb-item active">Role</li>
           </ol>
-          <a href="{{ route('access-role.create') }}" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Akses Role</a>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="form-actions">
+              <a href="{{ route('access-role.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Data</a>
+            </div>
+          </div>
+        </div>
         <div class="card">
           <div class="card-body">
             <div class="table-responsive m-t-40">
