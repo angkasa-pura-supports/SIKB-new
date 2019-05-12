@@ -22,18 +22,36 @@
           </div>
           <div class="row">
               <div class="col-lg-12">
+                  {{-- <table border="1">
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Ceklist</th>
+                      <th>Tanggal</th>
+                    </tr>
+                    @php
+                      $no = 0;
+                      $data = App\UploadCeklistToilet::whereBetween('created_at', ['2019-05-10', date('Y-m-d', strtotime("2019-05-31"."+1 days"))])->get();
+                    @endphp
+                    @foreach ($data as $value)
+                      <tr>
+                        <td>{{ $no=$no+1 }}</td>
+                        <td>{{ $value->nama_ceklist }}</td>
+                        <td>{{ $value->created_at }}</td>
+                      </tr>
+                    @endforeach
+                  </table> --}}
                   <div class="card">
                       <div class="card-header bg-info">
                           <h4 class="m-b-0 text-white">Report Ceklist Toilet</h4>
                       </div>
                       <div class="card-body">
-                          {!! Form::open(['route'=>'KontrakPekerjaan.store']) !!}
+                          {!! Form::open(['route'=>'ReportCeklistToilet.report', 'method'=>'GET']) !!}
                               <div class="form-body">
                                   <div class="row">
                                       <div class="col-md-6">
                                           <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
                                             {!! Form::label('Dari', 'Dari', ['class'=>'control-label']) !!}
-                                            {!! Form::text('masa_berlaku', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd']) !!}
+                                            {!! Form::text('start', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd']) !!}
                                             @if ($errors->has('masa_berlaku'))
                                               <small class="form-control-feedback">
                                                 {{ $errors->first('masa_berlaku') }}
@@ -45,7 +63,7 @@
                                       <div class="col-md-6">
                                           <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
                                             {!! Form::label('Sampai', 'Sampai', ['class'=>'control-label']) !!}
-                                            {!! Form::text('masa_berlaku', null, ['class'=>'form-control', 'id'=>'mdate1', 'placeholder'=>'yyyy-mm-dd']) !!}
+                                            {!! Form::text('end', null, ['class'=>'form-control', 'id'=>'mdate1', 'placeholder'=>'yyyy-mm-dd']) !!}
                                             @if ($errors->has('masa_berlaku'))
                                               <small class="form-control-feedback">
                                                 {{ $errors->first('masa_berlaku') }}

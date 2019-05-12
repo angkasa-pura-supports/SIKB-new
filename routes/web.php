@@ -60,3 +60,4 @@ Route::delete('UserAdmin/{id}','Sistem\UserAdminController@destroy')->name('User
 
 //ReportCeklistToilet
 Route::get('ReportCeklistToilet', 'Sistem\LaporanCekList\ReportCeklistToiletController@index')->name('ReportCeklistToilet.index');
+Route::get('ReportCeklistToilet/report/', 'Sistem\LaporanCekList\ReportCeklistToiletController@report')->name('ReportCeklistToilet.report');

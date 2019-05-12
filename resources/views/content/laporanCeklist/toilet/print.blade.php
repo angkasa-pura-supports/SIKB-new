@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>A4 landscape</title>
+  <title>Print Laporan Ceklist Toilet</title>
 
   <!-- Normalize or reset CSS with your favorite library -->
   <link rel="stylesheet" href="{{ asset('print/normalize.min.css') }}">

@@ -17,6 +17,11 @@ class ReportCeklistToiletController extends Controller
         return view('content.report.ReportCeklistToilet.index');
     }
 
+    public function report(Request $request)
+    {
+        return view('content.report.reportCeklistToilet.print');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
