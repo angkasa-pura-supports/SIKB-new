@@ -22,7 +22,7 @@ class PermissionController extends Controller
     public function index()
     {
       $data = Permission::all();
-      return view('content.permission.index', compact('data'));
+      return view('content.master.permission.index', compact('data'));
     }
 
     /**
@@ -32,7 +32,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        return view('content.permission.create');
+        return view('content.master.permission.create');
     }
 
     /**
@@ -71,7 +71,7 @@ class PermissionController extends Controller
     public function edit($id)
     {
         $data = Permission::findOrFail($id);
-        return view('content.permission.edit', compact('data'));
+        return view('content.master.permission.edit', compact('data'));
     }
 
     /**

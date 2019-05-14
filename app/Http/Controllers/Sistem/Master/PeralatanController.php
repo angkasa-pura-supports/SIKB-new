@@ -1,16 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Sistem\LaporanCeklist\Peralatan;
+namespace App\Http\Controllers\Sistem\Master;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Bandara;
-use App\karyawan;
-use App\AutomacticScrubber;
-use Alert;
-use Illuminate\Support\Facades\File;
-
-class AutomacticScrubberController extends Controller
+use App\Peralatan;
+class PeralatanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +14,8 @@ class AutomacticScrubberController extends Controller
      */
     public function index()
     {
-        // $data = AutomacticScrubber::all();
-        return view('content.laporanCeklist.peralatan.AutomacticScrubber.index', compact('data'));
+        $data = Peralatan::all();
+        return view('content.master.peralatan.index', compact('data'));
     }
 
     /**
@@ -30,10 +25,7 @@ class AutomacticScrubberController extends Controller
      */
     public function create()
     {
-      $bandara1 = Bandara::pluck('nama_bandara', 'id');
-      $jabatan = ['Supervisor', 'Senior Leader', 'Team Leader'];
-      $pengawas = karyawan::whereIn('Jabatan', $jabatan)->pluck('nama_karyawan', 'id');
-        return view('content.laporanCeklist.peralatan.AutomacticScrubber.create', compact('bandara1','jabatan','pengawas'));
+        //
     }
 
     /**
@@ -44,22 +36,7 @@ class AutomacticScrubberController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validate($request, [
-        'bandara_id' => 'required',
-        'pengawas_id' => 'required',
-        'shift' => 'required',
-        'tanggal_input' => 'required',
-        'catatan' => 'required'
-      ]);
-      $data = new AutomacticScrubber;
-      $data->bandara_id = $request->bandara_id;
-      $data->pengawas_id = $request->pengawas_id;
-      $data->shift = $request->shift;
-      $data->tanggal_input = $request->tanggal_input;
-      $data->catatan = $request->catatan;
-      $data->save();
-      Alert::success('Data berhasil disimpan!');
-      return redirect('laporanCeklist-AutomacticScrubber');
+        //
     }
 
     /**

@@ -18,7 +18,7 @@ class LokasiToiletController extends Controller
     public function index()
     {
       $lok_toilet = LokasiToilet::all();
-      return view('content.lokasiToilet.index', compact('lok_toilet'));
+      return view('content.master.lokasiToilet.index', compact('lok_toilet'));
     }
 
     /**
@@ -28,7 +28,7 @@ class LokasiToiletController extends Controller
      */
     public function create()
     {
-      return view('content.lokasiToilet.create');
+      return view('content.master.lokasiToilet.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class LokasiToiletController extends Controller
     public function edit($id)
     {
         $data = LokasiToilet::findOrFail($id);
-        return view('content.lokasiToilet.edit', compact('data'));
+        return view('content.master.lokasiToilet.edit', compact('data'));
     }
 
     /**

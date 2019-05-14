@@ -51,7 +51,7 @@
                                       <div class="col-md-6">
                                           <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
                                             {!! Form::label('Dari', 'Dari', ['class'=>'control-label']) !!}
-                                            {!! Form::text('start', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd']) !!}
+                                            {!! Form::text('start', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd', 'required'='']) !!}
                                             @if ($errors->has('masa_berlaku'))
                                               <small class="form-control-feedback">
                                                 {{ $errors->first('masa_berlaku') }}
@@ -63,7 +63,7 @@
                                       <div class="col-md-6">
                                           <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
                                             {!! Form::label('Sampai', 'Sampai', ['class'=>'control-label']) !!}
-                                            {!! Form::text('end', null, ['class'=>'form-control', 'id'=>'mdate1', 'placeholder'=>'yyyy-mm-dd']) !!}
+                                            {!! Form::text('end', null, ['class'=>'form-control', 'id'=>'mdate1', 'placeholder'=>'yyyy-mm-dd', 'required'='']) !!}
                                             @if ($errors->has('masa_berlaku'))
                                               <small class="form-control-feedback">
                                                 {{ $errors->first('masa_berlaku') }}

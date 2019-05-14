@@ -22,7 +22,7 @@ class RoleController extends Controller
     public function index()
     {
         $data = Role::all();
-        return view('content.roles.index', compact('data'));
+        return view('content.master.roles.index', compact('data'));
     }
 
     /**
@@ -32,7 +32,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('content.roles.create');
+        return view('content.master.roles.create');
     }
 
     /**
@@ -71,7 +71,7 @@ class RoleController extends Controller
     public function edit($id)
     {
         $data = Role::findOrFail($id);
-        return view('content.roles.edit', compact('data'));
+        return view('content.master.roles.edit', compact('data'));
     }
 
     /**

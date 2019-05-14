@@ -14,7 +14,6 @@ class AutomacticScrubber extends Model
   {
     return $this->belongsTo(Bandara::class);
   }
-    }
   public function pengawas()
   {
     return $this->belongsTo(karyawan::class);

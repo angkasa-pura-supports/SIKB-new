@@ -14,6 +14,7 @@
         <div class="d-flex justify-content-end align-items-center">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Laporan Ceklist</a></li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Peralatan</a></li>
             <li class="breadcrumb-item active">Automactic Scrubber</li>
           </ol>
         </div>
