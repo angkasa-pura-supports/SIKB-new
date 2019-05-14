@@ -60,7 +60,22 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Laporan Ceklist</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('laporanCeklist-toilet.index') }}">Toilet</a></li>
-                        <li><a href="#">Peralatan</a></li>
+                        <li> <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Peralatan</a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{ route ('laporanCeklist-AutomacticScrubber.index') }}">Automactic Scrubber</a></li>
+                                <li><a href="#">Blower</a></li>
+                                <li><a href="#">Brush Vacuum</a></li>
+                                <li><a href="#">Carpet Extractor</a></li>
+                                <li><a href="#">Carpet Spotter</a></li>
+                                <li><a href="#">Dry Vacuum</a></li>
+                                <li><a href="#">DW Vacuum</a></li>
+                                <li><a href="#">Floor Polisher</a></li>
+                                <li><a href="#">High Pressure</a></li>
+                                <li><a href="#">LS Polisher</a></li>
+                                <li><a href="#">Mesin Port Scrub</a></li>
+                                <li><a href="#">Mesin Potong Rumput</a></li>
+                            </ul>
+                        </li>
                         {{-- <li><a href="#">Brush Vacuum Cleaner</a></li>
                         <li><a href="#">Carpet Extractor</a></li>
                         <li><a href="#">Automactic Scrubber</a></li>
