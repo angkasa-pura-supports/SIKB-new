@@ -19,7 +19,7 @@ class AutomacticScrubberController extends Controller
      */
     public function index()
     {
-      $data = AutomacticScrubber::all();
+        $data = AutomacticScrubber::all();
         return view('content.laporanCeklist.peralatan.AutomacticScrubber.index', compact('data'));
     }
 
@@ -43,24 +43,24 @@ class AutomacticScrubberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-      $this->validate($request, [
-        'bandara_id' => 'required',
-        'pengawas_id' => 'required',
-        'shift' => 'required',
-        'tanggal_input' => 'required',
-        'catatan' => 'required'
-      ]);
-      $data = new AutomacticScrubber;
-      $data->bandara_id = $request->bandara_id;
-      $data->pengawas_id = $request->pengawas_id;
-      $data->shift = $request->shift;
-      $data->tanggal_input = $request->tanggal_input;
-      $data->catatan = $request->catatan;
-      $data->save();
-      Alert::success('Data berhasil disimpan!');
-      return redirect('laporanCeklist-AutomacticScrubber');
-    }
+      {
+        $this->validate($request,[
+          'bandara_id' => 'required',
+          'pengawas_id' => 'required',
+          'shift' => 'required',
+          'tanggal_input' => 'required',
+          'catatan' => 'required'
+        ]);
+        $data = new AutomacticScrubber;
+        $data->bandara_id = $request->bandara_id;
+        $data->pengawas_id = $request->pengawas_id;
+        $data->shift = $request->shift;
+        $data->tanggal_input = $request->tanggal_input;
+        $data->catatan = $request->catatan;
+        $data->save();
+        Alert::success('Data berhasil disimpan!');
+        return redirect('laporanCeklist-AutomacticScrubber');
+      }
 
     /**
      * Display the specified resource.
@@ -106,4 +106,5 @@ class AutomacticScrubberController extends Controller
     {
         //
     }
+  
 }
