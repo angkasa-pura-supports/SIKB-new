@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\AutomacticScrubber' => $baseDir . '/app/AutomacticScrubber.php',
     'App\\Bandara' => $baseDir . '/app/Bandara.php',
     'App\\CeklistToilet' => $baseDir . '/app/CeklistToilet.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -35,6 +36,7 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\LokasiToilet' => $baseDir . '/app/LokasiToilet.php',
+    'App\\Peralatan' => $baseDir . '/app/Peralatan.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
@@ -67,6 +69,7 @@ return array(
     'CreateKontrakPekerjaanTable' => $baseDir . '/database/migrations/2019_04_11_041257_create_kontrak_pekerjaan_table.php',
     'CreateLokasiToiletTable' => $baseDir . '/database/migrations/2019_05_02_133217_create_lokasi_toilet_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2019_05_08_100000_create_password_resets_table.php',
+    'CreatePeralatanTable' => $baseDir . '/database/migrations/2019_05_14_223531_create_peralatan_table.php',
     'CreatePermissionTables' => $baseDir . '/database/migrations/2019_04_13_191003_create_permission_tables.php',
     'CreateUploadCeklistToiletTable' => $baseDir . '/database/migrations/2019_05_03_192247_create_upload_ceklist_toilet_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2019_05_08_000000_create_users_table.php',

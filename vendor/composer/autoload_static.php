@@ -310,6 +310,7 @@ class ComposerStaticInitc9041f1784d571b21adfe60aba471d7e
     );
 
     public static $classMap = array (
+        'App\\AutomacticScrubber' => __DIR__ . '/../..' . '/app/AutomacticScrubber.php',
         'App\\Bandara' => __DIR__ . '/../..' . '/app/Bandara.php',
         'App\\CeklistToilet' => __DIR__ . '/../..' . '/app/CeklistToilet.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -339,6 +340,7 @@ class ComposerStaticInitc9041f1784d571b21adfe60aba471d7e
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\LokasiToilet' => __DIR__ . '/../..' . '/app/LokasiToilet.php',
+        'App\\Peralatan' => __DIR__ . '/../..' . '/app/Peralatan.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -371,6 +373,7 @@ class ComposerStaticInitc9041f1784d571b21adfe60aba471d7e
         'CreateKontrakPekerjaanTable' => __DIR__ . '/../..' . '/database/migrations/2019_04_11_041257_create_kontrak_pekerjaan_table.php',
         'CreateLokasiToiletTable' => __DIR__ . '/../..' . '/database/migrations/2019_05_02_133217_create_lokasi_toilet_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2019_05_08_100000_create_password_resets_table.php',
+        'CreatePeralatanTable' => __DIR__ . '/../..' . '/database/migrations/2019_05_14_223531_create_peralatan_table.php',
         'CreatePermissionTables' => __DIR__ . '/../..' . '/database/migrations/2019_04_13_191003_create_permission_tables.php',
         'CreateUploadCeklistToiletTable' => __DIR__ . '/../..' . '/database/migrations/2019_05_03_192247_create_upload_ceklist_toilet_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2019_05_08_000000_create_users_table.php',

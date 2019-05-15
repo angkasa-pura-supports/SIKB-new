@@ -42,6 +42,9 @@ Route::get('master-karyawan/{id}/edit', 'Sistem\Master\KaryawanController@edit')
 Route::put('master-karyawan{id}', 'Sistem\Master\KaryawanController@update')->name('master-karyawan.update')->middleware('permission:Update Karyawan');
 Route::delete('master-karyawan/{id}', 'Sistem\Master\KaryawanController@destroy')->name('master-karyawan.destroy')->middleware('permission:Delete Karyawan');
 
+// Master Peralatan
+Route::get('master-peralatan', 'Sistem\Master\PeralatanController@index')->name('master-peralatan.index');
+
 //Ceklis
 Route::get('laporanCeklist-toilet','Sistem\LaporanCekList\Toilet\CeklistToiletController@index')->name('laporanCeklist-toilet.index');
 Route::get('laporanCeklist-toilet/create','Sistem\LaporanCekList\Toilet\CeklistToiletController@create')->name('laporanCeklist-toilet.create');

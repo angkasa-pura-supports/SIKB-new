@@ -4,25 +4,18 @@ namespace App\Http\Controllers\Sistem\Master;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
-use Alert;
-use Spatie\Permission\Models\Role;
-class RoleController extends Controller
+use App\Peralatan;
+class PeralatanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('role:SuperAdmin');
-    }
     public function index()
     {
-        $data = Role::all();
-        return view('content.master.roles.index', compact('data'));
+        $data = Peralatan::all();
+        return view('content.master.peralatan.index', compact('data'));
     }
 
     /**
@@ -32,7 +25,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('content.master.roles.create');
+        //
     }
 
     /**
@@ -43,12 +36,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validate($request, [
-        'name' => 'required'
-      ]);
-      Role::create($request->all());
-      Alert::success('Data berhasil disimpan!');
-      return redirect('master-roles');
+        //
     }
 
     /**
@@ -70,8 +58,7 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        $data = Role::findOrFail($id);
-        return view('content.master.roles.edit', compact('data'));
+        //
     }
 
     /**
@@ -83,12 +70,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-          'name' => 'required'
-        ]);
-        Role::findOrFail($id)->update($request->all());
-        Alert::success('Data berhasil diubah!');
-        return redirect('master-roles');
+        //
     }
 
     /**
@@ -99,9 +81,6 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-      $data = Role::findOrFail($id);
-      $data->delete();
-      Alert::success('Data berhasil dihapus!');
-      return redirect('master-roles');
+        //
     }
 }

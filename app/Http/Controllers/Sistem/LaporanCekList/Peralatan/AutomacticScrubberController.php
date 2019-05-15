@@ -19,7 +19,11 @@ class AutomacticScrubberController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $data = AutomacticScrubber::all();
+=======
+        // $data = AutomacticScrubber::all();
+>>>>>>> 3508e9e53def5e87658dc76bb691f618d9dcb6b0
         return view('content.laporanCeklist.peralatan.AutomacticScrubber.index', compact('data'));
     }
 

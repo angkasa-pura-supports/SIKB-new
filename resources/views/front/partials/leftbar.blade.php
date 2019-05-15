@@ -44,7 +44,7 @@
                         <li><a href="{{ route('data_karyawan.index')}}">Karyawan</a></li>
                         <li><a href="{{ route('master-roles.index') }}">Roles</a></li>
                         <li><a href="{{ route('master-permission.index') }}">Permission</a></li>
-
+                        <li><a href="{{ route('master-peralatan.index') }}">Peralatan</a></li>
                     </ul>
                 </li>
                 <li>

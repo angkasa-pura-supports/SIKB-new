@@ -18,7 +18,7 @@ class KontrakPekerjaanController extends Controller
     {
       $kontrak = kontrakpekerjaan::all();
 
-      return view('content.KontrakPekerjaan.index', compact('kontrak'));
+      return view('content.master.KontrakPekerjaan.index', compact('kontrak'));
     }
 
     /**
@@ -29,7 +29,7 @@ class KontrakPekerjaanController extends Controller
     public function create()
     {
         $bandara = Bandara::pluck('nama_bandara', 'id');
-        return view('content.KontrakPekerjaan.create', compact('bandara'));
+        return view('content.master.KontrakPekerjaan.create', compact('bandara'));
     }
 
     /**
