@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Sistem\LaporanCeklist\Peralatan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Bandara;
+use App\Peralatan;
 use App\karyawan;
-use App\AutomacticScrubber;
+use App\CeklistPeralatan;
+// use App\UploadCeklistToilet;
 use Alert;
 use Illuminate\Support\Facades\File;
-
-class AutomacticScrubberController extends Controller
+class CeklistPeralatanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +20,8 @@ class AutomacticScrubberController extends Controller
      */
     public function index()
     {
-        $data = AutomacticScrubber::all();
-        return view('content.laporanCeklist.peralatan.AutomacticScrubber.index', compact('data'));
+        $data = CeklistPeralatan::all();
+        return view('content.laporanCeklist.peralatan.index', compact('data'));
     }
 
     /**
@@ -30,10 +31,7 @@ class AutomacticScrubberController extends Controller
      */
     public function create()
     {
-      $bandara1 = Bandara::pluck('nama_bandara', 'id');
-      $jabatan = ['Supervisor', 'Senior Leader', 'Team Leader'];
-      $pengawas = karyawan::whereIn('Jabatan', $jabatan)->pluck('nama_karyawan', 'id');
-        return view('content.laporanCeklist.peralatan.AutomacticScrubber.create', compact('bandara1','jabatan','pengawas'));
+        return view('content.laporanCeklist.peralatan.create');
     }
 
     /**
@@ -43,24 +41,9 @@ class AutomacticScrubberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-      {
-        $this->validate($request,[
-          'bandara_id' => 'required',
-          'pengawas_id' => 'required',
-          'shift' => 'required',
-          'tanggal_input' => 'required',
-          'catatan' => 'required'
-        ]);
-        $data = new AutomacticScrubber;
-        $data->bandara_id = $request->bandara_id;
-        $data->pengawas_id = $request->pengawas_id;
-        $data->shift = $request->shift;
-        $data->tanggal_input = $request->tanggal_input;
-        $data->catatan = $request->catatan;
-        $data->save();
-        Alert::success('Data berhasil disimpan!');
-        return redirect('laporanCeklist-AutomacticScrubber');
-      }
+    {
+        //
+    }
 
     /**
      * Display the specified resource.
@@ -106,5 +89,4 @@ class AutomacticScrubberController extends Controller
     {
         //
     }
-
 }

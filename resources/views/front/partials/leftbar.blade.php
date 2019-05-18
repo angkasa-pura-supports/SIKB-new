@@ -45,6 +45,7 @@
                         <li><a href="{{ route('master-roles.index') }}">Roles</a></li>
                         <li><a href="{{ route('master-permission.index') }}">Permission</a></li>
                         <li><a href="{{ route('master-peralatan.index') }}">Peralatan</a></li>
+                        <li><a href="{{ route('master-kondisi-peralatan.index') }}">Kondisi Peralatan</a></li>
                     </ul>
                 </li>
                 <li>
@@ -60,7 +61,8 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Laporan Ceklist</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('laporanCeklist-toilet.index') }}">Toilet</a></li>
-                        <li> <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Peralatan</a>
+                        <li><a href="{{ route('laporanCeklist-peralatan.index') }}">Peralatan</a></li>
+                        {{-- <li> <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Peralatan</a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{ route ('laporanCeklist-AutomacticScrubber.index') }}">Automactic Scrubber</a></li>
                                 <li><a href="#">Blower</a></li>
@@ -75,7 +77,7 @@
                                 <li><a href="#">Mesin Port Scrub</a></li>
                                 <li><a href="#">Mesin Potong Rumput</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                         {{-- <li><a href="#">Brush Vacuum Cleaner</a></li>
                         <li><a href="#">Carpet Extractor</a></li>
                         <li><a href="#">Automactic Scrubber</a></li>

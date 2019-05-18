@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Sistem\LaporanCeklist\Peralatan;
+namespace App\Http\Controllers\Sistem\Master;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Bandara;
-use App\karyawan;
-use App\AutomacticScrubber;
+use App\Peralatan;
+use App\PeralatanKondisi;
 use Alert;
-use Illuminate\Support\Facades\File;
-
-class AutomacticScrubberController extends Controller
+class PeralatanKondisiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,8 +16,8 @@ class AutomacticScrubberController extends Controller
      */
     public function index()
     {
-        $data = AutomacticScrubber::all();
-        return view('content.laporanCeklist.peralatan.AutomacticScrubber.index', compact('data'));
+        $data = PeralatanKondisi::all();
+        return view('content.master.peralatanKondisi.index', compact('data'));
     }
 
     /**
@@ -30,10 +27,8 @@ class AutomacticScrubberController extends Controller
      */
     public function create()
     {
-      $bandara1 = Bandara::pluck('nama_bandara', 'id');
-      $jabatan = ['Supervisor', 'Senior Leader', 'Team Leader'];
-      $pengawas = karyawan::whereIn('Jabatan', $jabatan)->pluck('nama_karyawan', 'id');
-        return view('content.laporanCeklist.peralatan.AutomacticScrubber.create', compact('bandara1','jabatan','pengawas'));
+        $peralatanList = Peralatan::pluck('nama_peralatan', 'id');
+        return view('content.master.peralatanKondisi.create', compact('peralatanList'));
     }
 
     /**
@@ -43,24 +38,16 @@ class AutomacticScrubberController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-      {
-        $this->validate($request,[
-          'bandara_id' => 'required',
-          'pengawas_id' => 'required',
-          'shift' => 'required',
-          'tanggal_input' => 'required',
-          'catatan' => 'required'
+    {
+        $this->validate($request, [
+          'peralatan_id' => 'required',
+          'item_pemeriksaan' => 'required',
+          'kondisi_standard' => 'required'
         ]);
-        $data = new AutomacticScrubber;
-        $data->bandara_id = $request->bandara_id;
-        $data->pengawas_id = $request->pengawas_id;
-        $data->shift = $request->shift;
-        $data->tanggal_input = $request->tanggal_input;
-        $data->catatan = $request->catatan;
-        $data->save();
+        PeralatanKondisi::create($request->all());
         Alert::success('Data berhasil disimpan!');
-        return redirect('laporanCeklist-AutomacticScrubber');
-      }
+        return redirect('master-kondisi-peralatan');
+    }
 
     /**
      * Display the specified resource.
@@ -81,7 +68,9 @@ class AutomacticScrubberController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = PeralatanKondisi::findOrFail($id);
+        $peralatanList = Peralatan::pluck('nama_peralatan', 'id');
+        return view('content.master.peralatanKondisi.edit', compact('data', 'peralatanList'));
     }
 
     /**
@@ -93,7 +82,14 @@ class AutomacticScrubberController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+          'peralatan_id' => 'required',
+          'item_pemeriksaan' => 'required',
+          'kondisi_standard' => 'required'
+        ]);
+        PeralatanKondisi::findOrFail($id)->update($request->all());
+        Alert::success('Data berhasil diubah!');
+        return redirect('master-kondisi-peralatan');
     }
 
     /**
@@ -104,7 +100,9 @@ class AutomacticScrubberController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = PeralatanKondisi::findOrFail($id);
+        $data->delete();
+        Alert::success('Data berhasil dihapus!');
+        return redirect('master-kondisi-peralatan');
     }
-
 }

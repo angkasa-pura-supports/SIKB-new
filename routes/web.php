@@ -34,7 +34,7 @@ Route::post('KontrakPekerjaan', 'Sistem\Master\KontrakPekerjaanController@store'
 Route::post('KontrakPekerjaan/{id}/edit', 'Sistem\Master\KontrakPekerjaanController@edit')->name('KontrakPekerjaan.edit');
 Route::delete('KontrakPekerjaan/{id}', 'Sistem\Master\KontrakPekerjaanController@destroy')->name('KontrakPekerjaan.destroy');
 
-//karyawan
+// Master Karyawan
 Route::get('data_karyawan','Sistem\Master\KaryawanController@index')->name('data_karyawan.index')->middleware('permission:Link Karyawan');
 Route::get('data_karyawan/create','Sistem\Master\KaryawanController@create')->name('data_karyawan.create')->middleware('permission:Create Karyawan');
 Route::post('master-karyawan', 'Sistem\Master\KaryawanController@store')->name('master-karyawan.store')->middleware('permission:Create Karyawan');
@@ -50,7 +50,15 @@ Route::get('master-peralatan/{id}/edit', 'Sistem\Master\PeralatanController@edit
 Route::put('master-peralatan/{id}', 'Sistem\Master\PeralatanController@update')->name('master-peralatan.update');
 Route::delete('master-peralatan/{id}', 'Sistem\Master\PeralatanController@destroy')->name('master-peralatan.destroy');
 
-//Ceklis
+// Master Kondisi Peralatan
+Route::get('master-kondisi-peralatan', 'Sistem\Master\PeralatanKondisiController@index')->name('master-kondisi-peralatan.index');
+Route::get('master-kondisi-peralatan/create', 'Sistem\Master\PeralatanKondisiController@create')->name('master-kondisi-peralatan.create');
+Route::post('master-kondisi-peralatan', 'Sistem\Master\PeralatanKondisiController@store')->name('master-kondisi-peralatan.store');
+Route::get('master-kondisi-peralatan/{id}/edit', 'Sistem\Master\PeralatanKondisiController@edit')->name('master-kondisi-peralatan.edit');
+Route::put('master-kondisi-peralatan/{id}', 'Sistem\Master\PeralatanKondisiController@update')->name('master-kondisi-peralatan.update');
+Route::delete('master-kondisi-peralatan/{id}', 'Sistem\Master\PeralatanKondisiController@destroy')->name('master-kondisi-peralatan.destroy');
+
+// Ceklist Toilet
 Route::get('laporanCeklist-toilet','Sistem\LaporanCekList\Toilet\CeklistToiletController@index')->name('laporanCeklist-toilet.index');
 Route::get('laporanCeklist-toilet/create','Sistem\LaporanCekList\Toilet\CeklistToiletController@create')->name('laporanCeklist-toilet.create');
 Route::post('laporanCeklist-toilet', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@store')->name('laporanCeklist-toilet.store');
@@ -58,6 +66,15 @@ Route::get('laporanCeklist-toilet/{id}', 'Sistem\LaporanCekList\Toilet\CeklistTo
 Route::get('laporanCeklist-toilet/print/{id}', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@print')->name('laporanCeklist-toilet.print');
 Route::get('laporanCeklist-toilet/checklist/{id}', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@checklist')->name('laporanCeklist-toilet.checklist');
 Route::post('laporanCeklist-toilet/checklist', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@checklistStore')->name('laporanCeklist-toilet.checklistStore');
+
+// Ceklist Peralatan
+Route::get('laporanCeklist-peralatan', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@index')->name('laporanCeklist-peralatan.index');
+Route::get('laporanCeklist-peralatan/create', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@create')->name('laporanCeklist-peralatan.create');
+Route::post('laporanCeklist-peralatan', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@store')->name('laporanCeklist-peralatan.store');
+Route::get('laporanCeklist-peralatan/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@show')->name('laporanCeklist-peralatan.show');
+Route::get('laporanCeklist-peralatan/print/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@print')->name('laporanCeklist-peralatan.print');
+Route::get('laporanCeklist-peralatan/checklist/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@checklist')->name('laporanCeklist-peralatan.checklist');
+Route::post('laporanCeklist-peralatan/checklist', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@checklistStore')->name('laporanCeklist-peralatan.checklistStore');
 
 //Laporan Ceklist Automactic Scrubber
 Route::get('laporanCeklist-AutomacticScrubber','Sistem\LaporanCekList\Peralatan\AutomacticScrubberController@index')->name('laporanCeklist-AutomacticScrubber.index');
