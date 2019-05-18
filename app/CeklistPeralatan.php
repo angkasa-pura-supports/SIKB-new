@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CeklistPeralatan extends Model
 {
     protected $table = 'ceklist_peralatan';
-    protected $fillable = ['bandara_id', 'peralatan_id', 'pengawas_id', 'shift', 'tanggal_input', 'catatan'];
+    protected $fillable = ['bandara_id', 'peralatan_id', 'pengawas_id', 'petugas', 'shift', 'tanggal_input', 'catatan'];
 
     public function bandara()
     {

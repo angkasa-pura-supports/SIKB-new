@@ -1,5 +1,5 @@
 @extends('front.layouts.front')
-@section('title', 'Ceklist Toilet')
+@section('title', 'Ceklist Peralatan')
 @section('cssAssets')
   @include('front.partials.css.cssForm')
 @endsection
@@ -8,13 +8,13 @@
   <div class="container-fluid">
     <div class="row page-titles">
       <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor">Ceklist Toilet</h4>
+        <h4 class="text-themecolor">Ceklist Peralatan</h4>
       </div>
       <div class="col-md-7 align-self-center text-right">
         <div class="d-flex justify-content-end align-items-center">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Laporan Ceklist</a></li>
-            <li class="breadcrumb-item">Ceklist Toilet</li>
+            <li class="breadcrumb-item">Ceklist Peralatan</li>
             <li class="breadcrumb-item active">Tambah</li>
           </ol>
         </div>
@@ -24,7 +24,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            {!! Form::open(['route'=>'laporanCeklist-toilet.store', 'files'=>true]) !!}
+            {!! Form::open(['route'=>'laporanCeklist-peralatan.store', 'files'=>true]) !!}
               {{ csrf_field() }}
               <div class="row">
                 <div class="col-md-6">
@@ -39,12 +39,12 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('lokasi_toilet_id') ? ' has-danger' : '' }}">
-                    {!! Form::label('lokasi_toilet_id', 'Lokasi Toilet', ['class'=>'control-label']) !!}
-                    {!! Form::select('lokasi_toilet_id', $lokasiToilet, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
-                    @if ($errors->has('lokasi_toilet_id'))
+                  <div class="form-group{{ $errors->has('peralatan_id') ? ' has-danger' : '' }}">
+                    {!! Form::label('peralatan_id', 'Peralatan', ['class'=>'control-label']) !!}
+                    {!! Form::select('peralatan_id', $peralatanList, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                    @if ($errors->has('peralatan_id'))
                       <small class="form-control-feedback">
-                        {{ $errors->first('lokasi_toilet_id') }}
+                        {{ $errors->first('peralatan_id') }}
                       </small>
                     @endif
                   </div>

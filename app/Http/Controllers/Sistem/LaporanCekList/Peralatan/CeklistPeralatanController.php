@@ -31,7 +31,11 @@ class CeklistPeralatanController extends Controller
      */
     public function create()
     {
-        return view('content.laporanCeklist.peralatan.create');
+        $bandara = Bandara::pluck('nama_bandara', 'id');
+        $peralatanList = Peralatan::pluck('nama_peralatan', 'id');
+        $jabatan = ['Supervisor', 'Senior Leader', 'Team Leader'];
+        $pengawas = karyawan::whereIn('Jabatan', $jabatan)->pluck('nama_karyawan', 'id');
+        return view('content.laporanCeklist.peralatan.create', compact('bandara', 'peralatanList', 'pengawas'));
     }
 
     /**
@@ -42,7 +46,18 @@ class CeklistPeralatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+          'bandara_id' => 'required',
+          'peralatan_id' => 'required',
+          'pengawas_id' => 'required',
+          'petugas' => 'required',
+          'shift' => 'required',
+          'tanggal_input' => 'required',
+          'catatan' => 'required'
+        ]);
+        CeklistPeralatan::create($request->all());
+        Alert::success('Data berhasil disimpan!');
+        return redirect('laporanCeklist-peralatan');
     }
 
     /**

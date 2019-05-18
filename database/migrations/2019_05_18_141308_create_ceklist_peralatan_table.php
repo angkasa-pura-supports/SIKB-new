@@ -21,6 +21,7 @@ class CreateCeklistPeralatanTable extends Migration
             $table->foreign('peralatan_id')->references('id')->on('peralatan')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('pengawas_id')->unsigned();
             $table->foreign('pengawas_id')->references('id')->on('karyawan')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('petugas');
             $table->string('shift');
             $table->date('tanggal_input');
             $table->longText('catatan')->nullable();

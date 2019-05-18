@@ -70,17 +70,17 @@
                       <td>{{ $value->shift }}</td>
                       <td>{{ date("d-m-Y", strtotime($value->tanggal_input)) }}</td>
                       <td>
-                        {{-- <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          @php
-                            $jumlahCeklist = App\UploadCeklistPeralatan::where('ceklist_Peralatan_id', $value->id)->count();
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                          {{-- @php
+                            $jumlahCeklist = App\Peralatan::where('peralatan_id', $value->id)->count();
                           @endphp
                           @if ($jumlahCeklist == 14)
                           @else
                             <a href="{{ route('laporanCeklist-Peralatan.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
-                          @endif
-                          <a href="{{ route('laporanCeklist-Peralatan.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
-                          <a href="{{ route('laporanCeklist-Peralatan.print', $value->id) }}" class="btn btn-warning" title="Print"><i class="fa fa-print"></i></a>
-                        </div> --}}
+                          @endif --}}
+                          <a href="{{ route('laporanCeklist-peralatan.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
+                          <a href="{{ route('laporanCeklist-peralatan.print', $value->id) }}" class="btn btn-warning" title="Print"><i class="fa fa-print"></i></a>
+                        </div>
                       </td>
                     </tr>
                   @endforeach
