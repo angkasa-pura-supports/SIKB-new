@@ -18,14 +18,14 @@ Route::get('master-bandara', 'Sistem\Master\BandaraController@index')->name('mas
 Route::get('master-bandara/create', 'Sistem\Master\BandaraController@create')->name('master-bandara.create')->middleware('permission:Create Bandara');
 Route::post('master-bandara', 'Sistem\Master\BandaraController@store')->name('master-bandara.store')->middleware('permission:Create Bandara');
 Route::get('master-bandara/{id}/edit', 'Sistem\Master\BandaraController@edit')->name('master-bandara.edit')->middleware('permission:Update Bandara');
-Route::put('master-bandara{id}', 'Sistem\Master\BandaraController@update')->name('master-bandara.update')->middleware('permission:Update Bandara');
+Route::put('master-bandara/{id}', 'Sistem\Master\BandaraController@update')->name('master-bandara.update')->middleware('permission:Update Bandara');
 Route::delete('master-bandara/{id}', 'Sistem\Master\BandaraController@destroy')->name('master-bandara.destroy')->middleware('permission:Delete Bandara');
 // Route Master Lokasi Toilet
 Route::get('master-lokasiToilet', 'Sistem\Master\LokasiToiletController@index')->name('master-lokasiToilet.index')->middleware('permission:Link Lokasi Toilet');
 Route::get('master-lokasiToilet/create', 'Sistem\Master\LokasiToiletController@create')->name('master-lokasiToilet.create')->middleware('permission:Create Lokasi Toilet');
 Route::post('master-lokasiToilet', 'Sistem\Master\LokasiToiletController@store')->name('master-lokasiToilet.store')->middleware('permission:Create Lokasi Toilet');
 Route::get('master-lokasiToilet/{id}/edit', 'Sistem\Master\LokasiToiletController@edit')->name('master-lokasiToilet.edit')->middleware('permission:Update Lokasi Toilet');
-Route::put('master-lokasiToilet{id}', 'Sistem\Master\LokasiToiletController@update')->name('master-lokasiToilet.update')->middleware('permission:Update Lokasi Toilet');
+Route::put('master-lokasiToilet/{id}', 'Sistem\Master\LokasiToiletController@update')->name('master-lokasiToilet.update')->middleware('permission:Update Lokasi Toilet');
 Route::delete('master-lokasiToilet/{id}', 'Sistem\Master\LokasiToiletController@destroy')->name('master-lokasiToilet.destroy')->middleware('permission:Delete Lokasi Toilet');
 //Master Data
 Route::get('KontrakPekerjaan', 'Sistem\Master\KontrakPekerjaanController@index')->name('KontrakPekerjaan.index');
@@ -39,11 +39,16 @@ Route::get('data_karyawan','Sistem\Master\KaryawanController@index')->name('data
 Route::get('data_karyawan/create','Sistem\Master\KaryawanController@create')->name('data_karyawan.create')->middleware('permission:Create Karyawan');
 Route::post('master-karyawan', 'Sistem\Master\KaryawanController@store')->name('master-karyawan.store')->middleware('permission:Create Karyawan');
 Route::get('master-karyawan/{id}/edit', 'Sistem\Master\KaryawanController@edit')->name('master-karyawan.edit')->middleware('permission:Update Karyawan');
-Route::put('master-karyawan{id}', 'Sistem\Master\KaryawanController@update')->name('master-karyawan.update')->middleware('permission:Update Karyawan');
+Route::put('master-karyawan/{id}', 'Sistem\Master\KaryawanController@update')->name('master-karyawan.update')->middleware('permission:Update Karyawan');
 Route::delete('master-karyawan/{id}', 'Sistem\Master\KaryawanController@destroy')->name('master-karyawan.destroy')->middleware('permission:Delete Karyawan');
 
 // Master Peralatan
 Route::get('master-peralatan', 'Sistem\Master\PeralatanController@index')->name('master-peralatan.index');
+Route::get('master-peralatan/create', 'Sistem\Master\PeralatanController@create')->name('master-peralatan.create');
+Route::post('master-peralatan', 'Sistem\Master\PeralatanController@store')->name('master-peralatan.store');
+Route::get('master-peralatan/{id}/edit', 'Sistem\Master\PeralatanController@edit')->name('master-peralatan.edit');
+Route::put('master-peralatan/{id}', 'Sistem\Master\PeralatanController@update')->name('master-peralatan.update');
+Route::delete('master-peralatan/{id}', 'Sistem\Master\PeralatanController@destroy')->name('master-peralatan.destroy');
 
 //Ceklis
 Route::get('laporanCeklist-toilet','Sistem\LaporanCekList\Toilet\CeklistToiletController@index')->name('laporanCeklist-toilet.index');

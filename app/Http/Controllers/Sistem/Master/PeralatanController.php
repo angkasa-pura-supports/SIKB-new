@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Sistem\Master;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Peralatan;
+use Alert;
 class PeralatanController extends Controller
 {
     /**
@@ -25,7 +26,7 @@ class PeralatanController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.master.peralatan.create');
     }
 
     /**
@@ -36,7 +37,15 @@ class PeralatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+          'nama_peralatan' => 'required',
+          'nama_mesin' => 'required',
+          'type' => 'required',
+          'no_mesin' => 'required'
+        ]);
+        Peralatan::create($request->all());
+        Alert::success('Data berhasil disimpan!');
+        return redirect('master-peralatan');
     }
 
     /**
@@ -58,7 +67,8 @@ class PeralatanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Peralatan::findOrFail($id);
+        return view('content.master.peralatan.edit', compact('data'));
     }
 
     /**
@@ -70,7 +80,15 @@ class PeralatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+          'nama_peralatan' => 'required',
+          'nama_mesin' => 'required',
+          'type' => 'required',
+          'no_mesin' => 'required'
+        ]);
+        Peralatan::findOrFail($id)->update($request->all());
+        Alert::success('Data berhasil diubah!');
+        return redirect('master-peralatan');
     }
 
     /**
@@ -81,6 +99,9 @@ class PeralatanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Peralatan::findOrFail($id);
+        $data->delete();
+        Alert::success('Data berhasil dihapus!');
+        return redirect('master-peralatan');
     }
 }
