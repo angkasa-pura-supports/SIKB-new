@@ -58,7 +58,7 @@
                         <li><a href="{{ route('access-permission.index') }}">Permission</a></li>
                     </ul>
                 </li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu">Laporan Ceklist</span></a>
+                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu"> Ceklist</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('laporanCeklist-toilet.index') }}">Toilet</a></li>
                         <li><a href="{{ route('laporanCeklist-peralatan.index') }}">Peralatan</a></li>
@@ -97,7 +97,9 @@
                       <span class="hide-menu">Report</span>
                     </a>
                     <ul aria-expanded="false" class="collapse">
-                      <li><a href="{{route ('ReportCeklistToilet.index')}}">Report Ceklist</a></li>
+                      {{-- <li><a href="{{route ('ReportCeklistToilet.index')}}">Report Ceklist</a></li> --}}
+                      <li><a href="{{ route('report-toilet.index') }}"> Toilet</a></li>
+                      <li><a href="#"> Peralatan</a></li>
                       <li><a href="#">L P P</a></li>
                       <li><a href="#">Laporan Kerusakan</a></li>
                       <li><a href="#">Laporan Harian</a></li>

@@ -89,6 +89,20 @@ Route::get('UserAdmin/{id}/edit','Sistem\UserAdminController@edit')->name('UserA
 Route::put('UserAdmin{id}','Sistem\UserAdminController@update')->name('UserAdmin.update')->middleware('permission:Update UserAdmin');
 Route::delete('UserAdmin/{id}','Sistem\UserAdminController@destroy')->name('UserAdmin.destroy')->middleware('permission:Delete UserAdmin');
 
+// Report
+// Report Toilet
+Route::get('report-toilet', 'Sistem\Report\ReportToiletController@index')->name('report-toilet.index');
+Route::get('report-toilet/report/', 'Sistem\Report\ReportToiletController@store')->name('report-toilet.store');
+
+
+
+
+
+
+
+
+
+
 //ReportCeklistToilet
-Route::get('ReportCeklistToilet', 'Sistem\LaporanCekList\ReportCeklistToiletController@index')->name('ReportCeklistToilet.index');
-Route::get('ReportCeklistToilet/report/', 'Sistem\LaporanCekList\ReportCeklistToiletController@report')->name('ReportCeklistToilet.report');
+// Route::get('ReportCeklistToilet', 'Sistem\LaporanCekList\ReportCeklistToiletController@index')->name('ReportCeklistToilet.index');
+// Route::get('ReportCeklistToilet/report/', 'Sistem\LaporanCekList\ReportCeklistToiletController@report')->name('ReportCeklistToilet.report');
