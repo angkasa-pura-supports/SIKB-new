@@ -1,5 +1,5 @@
 @extends('front.layouts.front')
-@section('title', 'Master Peralatan')
+@section('title', 'Kondisi Peralatan')
 @section('cssAssets')
   @include('front.partials.css.cssSweetAlert')
 @endsection
@@ -8,13 +8,13 @@
   <div class="container-fluid">
     <div class="row page-titles">
       <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor">Master Peralatan</h4>
+        <h4 class="text-themecolor">Kondisi Peralatan</h4>
       </div>
       <div class="col-md-7 align-self-center text-right">
         <div class="d-flex justify-content-end align-items-center">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Master Data</a></li>
-            <li class="breadcrumb-item active">Peralatan</li>
+            <li class="breadcrumb-item">Master</li>
+            <li class="breadcrumb-item active">Kondisi Peralatan</li>
           </ol>
         </div>
       </div>
@@ -24,7 +24,7 @@
         <div class="card">
           <div class="card-body">
             <div class="form-actions">
-              <a href="{{ route('master-peralatan.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Data</a>
+              <a href="{{ route('master-kondisi-peralatan.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Data</a>
             </div>
           </div>
         </div>
@@ -36,9 +36,8 @@
                   <tr>
                     <th>No</th>
                     <th>Nama Peralatan</th>
-                    <th>Nama Mesin</th>
-                    <th>Type</th>
-                    <th>No Mesin</th>
+                    <th>Item</th>
+                    <th>Kondisi</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -46,9 +45,8 @@
                   <tr>
                     <th>No</th>
                     <th>Nama Peralatan</th>
-                    <th>Nama Mesin</th>
-                    <th>Type</th>
-                    <th>No Mesin</th>
+                    <th>Item</th>
+                    <th>Kondisi</th>
                     <th>Action</th>
                   </tr>
                 </tfoot>
@@ -59,18 +57,16 @@
                   @foreach ($data as $value)
                     <tr>
                       <td>{{ $no=$no+1 }}</td>
-                      <td>{{ $value->nama_peralatan }}</td>
-                      <td>{{ $value->nama_mesin }}</td>
-                      <td>{{ $value->type }}</td>
-                      <td>{{ $value->no_mesin }}</td>
+                      <td>{{ $value->peralatan->nama_peralatan }}</td>
+                      <td>{{ $value->item_pemeriksaan }}</td>
+                      <td>{{ $value->kondisi_standard }}</td>
                       <td>
-                        {!! Form::open(['route'=>['master-peralatan.destroy', $value->id], 'method'=>'DELETE']) !!}
-                          <a href="{{ route('master-peralatan.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
+                        {!! Form::open(['route'=>['master-kondisi-peralatan.destroy', $value->id], 'method'=>'DELETE']) !!}
+                          <a href="{{ route('master-kondisi-peralatan.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
                           {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
                         {!! Form::close() !!}
                       </td>
                     </tr>
-
                   @endforeach
                 </tbody>
               </table>

@@ -1,12 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Sistem\Master;
+namespace App\Http\Controllers\Sistem\LaporanCeklist\Peralatan;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Bandara;
 use App\Peralatan;
+use App\karyawan;
+use App\CeklistPeralatan;
+// use App\UploadCeklistToilet;
 use Alert;
-class PeralatanController extends Controller
+use Illuminate\Support\Facades\File;
+class CeklistPeralatanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +20,8 @@ class PeralatanController extends Controller
      */
     public function index()
     {
-        $data = Peralatan::all();
-        return view('content.master.peralatan.index', compact('data'));
+        $data = CeklistPeralatan::all();
+        return view('content.laporanCeklist.peralatan.index', compact('data'));
     }
 
     /**
@@ -26,7 +31,11 @@ class PeralatanController extends Controller
      */
     public function create()
     {
-        return view('content.master.peralatan.create');
+        $bandara = Bandara::pluck('nama_bandara', 'id');
+        $peralatanList = Peralatan::pluck('nama_peralatan', 'id');
+        $jabatan = ['Supervisor', 'Senior Leader', 'Team Leader'];
+        $pengawas = karyawan::whereIn('Jabatan', $jabatan)->pluck('nama_karyawan', 'id');
+        return view('content.laporanCeklist.peralatan.create', compact('bandara', 'peralatanList', 'pengawas'));
     }
 
     /**
@@ -38,14 +47,17 @@ class PeralatanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-          'nama_peralatan' => 'required',
-          'nama_mesin' => 'required',
-          'type' => 'required',
-          'no_mesin' => 'required'
+          'bandara_id' => 'required',
+          'peralatan_id' => 'required',
+          'pengawas_id' => 'required',
+          'petugas' => 'required',
+          'shift' => 'required',
+          'tanggal_input' => 'required',
+          'catatan' => 'required'
         ]);
-        Peralatan::create($request->all());
+        CeklistPeralatan::create($request->all());
         Alert::success('Data berhasil disimpan!');
-        return redirect('master-peralatan');
+        return redirect('laporanCeklist-peralatan');
     }
 
     /**
@@ -67,8 +79,7 @@ class PeralatanController extends Controller
      */
     public function edit($id)
     {
-        $data = Peralatan::findOrFail($id);
-        return view('content.master.peralatan.edit', compact('data'));
+        //
     }
 
     /**
@@ -80,15 +91,7 @@ class PeralatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-          'nama_peralatan' => 'required',
-          'nama_mesin' => 'required',
-          'type' => 'required',
-          'no_mesin' => 'required'
-        ]);
-        Peralatan::findOrFail($id)->update($request->all());
-        Alert::success('Data berhasil diubah!');
-        return redirect('master-peralatan');
+        //
     }
 
     /**
@@ -99,9 +102,6 @@ class PeralatanController extends Controller
      */
     public function destroy($id)
     {
-        $data = Peralatan::findOrFail($id);
-        $data->delete();
-        Alert::success('Data berhasil dihapus!');
-        return redirect('master-peralatan');
+        //
     }
 }

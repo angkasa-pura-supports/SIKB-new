@@ -115,7 +115,9 @@
           @foreach ($report as $key)
             <tr>
               <td>{{ $key->created_at }}</td>
+              <td>{{ $key->ceklistToilet->shift }}</td>
 
+              <td>{{ $key->ceklistToilet->petugas }}</td>
             </tr>
           @endforeach
           <tr>
