@@ -8,7 +8,7 @@ use App\Bandara;
 use App\Peralatan;
 use App\karyawan;
 use App\CeklistPeralatan;
-// use App\UploadCeklistToilet;
+use App\UploadCeklistPeralatan;
 use Alert;
 use Illuminate\Support\Facades\File;
 class CeklistPeralatanController extends Controller
@@ -71,6 +71,12 @@ class CeklistPeralatanController extends Controller
         //
     }
 
+    public function print($id)
+    {
+        $data = CeklistPeralatan::findOrFail($id);
+        $ceklist = UploadCeklistPeralatan::where('id', $data->id)->get();
+        return view('content.laporanCeklist.peralatan.print', compact('data', 'ceklist'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
