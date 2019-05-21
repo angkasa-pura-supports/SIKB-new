@@ -1,6 +1,7 @@
 @extends('front.layouts.front')
 @section('title', 'Report Toilet')
 @section('cssAssets')
+  @include('front.partials.css.cssSweetAlert')
   @include('front.partials.css.cssForm')
 @endsection
 @section('content')
@@ -30,35 +31,35 @@
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
-                                          {!! Form::label('Dari', 'Dari', ['class'=>'control-label']) !!}
-                                          {!! Form::text('start', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd', 'required'=>'']) !!}
-                                          @if ($errors->has('masa_berlaku'))
+                                        <div class="form-group{{ $errors->has('lokasi_toilet_id') ? ' has-danger' : '' }}">
+                                          {!! Form::label('lokasi_toilet_id', 'Toilet', ['class'=>'control-label']) !!}
+                                          {!! Form::select('lokasi_toilet_id', $lokasiToilet, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                                          @if ($errors->has('lokasi_toilet_id'))
                                             <small class="form-control-feedback">
-                                              {{ $errors->first('masa_berlaku') }}
+                                              {{ $errors->first('lokasi_toilet_id') }}
                                             </small>
                                           @endif
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
-                                          {!! Form::label('Dari', 'Dari', ['class'=>'control-label']) !!}
+                                        <div class="form-group{{ $errors->has('start') ? ' has-danger' : '' }}">
+                                          {!! Form::label('start', 'Dari', ['class'=>'control-label']) !!}
                                           {!! Form::text('start', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd', 'required'=>'']) !!}
-                                          @if ($errors->has('masa_berlaku'))
+                                          @if ($errors->has('start'))
                                             <small class="form-control-feedback">
-                                              {{ $errors->first('masa_berlaku') }}
+                                              {{ $errors->first('start') }}
                                             </small>
                                           @endif
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <div class="form-group{{ $errors->has('masa_berlaku') ? ' has-danger' : '' }}">
-                                          {!! Form::label('Sampai', 'Sampai', ['class'=>'control-label']) !!}
+                                        <div class="form-group{{ $errors->has('end') ? ' has-danger' : '' }}">
+                                          {!! Form::label('end', 'Sampai', ['class'=>'control-label']) !!}
                                           {!! Form::text('end', null, ['class'=>'form-control', 'id'=>'mdate1', 'placeholder'=>'yyyy-mm-dd', 'required'=>'']) !!}
-                                          @if ($errors->has('masa_berlaku'))
+                                          @if ($errors->has('end'))
                                             <small class="form-control-feedback">
-                                              {{ $errors->first('masa_berlaku') }}
+                                              {{ $errors->first('end') }}
                                             </small>
                                           @endif
                                         </div>
@@ -77,6 +78,8 @@
   </div>
 @endsection
 @section('jsAssets')
+  @include('front.partials.js.jsSweetAlert')
+  @include('sweet::alert')
   @include('front.partials.js.jsForm')
   @include('front.partials.js.jsDataTables')
 @endsection

@@ -15,17 +15,21 @@
   <!-- Set page size here: A5, A4 or A3 -->
   <!-- Set also "landscape" if you need -->
   <style>@page { size: A4 landscape }</style>
+  <style media="screen">
+    .styleToilet{
+      margin-top: 50px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      border: 1px dashed;
+      width: 131px;
+    }
+  </style>
 </head>
 
 <!-- Set "A5", "A4" or "A3" for class name -->
 <!-- Set also "landscape" if you need -->
 <body class="A4 landscape">
-  @php
-    use Illuminate\Support\Facades\Input;
-    $data = App\CeklistToilet::where('id', 1)->first();
-    $report = App\UploadCeklistToilet::whereBetween('created_at', [Input::get('start'), date("Y-m-d", strtotime(Input::get('end')."+1 days"))])->get();
-  @endphp
-
   <!-- Each sheet element should have the class "sheet" -->
   <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
   <section class="sheet">
@@ -111,15 +115,88 @@
           </tr>
           {{-- Ceklist : &#10003;
           X : &#10007; --}}
-
-          @foreach ($report as $key)
+          @php
+            use Illuminate\Support\Facades\Input;
+          @endphp
+          @foreach ($tanggal as $value)
             <tr>
-              <td>{{ $key->created_at }}</td>
-              <td>{{ $key->ceklistToilet->shift }}</td>
-
-              <td>{{ $key->ceklistToilet->petugas }}</td>
+              <td>{{ $value->created_at }}</td>
+              <td>{{ $value->shift }}</td>
+              @php
+                $report = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->whereBetween('created_at', [Input::get('start'), date("Y-m-d", strtotime(Input::get('end')."+1 days"))])->get();
+                $keharuman = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Keharuman')->first();
+                $lantai = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Lantai')->first();
+                $toiletBowl = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Toilet Bowl')->first();
+                $dinding = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Dinding')->first();
+                $tempatSampah = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Tempat Sampah')->first();
+                $cermin = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Cermin')->first();
+                $washbasin = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Washbasin')->first();
+                $sabunCuciTangan = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Sabun Cuci Tangan')->first();
+                $kloset = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Kloset')->first();
+                $tissueRoll = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Tissue Roll')->first();
+                $urinal = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Urinal')->first();
+                $handdryer = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Handdryer')->first();
+                $pintu = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Pintu')->first();
+                $janitor = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->where('nama_ceklist', 'Janitor')->first();
+              @endphp
+              {{-- Keharuman --}}
+              <td>@if ($keharuman === null)@else @if ($keharuman->status_wanita == NULL) @elseif ($keharuman->status_wanita == "Wangi") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($keharuman === null)@else @if ($keharuman->status_pria == NULL) @elseif ($keharuman->status_pria == "Wangi") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Lantai --}}
+              <td>@if ($lantai === null)@else @if ($lantai->status_wanita == NULL) @elseif ($lantai->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($lantai === null)@else @if ($lantai->status_pria == NULL) @elseif ($lantai->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Toilet Bowl --}}
+              <td>@if ($toiletBowl === null)@else @if ($toiletBowl->status_wanita == NULL) @elseif ($toiletBowl->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($toiletBowl === null)@else @if ($toiletBowl->status_pria == NULL) @elseif ($toiletBowl->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Dinding --}}
+              <td>@if ($dinding === null)@else @if ($dinding->status_wanita == NULL) @elseif ($dinding->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($dinding === null)@else @if ($dinding->status_pria == NULL) @elseif ($dinding->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Tempat Sampah --}}
+              <td>@if ($tempatSampah === null)@else @if ($tempatSampah->status_wanita == NULL) @elseif ($tempatSampah->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($tempatSampah === null)@else @if ($tempatSampah->status_pria == NULL) @elseif ($tempatSampah->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Cermin --}}
+              <td>@if ($cermin === null)@else @if ($cermin->status_wanita == NULL) @elseif ($cermin->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($cermin === null)@else @if ($cermin->status_pria == NULL) @elseif ($cermin->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Washbasin --}}
+              <td>@if ($washbasin === null)@else @if ($washbasin->status_wanita == NULL) @elseif ($washbasin->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($washbasin === null)@else @if ($washbasin->status_pria == NULL) @elseif ($washbasin->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Sabun Cuci Tangan --}}
+              <td>@if ($sabunCuciTangan === null)@else @if ($sabunCuciTangan->status_wanita == NULL) @elseif ($sabunCuciTangan->status_wanita == "Ada") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($sabunCuciTangan === null)@else @if ($sabunCuciTangan->status_pria == NULL) @elseif ($sabunCuciTangan->status_pria == "Ada") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Kloset --}}
+              <td>@if ($kloset === null)@else @if ($kloset->status_wanita == NULL) @elseif ($kloset->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($kloset === null)@else @if ($kloset->status_pria == NULL) @elseif ($kloset->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Tissue Roll --}}
+              <td>@if ($tissueRoll === null)@else @if ($tissueRoll->status_wanita == NULL) @elseif ($tissueRoll->status_wanita == "Ada") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($tissueRoll === null)@else @if ($tissueRoll->status_pria == NULL) @elseif ($tissueRoll->status_pria == "Ada") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Urinal --}}
+              <td>@if ($urinal === null)@else @if ($urinal->status_wanita == NULL) @elseif ($urinal->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($urinal === null)@else @if ($urinal->status_pria == NULL) @elseif ($urinal->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Handdryer --}}
+              <td>@if ($handdryer === null)@else @if ($handdryer->status_wanita == NULL) @elseif ($handdryer->status_wanita == "Ada") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($handdryer === null)@else @if ($handdryer->status_pria == NULL) @elseif ($handdryer->status_pria == "Ada") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Pintu --}}
+              <td>@if ($pintu === null)@else @if ($pintu->status_wanita == NULL) @elseif ($pintu->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($pintu === null)@else @if ($pintu->status_pria == NULL) @elseif ($pintu->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              {{-- Janitor --}}
+              <td>@if ($janitor === null)@else @if ($janitor->status_wanita == NULL) @elseif ($janitor->status_wanita == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>@if ($janitor === null)@else @if ($janitor->status_pria == NULL) @elseif ($janitor->status_pria == "Bersih") &#10003; @else &#10007; @endif @endif</td>
+              <td>{{ $value->petugas }}</td>
+              <td></td>
             </tr>
           @endforeach
+
+          {{-- @foreach ($report as $key)
+            @if ($key->ceklistToilet->lokasi_toilet_id == $getToilet)
+              <tr>
+                <td>{{ $key->created_at }}</td>
+                <td>{{ $key->ceklistToilet->shift }}</td>
+
+                <td>{{ $key->ceklistToilet->petugas }}</td>
+              </tr>
+            @else
+            @endif
+          @endforeach --}}
           <tr>
             <td colspan="32">&nbsp;</td>
           </tr>
@@ -152,6 +229,10 @@
             <th>SUPERVISOR PROJECT</th>
           </tr>
         </table>
+        @php
+          $toilet = App\LokasiToilet::where('id', $getToilet)->first();
+        @endphp
+        <p class='styleToilet'>{{ $toilet->nama_toilet }}</p>
       </div>
     </article>
 
