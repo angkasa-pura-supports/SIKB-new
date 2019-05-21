@@ -185,18 +185,6 @@
               <td></td>
             </tr>
           @endforeach
-
-          {{-- @foreach ($report as $key)
-            @if ($key->ceklistToilet->lokasi_toilet_id == $getToilet)
-              <tr>
-                <td>{{ $key->created_at }}</td>
-                <td>{{ $key->ceklistToilet->shift }}</td>
-
-                <td>{{ $key->ceklistToilet->petugas }}</td>
-              </tr>
-            @else
-            @endif
-          @endforeach --}}
           <tr>
             <td colspan="32">&nbsp;</td>
           </tr>
@@ -237,7 +225,7 @@
     </article>
 
   </section>
-
+  
 </body>
 
 </html>
