@@ -96,6 +96,17 @@
                     @endif
                   </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="form-group{{ $errors->has('berkas') ? ' has-danger' : '' }}">
+                    {!! Form::label('berkas', 'Gambar', ['class'=>'control-label']) !!}<br>
+                    {!! Form::file('berkas', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                    @if ($errors->has('berkas'))
+                      <small class="form-control-feedback">
+                        {{ $errors->first('berkas') }}
+                      </small>
+                    @endif
+                  </div>
+                </div>
 
                 <div class="col-md-12">
                   <div class="form-group{{ $errors->has('catatan') ? ' has-danger' : '' }}">

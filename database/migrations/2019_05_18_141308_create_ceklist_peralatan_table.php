@@ -25,6 +25,7 @@ class CreateCeklistPeralatanTable extends Migration
             $table->string('shift');
             $table->date('tanggal_input');
             $table->longText('catatan')->nullable();
+            $table->string('berkas');
             $table->timestamps();
         });
     }

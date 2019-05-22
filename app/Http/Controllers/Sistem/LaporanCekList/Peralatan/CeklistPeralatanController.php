@@ -53,9 +53,26 @@ class CeklistPeralatanController extends Controller
           'petugas' => 'required',
           'shift' => 'required',
           'tanggal_input' => 'required',
+          'berkas' => 'required',
           'catatan' => 'required'
         ]);
-        CeklistPeralatan::create($request->all());
+        $data = new CeklistPeralatan;
+        $data->bandara_id = $request->bandara_id;
+        $data->peralatan_id = $request->peralatan_id;
+        $data->pengawas_id = $request->pengawas_id;
+        $data->petugas = $request->petugas;
+        $data->shift = $request->shift;
+        $data->tanggal_input = $request->tanggal_input;
+        if ($request->hasFile('berkas')) {
+          $dir = 'uploads/ceklist/peralatan';
+          $file = $request->file('berkas');
+          $ext = $file->getClientOriginalExtension();
+          $newName = rand(100000,1001238912).".".$ext;
+          $file->move($dir,$newName);
+          $data->berkas = $newName;
+        }
+        $data->catatan = $request->catatan;
+        $data->save();
         Alert::success('Data berhasil disimpan!');
         return redirect('laporanCeklist-peralatan');
     }
