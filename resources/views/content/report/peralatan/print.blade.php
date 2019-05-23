@@ -128,21 +128,36 @@
                 <td style="text-align:left">{{ $key->item_pemeriksaan }}</td>
                 <td style="text-align:left">{{ $key->kondisi_standard }}</td>
                 @php
-                  // $minggu1 = App\UploadCeklistPeralatan::where('ceklist_peralatan_id', )
+                  $ceklist = App\CeklistPeralatan::where('peralatan_id', $key->peralatan_id)->get();
                 @endphp
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                @foreach ($ceklist as $value)
+                  @php
+                    $upload = App\UploadCeklistPeralatan::where('ceklist_peralatan_id', $value->id)->get();
+                  @endphp
+                  @foreach ($upload as $value1)
+                    @if (substr($value1->kondisi, 0,8) == "Minggu 1" && $value1->peralatan_kondisi_id == $key->id)
+                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
+                    @endif
+                    @if (substr($value1->kondisi, 0,8) == "Minggu 2" && $value1->peralatan_kondisi_id == $key->id)
+                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
+                    @endif
+                    @if (substr($value1->kondisi, 0,8) == "Minggu 3" && $value1->peralatan_kondisi_id == $key->id)
+                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
+                    @endif
+                    @if (substr($value1->kondisi, 0,8) == "Minggu 4" && $value1->peralatan_kondisi_id == $key->id)
+                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
+                    @endif
+                    @if (substr($value1->kondisi, 0,8) == "Minggu 5" && $value1->peralatan_kondisi_id == $key->id)
+                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
+                    @endif
+                  @endforeach
+                @endforeach
                 <td></td>
               </tr>
             @endforeach
-
           </table>
         </div>
       </article>
-
     </page>
   </body>
 </html>

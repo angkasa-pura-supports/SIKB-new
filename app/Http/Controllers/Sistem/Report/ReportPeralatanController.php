@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Peralatan;
 use App\PeralatanKondisi;
+use App\UploadCeklistPeralatan;
 use Illuminate\Support\Facades\Input;
 use Alert;
 class ReportPeralatanController extends Controller
