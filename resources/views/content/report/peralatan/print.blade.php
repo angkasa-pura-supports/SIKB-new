@@ -62,10 +62,13 @@
         <div class="tabel">
           <div class="customTable">
             <table id="asd" style="margin-bottom:10px" border="0">
+              @php
+                $ambilPeralatan = App\Peralatan::where('id', $getPeralatan)->first();
+              @endphp
               <tr id="asd">
                 <td style="width:55px" id="asd"></td>
                 <td id="asd" style="width:300px;text-align:left">Nama Mesin</td>
-                <td id="asd" style="width:400px;text-align:left"> : </td>
+                <td id="asd" style="width:400px;text-align:left"> : <b>{{ $ambilPeralatan->nama_peralatan }}</b></td>
                 <td id="asd" style="width:50px"></td>
                 <td id="asd" style="width:50px"></td>
                 <td id="asd" style="width:50px"></td>
@@ -75,7 +78,7 @@
               <tr id="asd">
                 <td id="asd" style="width:55px"></td>
                 <td id="asd" style="width:300px;text-align:left">Type</td>
-                <td id="asd" style="width:400px;text-align:left"> : </td>
+                <td id="asd" style="width:400px;text-align:left"> : {{ $ambilPeralatan->type }}</td>
                 <td id="asd" style="width:50px"></td>
                 <td id="asd" style="width:50px"></td>
                 <td id="asd" style="width:50px"></td>
@@ -85,7 +88,7 @@
               <tr id="asd">
                 <td id="asd" style="width:55px"></td>
                 <td id="asd" style="width:300px;text-align:left">No. Mesin</td>
-                <td id="asd" style="width:400px;text-align:left"> : </td>
+                <td id="asd" style="width:400px;text-align:left"> : {{ $ambilPeralatan->no_mesin }}</td>
                 <td id="asd" style="width:50px"></td>
                 <td id="asd" style="width:50px"></td>
                 <td id="asd" style="width:50px"></td>
@@ -121,7 +124,9 @@
             </tr>
             @php
               $no = 0;
+              use Illuminate\Support\Facades\DB;
             @endphp
+            {{-- Kondisi Peralatan --}}
             @foreach ($kondisiPeralatan as $key)
               <tr>
                 <td style="height:15px">{{ $no=$no+1 }}</td>
@@ -130,31 +135,79 @@
                 @php
                   $ceklist = App\CeklistPeralatan::where('peralatan_id', $key->peralatan_id)->get();
                 @endphp
-                @foreach ($ceklist as $value)
-                  @php
-                    $upload = App\UploadCeklistPeralatan::where('ceklist_peralatan_id', $value->id)->get();
-                  @endphp
-                  @foreach ($upload as $value1)
-                    @if (substr($value1->kondisi, 0,8) == "Minggu 1" && $value1->peralatan_kondisi_id == $key->id)
-                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
-                    @endif
-                    @if (substr($value1->kondisi, 0,8) == "Minggu 2" && $value1->peralatan_kondisi_id == $key->id)
-                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
-                    @endif
-                    @if (substr($value1->kondisi, 0,8) == "Minggu 3" && $value1->peralatan_kondisi_id == $key->id)
-                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
-                    @endif
-                    @if (substr($value1->kondisi, 0,8) == "Minggu 4" && $value1->peralatan_kondisi_id == $key->id)
-                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
-                    @endif
-                    @if (substr($value1->kondisi, 0,8) == "Minggu 5" && $value1->peralatan_kondisi_id == $key->id)
-                      <td>{{ substr($value1->kondisi, 9,10) }}</td>
-                    @endif
-                  @endforeach
-                @endforeach
+                @php
+                  $minggu1 = App\UploadCeklistPeralatan::where('peralatan_kondisi_id', $key->id)->where('kondisi', 'LIKE', '%'.'Minggu 1'.'%')->first();
+                  $minggu2 = App\UploadCeklistPeralatan::where('peralatan_kondisi_id', $key->id)->where('kondisi', 'LIKE', '%'.'Minggu 2'.'%')->first();
+                  $minggu3 = App\UploadCeklistPeralatan::where('peralatan_kondisi_id', $key->id)->where('kondisi', 'LIKE', '%'.'Minggu 3'.'%')->first();
+                  $minggu4 = App\UploadCeklistPeralatan::where('peralatan_kondisi_id', $key->id)->where('kondisi', 'LIKE', '%'.'Minggu 4'.'%')->first();
+                  $minggu5 = App\UploadCeklistPeralatan::where('peralatan_kondisi_id', $key->id)->where('kondisi', 'LIKE', '%'.'Minggu 5'.'%')->first();
+                @endphp
+                {{-- Minggu 1 --}}
+                <td>
+                  @if ($minggu1 === NULL)
+                  @else
+                    {{ substr($minggu1->kondisi, 9,10) }}
+                  @endif
+                </td>
+                {{-- Minggu 2 --}}
+                <td>
+                  @if ($minggu2 === NULL)
+                  @else
+                    {{ substr($minggu2->kondisi, 9,10) }}
+                  @endif
+                </td>
+                {{-- Minggu 3 --}}
+                <td>
+                  @if ($minggu3 === NULL)
+                  @else
+                    {{ substr($minggu3->kondisi, 9,10) }}
+                  @endif
+                </td>
+                {{-- Minggu 4 --}}
+                <td>
+                  @if ($minggu4 === NULL)
+                  @else
+                    {{ substr($minggu4->kondisi, 9,10) }}
+                  @endif
+                </td>
+                {{-- Minggu 5 --}}
+                <td>
+                  @if ($minggu5 === NULL)
+                  @else
+                    {{ substr($minggu5->kondisi, 9,10) }}
+                  @endif
+                </td>
                 <td></td>
               </tr>
             @endforeach
+          </table>
+          <br>
+          <table style="width:200px" align="left">
+            <tr>
+              <th>FRM-APS-FSD-01-02-05, Rev.0</th>
+            </tr>
+          </table>
+          <table style="width:500px" align="right">
+            <tr>
+              <th style="width:150px">Disusun Oleh</th>
+              <th style="width:150px">Diperiksa Oleh</th>
+              <th style="width:150px">Disetujui oleh</th>
+            </tr>
+            <tr>
+              <td style="height:40px">&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+            </tr>
+            <tr>
+              <th>TEAM LEADER</th>
+              <th>SUPERVISOR PROJECT</th>
+              <th>KEPALA UNIT PELAKSANA</th>
+            </tr>
           </table>
         </div>
       </article>

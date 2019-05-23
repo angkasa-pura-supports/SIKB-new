@@ -105,15 +105,15 @@ class CeklistPeralatanController extends Controller
         for ($a=0; $a < count($request->kondisi); $a++) {
           $arrayKondisi[] = 'Minggu 2-'.$request->kondisi[$a];
         }
-      }elseif ($cekCeklistBulanIni == 3) {
+      }elseif ($cekCeklistBulanIni == 2) {
         for ($a=0; $a < count($request->kondisi); $a++) {
           $arrayKondisi[] = 'Minggu 3-'.$request->kondisi[$a];
         }
-      }elseif ($cekCeklistBulanIni == 4) {
+      }elseif ($cekCeklistBulanIni == 3) {
         for ($a=0; $a < count($request->kondisi); $a++) {
           $arrayKondisi[] = 'Minggu 4-'.$request->kondisi[$a];
         }
-      }elseif ($cekCeklistBulanIni == 5) {
+      }elseif ($cekCeklistBulanIni == 4) {
         for ($a=0; $a < count($request->kondisi); $a++) {
           $arrayKondisi[] = 'Minggu 5-'.$request->kondisi[$a];
         }

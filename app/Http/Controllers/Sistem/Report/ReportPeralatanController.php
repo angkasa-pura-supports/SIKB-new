@@ -21,6 +21,6 @@ class ReportPeralatanController extends Controller
     {
       $getPeralatan = Input::get('peralatan_id');
       $kondisiPeralatan = PeralatanKondisi::where('peralatan_id', $getPeralatan)->get();
-      return view('content.report.peralatan.print', compact('kondisiPeralatan'));
+      return view('content.report.peralatan.print', compact('kondisiPeralatan', 'getPeralatan'));
     }
 }
