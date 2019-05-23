@@ -93,6 +93,9 @@ Route::delete('UserAdmin/{id}','Sistem\UserAdminController@destroy')->name('User
 // Report Toilet
 Route::get('report-toilet', 'Sistem\Report\ReportToiletController@index')->name('report-toilet.index');
 Route::get('report-toilet/report/', 'Sistem\Report\ReportToiletController@store')->name('report-toilet.store');
+// Report Peralatan
+Route::get('report-peralatan', 'Sistem\Report\ReportPeralatanController@index')->name('report-peralatan.index');
+Route::get('report-peralatan/report/', 'Sistem\Report\ReportPeralatanController@store')->name('report-peralatan.store');
 
 
 

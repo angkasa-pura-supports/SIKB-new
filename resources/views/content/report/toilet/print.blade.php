@@ -51,6 +51,7 @@
     <page size="A4" layout="landscape">
       <article>
         <img src="{{ asset('print/aps.png') }}" align="right">
+        &nbsp;
       </article>
       <article class="row-title">
         <div class="judul">

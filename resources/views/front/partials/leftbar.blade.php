@@ -99,7 +99,7 @@
                     <ul aria-expanded="false" class="collapse">
                       {{-- <li><a href="{{route ('ReportCeklistToilet.index')}}">Report Ceklist</a></li> --}}
                       <li><a href="{{ route('report-toilet.index') }}"> Toilet</a></li>
-                      <li><a href="#"> Peralatan</a></li>
+                      <li><a href="{{ route('report-peralatan.index') }}"> Peralatan</a></li>
                       {{-- <li><a href="#">L P P</a></li>
                       <li><a href="#">Laporan Kerusakan</a></li>
                       <li><a href="#">Laporan Harian</a></li>
