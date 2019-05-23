@@ -12,6 +12,8 @@ use App\CeklistPeralatan;
 use App\UploadCeklistPeralatan;
 use Alert;
 use Illuminate\Support\Facades\File;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 class CeklistPeralatanController extends Controller
 {
     /**
@@ -83,6 +85,63 @@ class CeklistPeralatanController extends Controller
       $idCeklist = CeklistPeralatan::findOrFail($id);
       $kondisiPeralatan = PeralatanKondisi::where('peralatan_id', $idCeklist->peralatan_id)->get();
       return view('content.laporanCeklist.peralatan.checklist', compact('idCeklist', 'kondisiPeralatan'));
+    }
+
+    public function checklistStore(Request $request)
+    {
+      $this->validate($request, [
+        'ceklist_peralatan_id' => 'required',
+        'peralatan_kondisi_id' => 'required',
+        'kondisi' => 'required'
+      ]);
+      $peralatan = CeklistPeralatan::where('id', $request->ceklist_peralatan_id)->first();
+      $cekCeklistBulanIni = UploadCeklistPeralatan::whereMonth('created_at', Carbon::now()->month)->get()->groupBy(function($val){return Carbon::parse($val->created_at)->format('d');})->count();
+      if ($cekCeklistBulanIni == 0) {
+        for ($a=0; $a < count($request->kondisi); $a++) {
+          $arrayKondisi[] = [
+            'kondisi' => 'Minggu 1-'.$request->kondisi[$a]
+          ];
+        }
+      }elseif ($cekCeklistBulanIni == 1) {
+        for ($a=0; $a < count($request->kondisi); $a++) {
+          $arrayKondisi[] = [
+            'kondisi' => 'Minggu 2-'.$request->kondisi[$a]
+          ];
+        }
+      }elseif ($cekCeklistBulanIni == 3) {
+        for ($a=0; $a < count($request->kondisi); $a++) {
+          $arrayKondisi[] = [
+            'kondisi' => 'Minggu 3-'.$request->kondisi[$a]
+          ];
+        }
+      }elseif ($cekCeklistBulanIni == 4) {
+        for ($a=0; $a < count($request->kondisi); $a++) {
+          $arrayKondisi[] = [
+            'kondisi' => 'Minggu 4-'.$request->kondisi[$a]
+          ];
+        }
+      }elseif ($cekCeklistBulanIni == 5) {
+        for ($a=0; $a < count($request->kondisi); $a++) {
+          $arrayKondisi[] = [
+            'kondisi' => 'Minggu 5-'.$request->kondisi[$a]
+          ];
+        }
+      }
+      for ($i=0; $i < count($request->peralatan_kondisi_id); $i++) {
+        $arrayPeralatanKondisi[] = [
+          'peralatan_kondisi_id' => $request->peralatan_kondisi_id[$i]
+        ];
+      }
+      dd($arrayPeralatanKondisi);
+      for ($b=0; $b < count($request->kondisi); $b++) {
+        $data = new UploadCeklistPeralatan;
+        $data->ceklist_peralatan_id = $request->ceklist_peralatan_id;
+        $data->peralatan_kondisi_id = $arrayPeralatanKondisi[$b];
+        $data->kondisi = $arrayKondisi[$b];
+        $data->save();
+      }
+      Alert::success('Data berhasil disimpan!');
+      return redirect('laporanCeklist-peralatan');
     }
 
     /**
