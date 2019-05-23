@@ -77,6 +77,12 @@ class CeklistPeralatanController extends Controller
         return redirect('laporanCeklist-peralatan');
     }
 
+    public function checklist($id)
+    {
+      $idCeklist = CeklistPeralatan::findOrFail($id);
+      return view('content.laporanCeklist.peralatan.checklist', compact('idCeklist'));
+    }
+
     /**
      * Display the specified resource.
      *

@@ -76,8 +76,9 @@
                           @endphp
                           @if ($jumlahCeklist == 14)
                           @else
-                            <a href="{{ route('laporanCeklist-Peralatan.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
+
                           @endif --}}
+                          <a href="{{ route('laporanCeklist-peralatan.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
                           <a href="{{ route('laporanCeklist-peralatan.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
                           <a href="{{ route('laporanCeklist-peralatan.print', $value->id) }}" class="btn btn-warning" title="Print"><i class="fa fa-print"></i></a>
                         </div>
