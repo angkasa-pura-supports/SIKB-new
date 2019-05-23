@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Bandara;
 use App\Peralatan;
+use App\PeralatanKondisi;
 use App\karyawan;
 use App\CeklistPeralatan;
 use App\UploadCeklistPeralatan;
@@ -80,7 +81,8 @@ class CeklistPeralatanController extends Controller
     public function checklist($id)
     {
       $idCeklist = CeklistPeralatan::findOrFail($id);
-      return view('content.laporanCeklist.peralatan.checklist', compact('idCeklist'));
+      $kondisiPeralatan = PeralatanKondisi::where('peralatan_id', $idCeklist->peralatan_id)->get();
+      return view('content.laporanCeklist.peralatan.checklist', compact('idCeklist', 'kondisiPeralatan'));
     }
 
     /**

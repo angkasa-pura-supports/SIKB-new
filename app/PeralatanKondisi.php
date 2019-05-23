@@ -13,4 +13,9 @@ class PeralatanKondisi extends Model
     {
       return $this->belongsTo(Peralatan::class);
     }
+
+    public function uploadCeklistPeralatan()
+    {
+      return $this->hasMany(UploadCeklistPeralatan::class);
+    }
 }

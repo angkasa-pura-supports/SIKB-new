@@ -26,8 +26,30 @@
           <div class="card-body">
             {!! Form::model($idCeklist, ['route'=>['laporanCeklist-peralatan.checklistStore', $idCeklist->id], 'files'=>true]) !!}
               {{ csrf_field() }}
-              <div class="row">
-                <input type="hidden" name="ceklist_toilet_id" value="{{ $idCeklist->id }}">
+              <input type="hidden" name="ceklist_peralatan_id" value="{{ $idCeklist->id }}">
+              @foreach ($kondisiPeralatan as $key)
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="control-label">Item Pemeriksaan</label>
+                      <input type="hidden" name="peralatan_kondisi_id[]" value="{{ $key->id }}">
+                      <input type="text" value="{{ $key->item_pemeriksaan }}" class="form-control" readonly>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group{{ $errors->has('kondisi[]') ? ' has-danger' : '' }}">
+                      {!! Form::label('kondisi[]', 'Kondisi', ['class'=>'control-label']) !!}
+                      {!! Form::select('kondisi[]', ['R'=>'Rusak', 'B'=>'Baik'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                      @if ($errors->has('kondisi[]'))
+                        <small class="form-control-feedback">
+                          {{ $errors->first('kondisi[]') }}
+                        </small>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+              {{-- <div class="row">
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('nama_ceklist') ? ' has-danger' : '' }}">
                     {!! Form::label('nama_ceklist', 'Jenis Checklist', ['class'=>'control-label']) !!}
@@ -39,12 +61,7 @@
                     @endif
                   </div>
                 </div>
-
-              </div>
-
-              <div id="pilihan">
-
-              </div>
+              </div> --}}
               <div class="table-responsive m-t-40">
                 {!! Form::submit('Simpan', ['class'=>'btn waves-light btn-rounded btn-success']) !!}
               </div>
