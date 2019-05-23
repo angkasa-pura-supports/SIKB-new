@@ -1362,6 +1362,7 @@ return array(
     'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => $vendorDir . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
     'JsonSerializable' => $vendorDir . '/nesbot/carbon/src/JsonSerializable.php',
     'KaryawanSeeder' => $baseDir . '/database/seeds/KaryawanSeeder.php',
+    'KondisiPeralatan' => $baseDir . '/database/seeds/KondisiPeralatan.php',
     'Laravel\\Tinker\\ClassAliasAutoloader' => $vendorDir . '/laravel/tinker/src/ClassAliasAutoloader.php',
     'Laravel\\Tinker\\Console\\TinkerCommand' => $vendorDir . '/laravel/tinker/src/Console/TinkerCommand.php',
     'Laravel\\Tinker\\TinkerCaster' => $vendorDir . '/laravel/tinker/src/TinkerCaster.php',

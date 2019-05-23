@@ -1666,6 +1666,7 @@ class ComposerStaticInitc9041f1784d571b21adfe60aba471d7e
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
         'KaryawanSeeder' => __DIR__ . '/../..' . '/database/seeds/KaryawanSeeder.php',
+        'KondisiPeralatan' => __DIR__ . '/../..' . '/database/seeds/KondisiPeralatan.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
