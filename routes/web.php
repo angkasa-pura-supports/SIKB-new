@@ -75,6 +75,7 @@ Route::get('laporanCeklist-peralatan/{id}', 'Sistem\LaporanCeklist\Peralatan\Cek
 Route::get('laporanCeklist-peralatan/print/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@print')->name('laporanCeklist-peralatan.print');
 Route::get('laporanCeklist-peralatan/checklist/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@checklist')->name('laporanCeklist-peralatan.checklist');
 Route::post('laporanCeklist-peralatan/checklist', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@checklistStore')->name('laporanCeklist-peralatan.checklistStore');
+Route::delete('laporanCeklist-peralatan/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@destroy')->name('laporanCeklist-peralatan.destroy');
 
 //Laporan Ceklist Automactic Scrubber
 Route::get('laporanCeklist-AutomacticScrubber','Sistem\LaporanCekList\Peralatan\AutomacticScrubberController@index')->name('laporanCeklist-AutomacticScrubber.index');

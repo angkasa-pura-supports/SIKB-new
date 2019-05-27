@@ -78,6 +78,9 @@
                           @if ($cek === NULL)
                             <a href="{{ route('laporanCeklist-peralatan.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
                           @else
+                            {!! Form::open(['route'=>['laporanCeklist-peralatan.destroy', $value->id], 'method'=>'DELETE']) !!}
+                              {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
+                            {!! Form::close() !!}
                           @endif
 
                           {{-- <a href="{{ route('laporanCeklist-peralatan.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>

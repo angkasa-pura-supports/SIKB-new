@@ -27,7 +27,7 @@
                           <h4 class="m-b-0 text-white">Report Ceklist Peralatan</h4>
                       </div>
                       <div class="card-body">
-                        {!! Form::open(['route'=>'report-peralatan.store', 'method'=>'GET']) !!}
+                        {!! Form::open(['route'=>'report-peralatan.store', 'method'=>'GET', 'target'=>'_blank']) !!}
                             <div class="form-body">
                                 <div class="row">
                                     <div class="col-md-4">
