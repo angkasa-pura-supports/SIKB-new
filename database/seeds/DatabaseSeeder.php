@@ -19,6 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ModelPermissionSeeder::class);
         $this->call(KaryawanSeeder::class);
         $this->call(PeralatanSeeder::class);
-        $this->call(KondisiPeralatan::class);
+        $this->call(KondisiPeralatanSeeder::class);
     }
 }
