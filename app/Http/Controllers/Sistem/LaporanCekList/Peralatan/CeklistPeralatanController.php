@@ -183,6 +183,12 @@ class CeklistPeralatanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = CeklistPeralatan::findOrFail($id);
+        $dir = 'uploads/ceklist/peralatan/';
+        File::delete($dir . $data->berkas);
+        $data->delete();
+        Alert::success('Data berhasil dihapus!');
+        return redirect('laporanCeklist-peralatan');
+
     }
 }

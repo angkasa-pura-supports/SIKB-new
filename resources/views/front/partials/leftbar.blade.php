@@ -26,6 +26,7 @@
                     </ul>
                 </li>
                 <li class="nav-small-cap">--- Master Data ---</li>
+
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ asset('Dashboard') }}">Dashboard</a></li>
@@ -39,6 +40,7 @@
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('master-bandara.index') }}">Bandara</a></li>
+
                         <li><a href="{{ route('master-lokasiToilet.index') }}">Lokasi Toilet</a></li>
                         <li><a href="{{ route('KontrakPekerjaan.index') }}">Kontrak Pekerjaan</a></li>
                         <li><a href="{{ route('data_karyawan.index')}}">Karyawan</a></li>
