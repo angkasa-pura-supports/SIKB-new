@@ -72,7 +72,14 @@
                       <td>{{ date("d-m-Y", strtotime($value->tanggal_input)) }}</td>
                       <td>
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          <a href="{{ route('laporanCeklist-peralatan.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
+                          @php
+                            $cek = App\UploadCeklistPeralatan::where('ceklist_peralatan_id', $value->id)->first();
+                          @endphp
+                          @if ($cek === NULL)
+                            <a href="{{ route('laporanCeklist-peralatan.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
+                          @else
+                          @endif
+
                           {{-- <a href="{{ route('laporanCeklist-peralatan.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
                           <a href="{{ route('laporanCeklist-peralatan.print', $value->id) }}" class="btn btn-warning" title="Print"><i class="fa fa-print"></i></a> --}}
                         </div>
