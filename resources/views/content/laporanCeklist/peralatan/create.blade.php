@@ -74,9 +74,9 @@
                 </div>
 
                 <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('shift') ? ' has-danger' : '' }}">
-                    {!! Form::label('shift', 'Shift', ['class'=>'control-label']) !!}
-                    {!! Form::select('shift', ['Shift 1'=>'Shift 1', 'Shift 2'=>'Shift 2', 'Shift 3'=>'Shift 3'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                  <div class="form-group{{ $errors->has('Minggu') ? ' has-danger' : '' }}">
+                    {!! Form::label('Minggu', 'Minggu', ['class'=>'control-label']) !!}
+                    {!! Form::select('shift', ['Shift 1'=>'Minggu 1', 'Shift 2'=>'Minggu 2', 'Shift 3'=>'Minggu 3'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
                     @if ($errors->has('shift'))
                       <small class="form-control-feedback">
                         {{ $errors->first('shift') }}
