@@ -25,16 +25,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-small-cap">--- Master Data ---</li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{ asset('Dashboard') }}">Dashboard</a></li>
-
-                    </ul>
-                </li>
-
-
-
+                {{-- <li class="nav-small-cap">--- Master Data ---</li> --}}
+                  <li><a class="waves-effect waves-dark" href="{{ asset('Dashboard') }}"><i class="icon-speedometer"></i><span>Dashboard</span></a></li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
@@ -108,7 +100,7 @@
                       <li><a href="#">Laporan BAPP</a></li> --}}
                     </ul>
                 </li>
-
+                <li><a class="waves-effect waves-dark" href="#"><i class="ti-layout-accordion-merged"></i><span>Laporan Kerusakan</span></a></li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                       <i class="ti-user"></i>

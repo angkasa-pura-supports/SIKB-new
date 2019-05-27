@@ -76,7 +76,7 @@
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('Minggu') ? ' has-danger' : '' }}">
                     {!! Form::label('Minggu', 'Minggu', ['class'=>'control-label']) !!}
-                    {!! Form::select('shift', ['Shift 1'=>'Minggu 1', 'Shift 2'=>'Minggu 2', 'Shift 3'=>'Minggu 3'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                    {!! Form::select('shift', ['Minggu 1'=>'Minggu 1', 'Minggu 2'=>'Minggu 2', 'Minggu 3'=>'Minggu 3', 'Minggu 4'=>'Minggu 4', 'Minggu 5'=>'Minggu 5'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
                     @if ($errors->has('shift'))
                       <small class="form-control-feedback">
                         {{ $errors->first('shift') }}
