@@ -13,6 +13,14 @@ Route::resource('master-permission', 'Sistem\Master\PermissionController');
 Route::resource('access-role', 'Sistem\AccessRoleController');
 // Route Access Permission
 Route::resource('access-permission', 'Sistem\AccessPermissionController');
+
+//Master Plan Cleaning Program
+Route::get('Plan-Cleaning-Program', 'Sistem\Master\PlanCleaningProgramController@index')->name('Plan-Cleaning-Program.index');
+Route::get('Plan-Cleaning-Program/create', 'Sistem\Master\PlanCleaningProgramController@create')->name('Plan-Cleaning-Program.create');
+Route::post('Plan-Cleaning-Program', 'Sistem\Master\PlanCleaningProgramController@store')->name('Plan-Cleaning-Program.store');
+
+
+
 // Route Master Bandara
 Route::get('master-bandara', 'Sistem\Master\BandaraController@index')->name('master-bandara.index')->middleware('permission:Link Bandara');
 Route::get('master-bandara/create', 'Sistem\Master\BandaraController@create')->name('master-bandara.create')->middleware('permission:Create Bandara');
@@ -97,6 +105,11 @@ Route::get('report-toilet/report/', 'Sistem\Report\ReportToiletController@store'
 // Report Peralatan
 Route::get('report-peralatan', 'Sistem\Report\ReportPeralatanController@index')->name('report-peralatan.index');
 Route::get('report-peralatan/report/', 'Sistem\Report\ReportPeralatanController@store')->name('report-peralatan.store');
+
+//Komplain
+Route::get('komplain', 'Sistem\Master\KomplainController@index')->name('komplain.index');
+Route::get('komplain/create', 'Sistem\Master\KomplainController@create')->name('komplain.create');
+Route::post('komplain', 'Sistem\Master\KomplainController@store')->name('komplain.store');
 
 
 

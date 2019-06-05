@@ -30,6 +30,7 @@
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('Plan-Cleaning-Program.index') }}">Plan Cleaning Program</a></li>
                         <li><a href="{{ route('master-bandara.index') }}">Bandara</a></li>
 
                         <li><a href="{{ route('master-lokasiToilet.index') }}">Lokasi Toilet</a></li>
@@ -39,6 +40,7 @@
                         <li><a href="{{ route('master-permission.index') }}">Permission</a></li>
                         <li><a href="{{ route('master-peralatan.index') }}">Peralatan</a></li>
                         <li><a href="{{ route('master-kondisi-peralatan.index') }}">Kondisi Peralatan</a></li>
+                        <li><a href="#">Kondisi Peralatan</a></li>
                     </ul>
                 </li>
                 <li>
@@ -101,6 +103,7 @@
                       <li><a href="#">Laporan BAPP</a></li> --}}
                     </ul>
                 </li>
+                  <li><a class="waves-effect waves-dark" href="{{ route('komplain.create') }}"><i class="ti-pie-chart"></i><span>Komplain</span></a></li>
                 <li><a class="waves-effect waves-dark" href="#"><i class="ti-layout-accordion-merged"></i><span>Laporan Kerusakan</span></a></li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
