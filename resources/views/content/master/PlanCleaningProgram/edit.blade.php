@@ -24,7 +24,7 @@
             <h4 class="m-b-0 text-white">Tambah Plan Cleaning Program</h4>
           </div>
           <div class="card-body">
-            {!! Form::open(['route'=>'Plan-Cleaning-Program.store']) !!}
+          {!! Form::model($data, ['route'=>['Plan-Cleaning-Program.update', $data->id], 'method'=>'PUT']) !!}
             <div class="form-body">
               <div class="row">
                 <div class="col-md-6">
@@ -85,8 +85,7 @@
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('program_to_do') ? ' has-danger' : '' }}">
                     {!! Form::label('Program To Do', 'Program To Do', ['class'=>'control-label']) !!}
-                    {!! Form::select('program_to_do', ['Daily' => 'Daily',
-                                                      'Weekly (Sun)'=>'Weekly (Sun)',
+                    {!! Form::select('program_to_do', ['Weekly (Sun)'=>'Weekly (Sun)',
                                                       'Weekly (Mon)'=>'Weekly (Mon)',
                                                       'Weekly (Tue)'=>'Weekly (Tue)',
                                                       'Weekly (Wed)'=>'Weekly (Wed)',
@@ -129,7 +128,7 @@
               </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn btn-success">Tambah</button>
+              <button type="submit" class="btn btn-success">Update</button>
             </div>
             {!! Form::close() !!}
           </div>

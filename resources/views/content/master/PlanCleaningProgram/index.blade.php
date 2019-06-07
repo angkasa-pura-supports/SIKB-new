@@ -35,21 +35,48 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Threeletter</th>
-                    <th>Nama Bandara</th>
+                    <th>Object</th>
+                    <th>Material Made From</th>
+                    <th>How To Do</th>
+                    <th>Routin</th>
+                    <th>Program To Do</th>
+                    <th>Ket</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Threeletter</th>
-                    <th>Nama Bandara</th>
+                    <th>Object</th>
+                    <th>Material Made From</th>
+                    <th>How To Do</th>
+                    <th>Routin</th>
+                    <th>Program To Do</th>
+                    <th>Ket</th>
                     <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-
+                  @php
+                    $no=0;
+                  @endphp
+                  @foreach ($data as $value)
+                    <tr>
+                      <td>{{ $no=$no+1 }}</td>
+                      <td>{{ $value->object }}</td>
+                      <td>{{ $value->material_made_from }}</td>
+                      <td>{{ $value->how_to_do }}</td>
+                      <td>{{ $value->routine }}</td>
+                      <td>{{ $value->program_to_do }}</td>
+                      <td>{{ $value->ket }}</td>
+                      <td>
+                        {!! Form::open(['route'=>['Plan-Cleaning-Program.destroy', $value->id], 'method'=>'DELETE']) !!}
+                          <a href="{{ route('Plan-Cleaning-Program.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
+                          {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
+                        {!! Form::close() !!}
+                      </td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>

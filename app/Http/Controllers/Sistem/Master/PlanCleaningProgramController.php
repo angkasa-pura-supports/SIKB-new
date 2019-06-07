@@ -17,8 +17,8 @@ class PlanCleaningProgramController extends Controller
      */
     public function index()
     {
-        //$data = PlanCleaningProgram::all();
-        return view('content.master.PlanCleaningProgram.index');
+        $data = PlanCleaningProgram::all();
+        return view('content.master.PlanCleaningProgram.index', compact('data'));
     }
 
     /**
@@ -47,7 +47,7 @@ class PlanCleaningProgramController extends Controller
         'program_to_do' => 'required',
         'ket' => 'required'
       ]);
-      plan_cleaning_program::create($request->all());
+      PlanCleaningProgram::create($request->all());
       Alert::success('Data berhasil disimpan!');
       return redirect('Plan-Cleaning-Program');
     }
@@ -71,7 +71,8 @@ class PlanCleaningProgramController extends Controller
      */
     public function edit($id)
     {
-        //
+      $data = PlanCleaningProgram::findOrFail($id);
+      return view('content.master.PlanCleaningProgram.edit', compact('data'));
     }
 
     /**
@@ -83,7 +84,17 @@ class PlanCleaningProgramController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+        'object'  => 'required',
+        'material_made_from' => 'required',
+        'how_to_do' => 'required',
+        'routine' => 'required',
+        'program_to_do' => 'required',
+        'ket' => 'required'
+      ]);
+      PlanCleaningProgram::findOrFail($id)->update($request->all());
+      Alert::success('Data berhasil diUpdate!!');
+      return redirect('Plan-Cleaning-Program');
     }
 
     /**
@@ -94,6 +105,9 @@ class PlanCleaningProgramController extends Controller
      */
     public function destroy($id)
     {
-        //
+          $data = PlanCleaningProgram::findOrFail($id);
+          $data->delete();
+          Alert::success('Data berhasil dihapus!');
+          return redirect('Plan-Cleaning-Program');
     }
 }

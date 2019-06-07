@@ -18,6 +18,9 @@ Route::resource('access-permission', 'Sistem\AccessPermissionController');
 Route::get('Plan-Cleaning-Program', 'Sistem\Master\PlanCleaningProgramController@index')->name('Plan-Cleaning-Program.index');
 Route::get('Plan-Cleaning-Program/create', 'Sistem\Master\PlanCleaningProgramController@create')->name('Plan-Cleaning-Program.create');
 Route::post('Plan-Cleaning-Program', 'Sistem\Master\PlanCleaningProgramController@store')->name('Plan-Cleaning-Program.store');
+Route::get('Plan-Cleaning-Program/{id}/edit', 'Sistem\Master\PlanCleaningProgramController@edit')->name('Plan-Cleaning-Program.edit');
+Route::put('Plan-Cleaning-Program/{id}', 'Sistem\Master\PlanCleaningProgramController@update')->name('Plan-Cleaning-Program.update');
+Route::delete('Plan-Cleaning-Program/{id}', 'Sistem\Master\PlanCleaningProgramController@destroy')->name('Plan-Cleaning-Program.destroy');
 
 
 
