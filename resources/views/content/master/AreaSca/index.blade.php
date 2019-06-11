@@ -35,36 +35,33 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Threeletter</th>
-                    <th>Nama Bandara</th>
+                    <th>Nama Area</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Threeletter</th>
-                    <th>Nama Bandara</th>
+                    <th>Nama Area</th>
                     <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  {{-- @php
+                  @php
                     $no=0;
                   @endphp
                   @foreach ($data as $value)
                     <tr>
                       <td>{{ $no=$no+1 }}</td>
-                      <td>{{ $value->threeletter }}</td>
-                      <td>{{ $value->nama_bandara }}</td>
+                      <td>{{ $value->nama_area }}</td>
                       <td>
-                        {!! Form::open(['route'=>['master-bandara.destroy', $value->id], 'method'=>'DELETE']) !!}
-                          <a href="{{ route('master-bandara.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
+                        {!! Form::open(['route'=>['Area-Sca.destroy', $value->id], 'method'=>'DELETE']) !!}
+                          <a href="{{ route('Area-Sca.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
                           {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
                         {!! Form::close() !!}
                       </td>
                     </tr>
-                  @endforeach --}}
+                  @endforeach
                 </tbody>
               </table>
             </div>

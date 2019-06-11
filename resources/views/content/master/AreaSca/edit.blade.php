@@ -24,7 +24,7 @@
                           <h4 class="m-b-0 text-white">Tambah Standard Cleanliness Area</h4>
                       </div>
                       <div class="card-body">
-                          {!! Form::open(['route'=>'Area-Sca.store']) !!}
+                          {!! Form::model($data, ['route'=>['Area-Sca.update', $data->id], 'method'=>'PUT']) !!}
                               <div class="form-body">
                                   <div class="row">
                                       <div class="col-md-6">

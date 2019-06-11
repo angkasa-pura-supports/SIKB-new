@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(KaryawanSeeder::class);
         $this->call(PeralatanSeeder::class);
         $this->call(KondisiPeralatanSeeder::class);
+        $this->call(AreaScaSeeder::class);
     }
 }
