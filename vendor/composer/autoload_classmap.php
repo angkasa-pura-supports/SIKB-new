@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\AreaSca' => $baseDir . '/app/AreaSca.php',
     'App\\AutomacticScrubber' => $baseDir . '/app/AutomacticScrubber.php',
     'App\\Bandara' => $baseDir . '/app/Bandara.php',
     'App\\CeklistPeralatan' => $baseDir . '/app/CeklistPeralatan.php',
@@ -26,6 +27,7 @@ return array(
     'App\\Http\\Controllers\\Sistem\\LaporanCeklist\\Peralatan\\AutomacticScrubberController' => $baseDir . '/app/Http/Controllers/Sistem/LaporanCekList/Peralatan/AutomacticScrubberController.php',
     'App\\Http\\Controllers\\Sistem\\LaporanCeklist\\Peralatan\\BlowerControler' => $baseDir . '/app/Http/Controllers/Sistem/LaporanCekList/Peralatan/BlowerController.php',
     'App\\Http\\Controllers\\Sistem\\LaporanCeklist\\Peralatan\\CeklistPeralatanController' => $baseDir . '/app/Http/Controllers/Sistem/LaporanCekList/Peralatan/CeklistPeralatanController.php',
+    'App\\Http\\Controllers\\Sistem\\Master\\AreaScaController' => $baseDir . '/app/Http/Controllers/Sistem/Master/AreaScaController.php',
     'App\\Http\\Controllers\\Sistem\\Master\\BandaraController' => $baseDir . '/app/Http/Controllers/Sistem/Master/BandaraController.php',
     'App\\Http\\Controllers\\Sistem\\Master\\KaryawanController' => $baseDir . '/app/Http/Controllers/Sistem/Master/KaryawanController.php',
     'App\\Http\\Controllers\\Sistem\\Master\\KomplainController' => $baseDir . '/app/Http/Controllers/Sistem/Master/KomplainController.php',
@@ -47,6 +49,7 @@ return array(
     'App\\LokasiToilet' => $baseDir . '/app/LokasiToilet.php',
     'App\\Peralatan' => $baseDir . '/app/Peralatan.php',
     'App\\PeralatanKondisi' => $baseDir . '/app/PeralatanKondisi.php',
+    'App\\PlanCleaningProgram' => $baseDir . '/app/PlanCleaningProgram.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',
@@ -58,6 +61,7 @@ return array(
     'App\\blower' => $baseDir . '/app/blower.php',
     'App\\karyawan' => $baseDir . '/app/karyawan.php',
     'App\\kontrakpekerjaan' => $baseDir . '/app/kontrakpekerjaan.php',
+    'AreaScaSeeder' => $baseDir . '/database/seeds/AreaScaSeeder.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'BandaraSeeder' => $baseDir . '/database/seeds/BandaraSeeder.php',
@@ -74,6 +78,7 @@ return array(
     'Collective\\Html\\HtmlBuilder' => $vendorDir . '/laravelcollective/html/src/HtmlBuilder.php',
     'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
     'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
+    'CreateAreascaTable' => $baseDir . '/database/migrations/2019_06_07_201451_create_areasca_table.php',
     'CreateBandaraTable' => $baseDir . '/database/migrations/2019_04_10_170940_create_bandara_table.php',
     'CreateCeklistAutomacticScrubberTable' => $baseDir . '/database/migrations/2019_05_14_095713_create_ceklist_AutomacticScrubber_table.php',
     'CreateCeklistPeralatanTable' => $baseDir . '/database/migrations/2019_05_18_141308_create_ceklist_peralatan_table.php',

@@ -22,6 +22,14 @@ Route::get('Plan-Cleaning-Program/{id}/edit', 'Sistem\Master\PlanCleaningProgram
 Route::put('Plan-Cleaning-Program/{id}', 'Sistem\Master\PlanCleaningProgramController@update')->name('Plan-Cleaning-Program.update');
 Route::delete('Plan-Cleaning-Program/{id}', 'Sistem\Master\PlanCleaningProgramController@destroy')->name('Plan-Cleaning-Program.destroy');
 
+//AreaSCA
+Route::get('Area-Sca', 'Sistem\Master\AreaScaController@index')->name('Area-Sca.index');
+Route::get('Area-Sca/create', 'Sistem\Master\AreaScaController@create')->name('Area-Sca.create');
+Route::post('Area-Sca', 'Sistem\Master\AreaScaController@store')->name('Area-Sca.store');
+Route::get('Area-Sca/{id}/edit', 'Sistem\Master\AreaScaController@edit')->name('Area-Sca.edit');
+Route::put('Area-Sca/{id}', 'Sistem\Master\AreaScaController@update')->name('Area-Sca.update');
+Route::delete('Area-Sca/{id}', 'Sistem\Master\AreaScaController@destroy')->name('Area-Sca.destroy');
+
 
 
 // Route Master Bandara

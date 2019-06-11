@@ -31,8 +31,9 @@
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('Plan-Cleaning-Program.index') }}">Plan Cleaning Program</a></li>
+                        <li><a href="{{ route('Area-Sca.index') }}">Area (SCA)</a></li>
+                        <li><a href="#">Standard Cleanliness Area</a></li>
                         <li><a href="{{ route('master-bandara.index') }}">Bandara</a></li>
-
                         <li><a href="{{ route('master-lokasiToilet.index') }}">Lokasi Toilet</a></li>
                         <li><a href="{{ route('KontrakPekerjaan.index') }}">Kontrak Pekerjaan</a></li>
                         <li><a href="{{ route('data_karyawan.index')}}">Karyawan</a></li>
@@ -40,7 +41,8 @@
                         <li><a href="{{ route('master-permission.index') }}">Permission</a></li>
                         <li><a href="{{ route('master-peralatan.index') }}">Peralatan</a></li>
                         <li><a href="{{ route('master-kondisi-peralatan.index') }}">Kondisi Peralatan</a></li>
-                        <li><a href="#">Kondisi Peralatan</a></li>
+
+
                     </ul>
                 </li>
                 <li>
@@ -57,33 +59,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('laporanCeklist-toilet.index') }}">Toilet</a></li>
                         <li><a href="{{ route('laporanCeklist-peralatan.index') }}">Peralatan</a></li>
-                        {{-- <li> <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Peralatan</a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{ route ('laporanCeklist-AutomacticScrubber.index') }}">Automactic Scrubber</a></li>
-                                <li><a href="#">Blower</a></li>
-                                <li><a href="#">Brush Vacuum</a></li>
-                                <li><a href="#">Carpet Extractor</a></li>
-                                <li><a href="#">Carpet Spotter</a></li>
-                                <li><a href="#">Dry Vacuum</a></li>
-                                <li><a href="#">DW Vacuum</a></li>
-                                <li><a href="#">Floor Polisher</a></li>
-                                <li><a href="#">High Pressure</a></li>
-                                <li><a href="#">LS Polisher</a></li>
-                                <li><a href="#">Mesin Port Scrub</a></li>
-                                <li><a href="#">Mesin Potong Rumput</a></li>
-                            </ul>
-                        </li> --}}
-                        {{-- <li><a href="#">Brush Vacuum Cleaner</a></li>
-                        <li><a href="#">Carpet Extractor</a></li>
-                        <li><a href="#">Automactic Scrubber</a></li>
-                        <li><a href="#">Carpet Spotter</a></li>
-                        <li><a href="#">Dry Vacuum Cleaner</a></li>
-                        <li><a href="#">DW Vacuum Cleaner</a></li>
-                        <li><a href="#">Floor Polisher High Speed</a></li>
-                        <li><a href="#">High Pressure</a></li>
-                        <li><a href="#">LS Polisher</a></li>
-                        <li><a href="#">Mesin Port Scrub</a></li>
-                        <li><a href="#">Mesin Potong Rumput-Dorong</a></li> --}}
+                        <li><a href="#">Standard Cleanliness Area</a></li>
                     </ul>
                 </li>
                 <li>
