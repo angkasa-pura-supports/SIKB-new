@@ -30,7 +30,13 @@ Route::get('Area-Sca/{id}/edit', 'Sistem\Master\AreaScaController@edit')->name('
 Route::put('Area-Sca/{id}', 'Sistem\Master\AreaScaController@update')->name('Area-Sca.update');
 Route::delete('Area-Sca/{id}', 'Sistem\Master\AreaScaController@destroy')->name('Area-Sca.destroy');
 
-
+//Standard Cleanliness Area
+Route::get('Standard-Cleanliness-Area', 'Sistem\Master\StandardCleanlinessAreaController@index')->name('Standard-Cleanliness-Area.index');
+Route::get('Standard-Cleanliness-Area/create', 'Sistem\Master\StandardCleanlinessAreaController@create')->name('Standard-Cleanliness-Area.create');
+Route::post('Standard-Cleanliness-Area', 'Sistem\Master\StandardCleanlinessAreaController@store')->name('Standard-Cleanliness-Area.store');
+Route::get('Standard-Cleanliness-Area/{id}/edit', 'Sistem\Master\StandardCleanlinessAreaController@edit')->name('Standard-Cleanliness-Area.edit');
+Route::put('Standard-Cleanliness-Area/{id}', 'Sistem\Master\StandardCleanlinessAreaController@update')->name('Standard-Cleanliness-Area.update');
+Route::delete('Standard-Cleanliness-Area/{id}', 'Sistem\Master\StandardCleanlinessAreaController@destroy')->name('Standard-Cleanliness-Area.destroy');
 
 // Route Master Bandara
 Route::get('master-bandara', 'Sistem\Master\BandaraController@index')->name('master-bandara.index')->middleware('permission:Link Bandara');

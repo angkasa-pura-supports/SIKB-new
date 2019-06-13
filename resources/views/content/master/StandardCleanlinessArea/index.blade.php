@@ -1,5 +1,5 @@
 @extends('front.layouts.front')
-@section('title', 'Kondisi Peralatan')
+@section('title', 'Standard Cleanliness Area')
 @section('cssAssets')
   @include('front.partials.css.cssSweetAlert')
 @endsection
@@ -8,13 +8,13 @@
   <div class="container-fluid">
     <div class="row page-titles">
       <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor">Kondisi Peralatan</h4>
+        <h4 class="text-themecolor">Standard Cleanliness Area</h4>
       </div>
       <div class="col-md-7 align-self-center text-right">
         <div class="d-flex justify-content-end align-items-center">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">Master</li>
-            <li class="breadcrumb-item active">Kondisi Peralatan</li>
+            <li class="breadcrumb-item active">Standard Cleanliness Area</li>
           </ol>
         </div>
       </div>
@@ -24,7 +24,7 @@
         <div class="card">
           <div class="card-body">
             <div class="form-actions">
-              <a href="{{ route('master-kondisi-peralatan.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Data</a>
+              <a href="{{ route('Standard-Cleanliness-Area.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Data</a>
             </div>
           </div>
         </div>
@@ -33,20 +33,20 @@
             <div class="table-responsive m-t-40">
               <table id="example23" class="table table-bordered table-striped">
                 <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Nama Peralatan</th>
-                    <th>Item</th>
-                    <th>Kondisi</th>
-                    <th>Action</th>
-                  </tr>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama Area</th>
+                      <th>Material</th>
+                      <th>Standard Area</th>
+                      <th>Action</th>
+                    </tr>
                 </thead>
                 <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Nama Peralatan</th>
-                    <th>Item</th>
-                    <th>Kondisi</th>
+                    <th>Nama Area</th>
+                    <th>Material</th>
+                    <th>Standard Area</th>
                     <th>Action</th>
                   </tr>
                 </tfoot>
@@ -57,12 +57,12 @@
                   @foreach ($data as $value)
                     <tr>
                       <td>{{ $no=$no+1 }}</td>
-                      <td>{{ $value->Peralatan->nama_peralatan }}</td>
-                      <td>{{ $value->item_pemeriksaan }}</td>
-                      <td>{{ $value->kondisi_standard }}</td>
+                      <td>{{ $value->area->nama_area }}</td>
+                      <td>{{ $value->material }}</td>
+                      <td>{{ $value->standard_area }}</td>
                       <td>
-                        {!! Form::open(['route'=>['master-kondisi-peralatan.destroy', $value->id], 'method'=>'DELETE']) !!}
-                          <a href="{{ route('master-kondisi-peralatan.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
+                        {!! Form::open(['route'=>['Standard-Cleanliness-Area.destroy', $value->id], 'method'=>'DELETE']) !!}
+                          <a href="{{ route('Standard-Cleanliness-Area.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
                           {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
                         {!! Form::close() !!}
                       </td>

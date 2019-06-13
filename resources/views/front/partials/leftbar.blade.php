@@ -32,7 +32,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('Plan-Cleaning-Program.index') }}">Plan Cleaning Program</a></li>
                         <li><a href="{{ route('Area-Sca.index') }}">Area (SCA)</a></li>
-                        <li><a href="#">Standard Cleanliness Area</a></li>
+                        <li><a href="{{ route('Standard-Cleanliness-Area.index')}}">Standard Cleanliness Area</a></li>
                         <li><a href="{{ route('master-bandara.index') }}">Bandara</a></li>
                         <li><a href="{{ route('master-lokasiToilet.index') }}">Lokasi Toilet</a></li>
                         <li><a href="{{ route('KontrakPekerjaan.index') }}">Kontrak Pekerjaan</a></li>
