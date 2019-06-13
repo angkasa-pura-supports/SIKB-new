@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Sistem\Master;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\AreaSca;
-use App\StandardCleanlinessArea;
+use App\Consumable;
 use Alert;
 
-class StandardCleanlinessAreaController extends Controller
+class ConsumableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,8 @@ class StandardCleanlinessAreaController extends Controller
      */
     public function index()
     {
-        $data = StandardCleanlinessArea::all();
-        return view('content.master.StandardCleanlinessArea.index', compact('data'));
+        $data = Consumable::all();
+        return view('content.master.consumable.index', compact('data'));
     }
 
     /**
@@ -28,8 +27,7 @@ class StandardCleanlinessAreaController extends Controller
      */
     public function create()
     {
-      $standardSCA = AreaSca::pluck('nama_area', 'id');
-      return view('content.master.StandardCleanlinessArea.create', compact('standardSCA'));
+        return view('content.master.consumable.create');
     }
 
     /**
@@ -41,13 +39,12 @@ class StandardCleanlinessAreaController extends Controller
     public function store(Request $request)
     {
       $this->validate($request, [
-        'area_id' => 'required',
-        'material' => 'required',
-        'standard_area' => 'required'
+        'nama_consumable'  => 'required',
+        'stok' => 'required'
       ]);
-      StandardCleanlinessArea::create($request->all());
+      Consumable::create($request->all());
       Alert::success('Data berhasil disimpan!');
-      return redirect('Standard-Cleanliness-Area');
+      return redirect('Consumable');
     }
 
     /**
@@ -69,9 +66,8 @@ class StandardCleanlinessAreaController extends Controller
      */
     public function edit($id)
     {
-        $data = StandardCleanlinessArea::findOrFail($id);
-        $standardSCA = AreaSca::pluck('nama_area', 'id');
-        return view('content.master.StandardCleanlinessArea.edit', compact('data','standardSCA'));
+      $data = Consumable::findOrFail($id);
+      return view('content.master.consumable.edit', compact('data'));
     }
 
     /**
@@ -83,14 +79,13 @@ class StandardCleanlinessAreaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-        'area_id' => 'required',
-        'material' => 'required',
-        'standard_area' => 'required'
+      $this->validate($request, [
+        'nama_consumable'  => 'required',
+        'stok' => 'required'
       ]);
-      StandardCleanlinessArea::findOrFail($id)->update($request->all());
+      Consumable::findOrFail($id)->update($request->all());
       Alert::success('Data berhasil diUbah!');
-      return redirect('Standard-Cleanliness-Area');
+      return redirect('Consumable');
     }
 
     /**
@@ -101,9 +96,9 @@ class StandardCleanlinessAreaController extends Controller
      */
     public function destroy($id)
     {
-      $data = StandardCleanlinessArea::findOrFail($id);
+      $data = Consumable::findOrFail($id);
       $data->delete();
       Alert::success('Data berhasil dihapus!');
-      return redirect('Standard-Cleanliness-Area');
+      return redirect('Consumable');
     }
 }

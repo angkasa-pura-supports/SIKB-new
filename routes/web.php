@@ -38,6 +38,14 @@ Route::get('Standard-Cleanliness-Area/{id}/edit', 'Sistem\Master\StandardCleanli
 Route::put('Standard-Cleanliness-Area/{id}', 'Sistem\Master\StandardCleanlinessAreaController@update')->name('Standard-Cleanliness-Area.update');
 Route::delete('Standard-Cleanliness-Area/{id}', 'Sistem\Master\StandardCleanlinessAreaController@destroy')->name('Standard-Cleanliness-Area.destroy');
 
+//Consumable
+Route::get('Consumable', 'Sistem\Master\ConsumableController@index')->name('Consumable.index');
+Route::get('Consumable/create', 'Sistem\Master\ConsumableController@create')->name('Consumable.create');
+Route::post('Consumable', 'Sistem\Master\ConsumableController@store')->name('Consumable.store');
+Route::get('Consumable/{id}/edit', 'Sistem\Master\ConsumableController@edit')->name('Consumable.edit');
+Route::put('Consumable/{id}', 'Sistem\Master\ConsumableController@update')->name('Consumable.update');
+Route::delete('Consumable/{id}', 'Sistem\Master\ConsumableController@destroy')->name('Consumable.destroy');
+
 // Route Master Bandara
 Route::get('master-bandara', 'Sistem\Master\BandaraController@index')->name('master-bandara.index')->middleware('permission:Link Bandara');
 Route::get('master-bandara/create', 'Sistem\Master\BandaraController@create')->name('master-bandara.create')->middleware('permission:Create Bandara');
