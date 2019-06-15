@@ -46,6 +46,15 @@ Route::get('Consumable/{id}/edit', 'Sistem\Master\ConsumableController@edit')->n
 Route::put('Consumable/{id}', 'Sistem\Master\ConsumableController@update')->name('Consumable.update');
 Route::delete('Consumable/{id}', 'Sistem\Master\ConsumableController@destroy')->name('Consumable.destroy');
 
+//List Penggunaan Chemical
+Route::get('Chemical', 'Sistem\Master\ChemicalController@index')->name('Chemical.index');
+Route::get('Chemical/create', 'Sistem\Master\ChemicalController@create')->name('Chemical.create');
+Route::get('Chemical/{id}/edit', 'Sistem\Master\ChemicalController@index')->name('Chemical.edit');
+Route::post('Chemical', 'Sistem\Master\ChemicalController@store')->name('Chemical.store');
+Route::put('Chemical', 'Sistem\Master\ChemicalController@update')->name('Chemical.update');
+Route::delete('Chemical', 'Sistem\Master\ChemicalController@destroy')->name('Chemical.destroy');
+
+
 // Route Master Bandara
 Route::get('master-bandara', 'Sistem\Master\BandaraController@index')->name('master-bandara.index')->middleware('permission:Link Bandara');
 Route::get('master-bandara/create', 'Sistem\Master\BandaraController@create')->name('master-bandara.create')->middleware('permission:Create Bandara');
@@ -123,7 +132,6 @@ Route::get('UserAdmin/{id}/edit','Sistem\UserAdminController@edit')->name('UserA
 Route::put('UserAdmin{id}','Sistem\UserAdminController@update')->name('UserAdmin.update')->middleware('permission:Update UserAdmin');
 Route::delete('UserAdmin/{id}','Sistem\UserAdminController@destroy')->name('UserAdmin.destroy')->middleware('permission:Delete UserAdmin');
 
-// Report
 // Report Toilet
 Route::get('report-toilet', 'Sistem\Report\ReportToiletController@index')->name('report-toilet.index');
 Route::get('report-toilet/report/', 'Sistem\Report\ReportToiletController@store')->name('report-toilet.store');
