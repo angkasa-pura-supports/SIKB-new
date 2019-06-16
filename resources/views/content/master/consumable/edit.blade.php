@@ -12,7 +12,7 @@
                       <ol class="breadcrumb">
                           <li class="breadcrumb-item"><a href="javascript:void(0)">Master Data</a></li>
                           <li class="breadcrumb-item">Consumable</li>
-                          <li class="breadcrumb-item active">Tambah</li>
+                          <li class="breadcrumb-item active">Ubah</li>
                       </ol>
                   </div>
               </div>

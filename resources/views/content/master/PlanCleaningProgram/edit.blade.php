@@ -12,7 +12,7 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0)">Master Data</a></li>
             <li class="breadcrumb-item">Plan Cleaning Program</li>
-            <li class="breadcrumb-item active">Tambah</li>
+            <li class="breadcrumb-item active">Ubah</li>
           </ol>
         </div>
       </div>
@@ -128,7 +128,7 @@
               </div>
 
             <div class="form-actions">
-              <button type="submit" class="btn btn-success">Update</button>
+              <button type="submit" class="btn btn-success">Ubah</button>
             </div>
             {!! Form::close() !!}
           </div>

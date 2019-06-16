@@ -18,7 +18,7 @@ class CreateStandardCleanlinessAreaTable extends Migration
             $table->integer('area_id')->unsigned();
             $table->foreign('area_id')->references('id')->on('areasca')->onDelete('cascade')->onUpdate('cascade');
             $table->string('material');
-            $table->string('standard_area');
+            $table->longText('standard_area');
             $table->timestamps();
         });
     }
