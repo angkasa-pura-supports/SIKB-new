@@ -15,8 +15,8 @@ class ReportConsumableController extends Controller
      */
     public function index()
     {
-      $jenis = Consumable::where('jenis','Consumable');
-      return view('content.report.consumable.index', ['jenis' => $jenis]);
+      $jenis = Consumable::where('nama','=','Consumable');
+      return view('content.report.consumable.index', compact('jenis'));
     }
 
     /**
