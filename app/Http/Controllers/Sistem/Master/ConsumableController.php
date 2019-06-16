@@ -40,6 +40,7 @@ class ConsumableController extends Controller
     {
       $this->validate($request, [
         'nama_consumable'  => 'required',
+        'jenis' => 'required',
         'stok' => 'required'
       ]);
       Consumable::create($request->all());
@@ -81,6 +82,7 @@ class ConsumableController extends Controller
     {
       $this->validate($request, [
         'nama_consumable'  => 'required',
+        'jenis' => 'required',
         'stok' => 'required'
       ]);
       Consumable::findOrFail($id)->update($request->all());

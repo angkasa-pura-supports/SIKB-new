@@ -16,6 +16,11 @@ class CreateChemicalTable extends Migration
         Schema::create('chemical', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_chemical');
+            $table->longText('fungsi');
+            $table->longText('cara_penggunaan');
+            $table->longText('resiko');
+            $table->longText('penggendalian_resiko');
+            $table->longText('ket');
             $table->timestamps();
         });
     }

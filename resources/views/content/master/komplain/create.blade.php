@@ -1,5 +1,5 @@
 @extends('front.layouts.front')
-@section('title', 'Ceklist Toilet')
+@section('title', 'Komplain')
 @section('cssAssets')
   @include('front.partials.css.cssForm')
 @endsection
@@ -8,13 +8,13 @@
   <div class="container-fluid">
     <div class="row page-titles">
       <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor">Ceklist Toilet</h4>
+        <h4 class="text-themecolor">Komplain</h4>
       </div>
       <div class="col-md-7 align-self-center text-right">
         <div class="d-flex justify-content-end align-items-center">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Laporan Ceklist</a></li>
-            <li class="breadcrumb-item">Ceklist Toilet</li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Laporan Komplain</a></li>
+            <li class="breadcrumb-item">Komplain</li>
             <li class="breadcrumb-item active">Tambah</li>
           </ol>
         </div>
@@ -39,12 +39,12 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('lokasi_toilet_id') ? ' has-danger' : '' }}">
-                    {!! Form::label('lokasi_toilet_id', 'Lokasi Toilet', ['class'=>'control-label']) !!}
-                    {!! Form::text('threeletter', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                    @if ($errors->has('lokasi_toilet_id'))
+                  <div class="form-group{{ $errors->has('Departement') ? ' has-danger' : '' }}">
+                    {!! Form::label('Departement', 'Departement', ['class'=>'control-label']) !!}
+                    {!! Form::text('Departement', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
+                    @if ($errors->has('Departement'))
                       <small class="form-control-feedback">
-                        {{ $errors->first('lokasi_toilet_id') }}
+                        {{ $errors->first('Departement') }}
                       </small>
                     @endif
                   </div>

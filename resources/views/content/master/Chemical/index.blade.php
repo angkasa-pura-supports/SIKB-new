@@ -36,6 +36,10 @@
                   <tr>
                     <th>No</th>
                     <th>Nama Chemical</th>
+                    <th>Fungsi</th>
+                    <th>Cara Penggunaan</th>
+                    <th>Resiko</th>
+                    <th>Penggendalian Resiko</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -43,18 +47,25 @@
                   <tr>
                     <th>No</th>
                     <th>Nama Chemical</th>
+                    <th>Fungsi</th>
+                    <th>Cara Penggunaan</th>
+                    <th>Resiko</th>
+                    <th>Penggendalian Resiko</th>
                     <th>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  {{-- @php
+                  @php
                     $no=0;
                   @endphp
                   @foreach ($data as $value)
                     <tr>
                       <td>{{ $no=$no+1 }}</td>
-                      <td>{{ $value->threeletter }}</td>
-                      <td>{{ $value->nama_bandara }}</td>
+                      <td>{{ $value->nama_chemical }}</td>
+                      <td>{{ $value->fungsi }}</td>
+                      <td>{{ $value->cara_penggunaan }}</td>
+                      <td>{{ $value->resiko }}</td>
+                      <td>{{ $value->penggendalian_resiko }}</td>
                       <td>
                         {!! Form::open(['route'=>['Chemical.destroy', $value->id], 'method'=>'DELETE']) !!}
                           <a href="{{ route('Chemical.edit', $value->id) }}" class="btn btn-info btn-xs">Ubah</a>
@@ -62,7 +73,7 @@
                         {!! Form::close() !!}
                       </td>
                     </tr>
-                  @endforeach --}}
+                  @endforeach
                 </tbody>
               </table>
             </div>

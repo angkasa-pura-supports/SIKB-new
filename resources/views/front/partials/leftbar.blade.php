@@ -33,7 +33,7 @@
                         <li><a href="{{ route('Plan-Cleaning-Program.index') }}">Plan Cleaning Program</a></li>
                         <li><a href="{{ route('Area-Sca.index') }}">Area (SCA)</a></li>
                         <li><a href="{{ route('Standard-Cleanliness-Area.index')}}">Standard Cleanliness Area</a></li>
-                        <li><a href="{{ route('Consumable.index') }}">List Consumble</a></li>
+                        <li><a href="{{ route('Consumable.index') }}">List Peralatan</a></li>
                         <li><a href="{{ route('Chemical.index') }}">Chemical</a></li>
                         <li><a href="{{ route('master-bandara.index') }}">Bandara</a></li>
                         <li><a href="{{ route('master-lokasiToilet.index') }}">Lokasi Toilet</a></li>
@@ -41,8 +41,8 @@
                         <li><a href="{{ route('data_karyawan.index')}}">Karyawan</a></li>
                         <li><a href="{{ route('master-roles.index') }}">Roles</a></li>
                         <li><a href="{{ route('master-permission.index') }}">Permission</a></li>
-                        <li><a href="{{ route('master-peralatan.index') }}">Peralatan</a></li>
-                        <li><a href="{{ route('master-kondisi-peralatan.index') }}">Kondisi Peralatan</a></li>
+                        <li><a href="{{ route('master-peralatan.index') }}">Peralatan Mesin</a></li>
+                        <li><a href="{{ route('master-kondisi-peralatan.index') }}">Kondisi Peralatan Mesin</a></li>
 
 
                     </ul>
