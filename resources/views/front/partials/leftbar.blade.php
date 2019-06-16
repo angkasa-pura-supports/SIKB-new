@@ -30,6 +30,11 @@
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
+                        <li><a href="{{ route('Plan-Cleaning-Program.index') }}">Plan Cleaning Program</a></li>
+                        <li><a href="{{ route('Area-Sca.index') }}">Area (SCA)</a></li>
+                        <li><a href="{{ route('Standard-Cleanliness-Area.index')}}">Standard Cleanliness Area</a></li>
+                        <li><a href="{{ route('Consumable.index') }}">List Peralatan</a></li>
+                        <li><a href="{{ route('Chemical.index') }}">Chemical</a></li>
                         <li><a href="{{ route('master-bandara.index') }}">Bandara</a></li>
                         <li><a href="{{ route('master-lokasiToilet.index') }}">Lokasi Toilet</a></li>
                         <li><a href="{{ route('KontrakPekerjaan.index') }}">Kontrak Pekerjaan</a></li>
@@ -62,6 +67,13 @@
                         <li><a href="#">Standard Cleanliness Area</a></li>
                     </ul>
                 </li>
+                <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-accordion-merged"></i><span class="hide-menu">Monitoring Ceklist</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a href="#">Penggunaan Peralatan</a></li>
+                        <li><a href="#">Penggunaan Chemical</a></li>
+                        <li><a href="#">Peralatan Facility Service</a></li>
+                    </ul>
+                </li>
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                       <i class="ti-view-list"></i>
@@ -71,6 +83,7 @@
                       {{-- <li><a href="{{route ('ReportCeklistToilet.index')}}">Report Ceklist</a></li> --}}
                       <li><a href="{{ route('report-toilet.index') }}"> Toilet</a></li>
                       <li><a href="{{ route('report-peralatan.index') }}"> Peralatan</a></li>
+                      <li><a href="{{ route('report-consumable.index')}}">Consumable</a></li>
                       {{-- <li><a href="#">L P P</a></li>
                       <li><a href="#">Laporan Kerusakan</a></li>
                       <li><a href="#">Laporan Harian</a></li>

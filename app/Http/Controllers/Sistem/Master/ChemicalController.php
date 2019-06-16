@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Sistem\Master;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Spatie\Permission\Models\Permission;
+use App\Chemical;
+use Alert;
 
 class ChemicalController extends Controller
 {
@@ -14,7 +17,8 @@ class ChemicalController extends Controller
      */
     public function index()
     {
-        return view('content.master.Chemical.index');
+        $data = Chemical::all();
+        return view('content.master.Chemical.index', compact('data'));
     }
 
     /**
@@ -35,7 +39,18 @@ class ChemicalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+        'nama_chemical'     => 'required',
+        'fungsi'            => 'required',
+        'cara_penggunaan'   => 'required',
+        'resiko'            => 'required',
+        'penggendalian_resiko' => 'required',
+        'ket'               => 'required'
+
+      ]);
+      Chemical::create($request->all());
+      Alert::success('Data berhasil disimpan!');
+      return redirect('Chemical');
     }
 
     /**

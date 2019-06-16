@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Sistem\Master;
+namespace App\Http\Controllers\Sistem\Report;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Consumable;
-use Alert;
 
-class ConsumableController extends Controller
+class ReportConsumableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,8 @@ class ConsumableController extends Controller
      */
     public function index()
     {
-        $data = Consumable::all();
-        return view('content.master.consumable.index', compact('data'));
+      $jenis = Consumable::where('jenis','Consumable');
+      return view('content.report.consumable.index', ['jenis' => $jenis]);
     }
 
     /**
@@ -27,7 +26,7 @@ class ConsumableController extends Controller
      */
     public function create()
     {
-        return view('content.master.consumable.create');
+        //
     }
 
     /**
@@ -38,14 +37,7 @@ class ConsumableController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validate($request, [
-        'nama_consumable'  => 'required',
-        'jenis' => 'required',
-        'stok' => 'required'
-      ]);
-      Consumable::create($request->all());
-      Alert::success('Data berhasil disimpan!');
-      return redirect('Consumable');
+        //
     }
 
     /**
@@ -67,8 +59,7 @@ class ConsumableController extends Controller
      */
     public function edit($id)
     {
-      $data = Consumable::findOrFail($id);
-      return view('content.master.consumable.edit', compact('data'));
+        //
     }
 
     /**
@@ -80,14 +71,7 @@ class ConsumableController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $this->validate($request, [
-        'nama_consumable'  => 'required',
-        'jenis' => 'required',
-        'stok' => 'required'
-      ]);
-      Consumable::findOrFail($id)->update($request->all());
-      Alert::success('Data berhasil diUbah!');
-      return redirect('Consumable');
+        //
     }
 
     /**
@@ -98,9 +82,6 @@ class ConsumableController extends Controller
      */
     public function destroy($id)
     {
-      $data = Consumable::findOrFail($id);
-      $data->delete();
-      Alert::success('Data berhasil dihapus!');
-      return redirect('Consumable');
+        //
     }
 }

@@ -138,7 +138,8 @@ Route::get('report-toilet/report/', 'Sistem\Report\ReportToiletController@store'
 // Report Peralatan
 Route::get('report-peralatan', 'Sistem\Report\ReportPeralatanController@index')->name('report-peralatan.index');
 Route::get('report-peralatan/report/', 'Sistem\Report\ReportPeralatanController@store')->name('report-peralatan.store');
-
+//Report Consumable
+Route::get('report-consumable', 'Sistem\Report\ReportConsumableController@index')->name('report-consumable.index');
 //Komplain
 Route::get('komplain', 'Sistem\Master\KomplainController@index')->name('komplain.index');
 Route::get('komplain/create', 'Sistem\Master\KomplainController@create')->name('komplain.create');

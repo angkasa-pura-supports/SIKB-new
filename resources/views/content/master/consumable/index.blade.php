@@ -35,7 +35,8 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Nama Consumable</th>
+                    <th>Nama peratalan</th>
+                    <th>Jenis</th>
                     <th>Stok</th>
                     <th>Action</th>
                   </tr>
@@ -43,7 +44,8 @@
                 <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Nama Consumable</th>
+                    <th>Nama peratalan</th>
+                    <th>Jenis</th>
                     <th>Stok</th>
                     <th>Action</th>
                   </tr>
@@ -56,6 +58,7 @@
                     <tr>
                       <td>{{ $no=$no+1 }}</td>
                       <td>{{ $value->nama_consumable }}</td>
+                      <td>{{ $value->jenis }}</td>
                       <td>{{ $value->stok }}</td>
                       <td>
                         {!! Form::open(['route'=>['Consumable.destroy', $value->id], 'method'=>'DELETE']) !!}

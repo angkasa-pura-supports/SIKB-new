@@ -25,34 +25,47 @@
                       </div>
                       <div class="card-body">
                         {!! Form::model($data, ['route'=>['Consumable.update', $data->id], 'method'=>'PUT']) !!}
-                              <div class="form-body">
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                          <div class="form-group{{ $errors->has('Nama Consumable') ? ' has-danger' : '' }}">
-                                            {!! Form::label('Nama Consumable', 'Nama Consumable', ['class'=>'control-label']) !!}
-                                            {!! Form::text('nama_consumable', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                                            @if ($errors->has('Consumable'))
-                                              <small class="form-control-feedback">
-                                                {{ $errors->first('Consumable') }}
-                                              </small>
-                                            @endif
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="row">
-                                      <div class="col-md-6">
-                                          <div class="form-group{{ $errors->has('stok') ? ' has-danger' : '' }}">
-                                            {!! Form::label('stok', 'Stok', ['class'=>'control-label']) !!}
-                                            {!! Form::text('stok', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                                            @if ($errors->has('stok'))
-                                              <small class="form-control-feedback">
-                                                {{ $errors->first('stok') }}
-                                              </small>
-                                            @endif
-                                          </div>
-                                      </div>
-                                  </div>
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group{{ $errors->has('Nama Consumable') ? ' has-danger' : '' }}">
+                                      {!! Form::label('Nama Consumable', 'Nama Consumable', ['class'=>'control-label']) !!}
+                                      {!! Form::text('nama_consumable', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
+                                      @if ($errors->has('Consumable'))
+                                        <small class="form-control-feedback">
+                                          {{ $errors->first('Consumable') }}
+                                        </small>
+                                      @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group{{ $errors->has('jenis') ? ' has-danger' : '' }}">
+                                  {!! Form::label('jenis', 'jenis', ['class'=>'control-label']) !!}
+                                  {!! Form::select('jenis', ['Consumable'=>'Consumable', 'Peralatan Facility Service'=>'Peralatan Facility Service'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                                  @if ($errors->has('jenis'))
+                                    <small class="form-control-feedback">
+                                      {{ $errors->first('jenis') }}
+                                    </small>
+                                  @endif
+                                </div>
                               </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group{{ $errors->has('stok') ? ' has-danger' : '' }}">
+                                      {!! Form::label('stok', 'Stok', ['class'=>'control-label']) !!}
+                                      {!! Form::text('stok', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
+                                      @if ($errors->has('stok'))
+                                        <small class="form-control-feedback">
+                                          {{ $errors->first('stok') }}
+                                        </small>
+                                      @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                               <div class="form-actions">
                                   <button type="submit" class="btn btn-success">Ubah</button>
                               </div>

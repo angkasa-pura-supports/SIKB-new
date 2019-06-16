@@ -16,6 +16,7 @@ class CreateConsumableTabel extends Migration
         Schema::create('consumable', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_consumable');
+            $table->string('jenis');
             $table->string('stok');
             $table->timestamps();
         });
