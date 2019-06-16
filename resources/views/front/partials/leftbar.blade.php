@@ -30,11 +30,6 @@
                 <li>
                     <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-grid2"></i><span class="hide-menu">Master Data</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="{{ route('Plan-Cleaning-Program.index') }}">Plan Cleaning Program</a></li>
-                        <li><a href="{{ route('Area-Sca.index') }}">Area (SCA)</a></li>
-                        <li><a href="{{ route('Standard-Cleanliness-Area.index')}}">Standard Cleanliness Area</a></li>
-                        <li><a href="{{ route('Consumable.index') }}">List Peralatan</a></li>
-                        <li><a href="{{ route('Chemical.index') }}">Chemical</a></li>
                         <li><a href="{{ route('master-bandara.index') }}">Bandara</a></li>
                         <li><a href="{{ route('master-lokasiToilet.index') }}">Lokasi Toilet</a></li>
                         <li><a href="{{ route('KontrakPekerjaan.index') }}">Kontrak Pekerjaan</a></li>
@@ -46,7 +41,7 @@
                         <li><a href="{{ route('Plan-Cleaning-Program.index') }}">Plan Cleaning Program</a></li>
                         <li><a href="{{ route('Area-Sca.index') }}">Area (SCA)</a></li>
                         <li><a href="{{ route('Standard-Cleanliness-Area.index')}}">Standard Cleanliness Area</a></li>
-                        <li><a href="{{ route('Consumable.index') }}">List Consumble</a></li>
+                        <li><a href="{{ route('Consumable.index') }}">List Peralatan</a></li>
                         <li><a href="{{ route('Chemical.index') }}">Chemical</a></li>
                     </ul>
                 </li>
