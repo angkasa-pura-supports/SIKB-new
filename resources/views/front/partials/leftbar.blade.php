@@ -33,7 +33,7 @@
                         <li><a href="{{ route('master-bandara.index') }}">Bandara</a></li>
                         <li><a href="{{ route('master-lokasiToilet.index') }}">Lokasi Toilet</a></li>
                         <li><a href="{{ route('KontrakPekerjaan.index') }}">Kontrak Pekerjaan</a></li>
-                        <li><a href="{{ route('data_karyawan.index')}}">Karyawan</a></li>
+                        <li><a href="{{ route('master-karyawan.index')}}">Karyawan</a></li>
                         <li><a href="{{ route('master-roles.index') }}">Roles</a></li>
                         <li><a href="{{ route('master-permission.index') }}">Permission</a></li>
                         <li><a href="{{ route('master-peralatan.index') }}">Peralatan</a></li>
@@ -59,7 +59,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('laporanCeklist-toilet.index') }}">Toilet</a></li>
                         <li><a href="{{ route('laporanCeklist-peralatan.index') }}">Peralatan</a></li>
-                        <li><a href="#">Standard Cleanliness Area</a></li>
+                        <li><a href="{{ route('laporanCeklist-sca.index') }}">Standard Cleanliness Area</a></li>
                     </ul>
                 </li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-accordion-merged"></i><span class="hide-menu">Monitoring Ceklist</span></a>

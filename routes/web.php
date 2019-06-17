@@ -13,125 +13,47 @@ Route::resource('master-permission', 'Sistem\Master\PermissionController');
 Route::resource('access-role', 'Sistem\AccessRoleController');
 // Route Access Permission
 Route::resource('access-permission', 'Sistem\AccessPermissionController');
-
 //Master Plan Cleaning Program
-Route::get('Plan-Cleaning-Program', 'Sistem\Master\PlanCleaningProgramController@index')->name('Plan-Cleaning-Program.index');
-Route::get('Plan-Cleaning-Program/create', 'Sistem\Master\PlanCleaningProgramController@create')->name('Plan-Cleaning-Program.create');
-Route::post('Plan-Cleaning-Program', 'Sistem\Master\PlanCleaningProgramController@store')->name('Plan-Cleaning-Program.store');
-Route::get('Plan-Cleaning-Program/{id}/edit', 'Sistem\Master\PlanCleaningProgramController@edit')->name('Plan-Cleaning-Program.edit');
-Route::put('Plan-Cleaning-Program/{id}', 'Sistem\Master\PlanCleaningProgramController@update')->name('Plan-Cleaning-Program.update');
-Route::delete('Plan-Cleaning-Program/{id}', 'Sistem\Master\PlanCleaningProgramController@destroy')->name('Plan-Cleaning-Program.destroy');
-
+Route::resource('Plan-Cleaning-Program', 'Sistem\Master\PlanCleaningProgramController');
 //AreaSCA
-Route::get('Area-Sca', 'Sistem\Master\AreaScaController@index')->name('Area-Sca.index');
-Route::get('Area-Sca/create', 'Sistem\Master\AreaScaController@create')->name('Area-Sca.create');
-Route::post('Area-Sca', 'Sistem\Master\AreaScaController@store')->name('Area-Sca.store');
-Route::get('Area-Sca/{id}/edit', 'Sistem\Master\AreaScaController@edit')->name('Area-Sca.edit');
-Route::put('Area-Sca/{id}', 'Sistem\Master\AreaScaController@update')->name('Area-Sca.update');
-Route::delete('Area-Sca/{id}', 'Sistem\Master\AreaScaController@destroy')->name('Area-Sca.destroy');
-
+Route::resource('Area-Sca', 'Sistem\Master\AreaScaController');
 //Standard Cleanliness Area
-Route::get('Standard-Cleanliness-Area', 'Sistem\Master\StandardCleanlinessAreaController@index')->name('Standard-Cleanliness-Area.index');
-Route::get('Standard-Cleanliness-Area/create', 'Sistem\Master\StandardCleanlinessAreaController@create')->name('Standard-Cleanliness-Area.create');
-Route::post('Standard-Cleanliness-Area', 'Sistem\Master\StandardCleanlinessAreaController@store')->name('Standard-Cleanliness-Area.store');
-Route::get('Standard-Cleanliness-Area/{id}/edit', 'Sistem\Master\StandardCleanlinessAreaController@edit')->name('Standard-Cleanliness-Area.edit');
-Route::put('Standard-Cleanliness-Area/{id}', 'Sistem\Master\StandardCleanlinessAreaController@update')->name('Standard-Cleanliness-Area.update');
-Route::delete('Standard-Cleanliness-Area/{id}', 'Sistem\Master\StandardCleanlinessAreaController@destroy')->name('Standard-Cleanliness-Area.destroy');
-
+Route::resource('Standard-Cleanliness-Area', 'Sistem\Master\StandardCleanlinessAreaController');
 //Consumable
-Route::get('Consumable', 'Sistem\Master\ConsumableController@index')->name('Consumable.index');
-Route::get('Consumable/create', 'Sistem\Master\ConsumableController@create')->name('Consumable.create');
-Route::post('Consumable', 'Sistem\Master\ConsumableController@store')->name('Consumable.store');
-Route::get('Consumable/{id}/edit', 'Sistem\Master\ConsumableController@edit')->name('Consumable.edit');
-Route::put('Consumable/{id}', 'Sistem\Master\ConsumableController@update')->name('Consumable.update');
-Route::delete('Consumable/{id}', 'Sistem\Master\ConsumableController@destroy')->name('Consumable.destroy');
-
+Route::resource('Consumable', 'Sistem\Master\ConsumableController');
 //List Penggunaan Chemical
-Route::get('Chemical', 'Sistem\Master\ChemicalController@index')->name('Chemical.index');
-Route::get('Chemical/create', 'Sistem\Master\ChemicalController@create')->name('Chemical.create');
-Route::get('Chemical/{id}/edit', 'Sistem\Master\ChemicalController@index')->name('Chemical.edit');
-Route::post('Chemical', 'Sistem\Master\ChemicalController@store')->name('Chemical.store');
-Route::put('Chemical', 'Sistem\Master\ChemicalController@update')->name('Chemical.update');
-Route::delete('Chemical', 'Sistem\Master\ChemicalController@destroy')->name('Chemical.destroy');
-
-
+Route::resource('Chemical', 'Sistem\Master\ChemicalController');
 // Route Master Bandara
-Route::get('master-bandara', 'Sistem\Master\BandaraController@index')->name('master-bandara.index')->middleware('permission:Link Bandara');
-Route::get('master-bandara/create', 'Sistem\Master\BandaraController@create')->name('master-bandara.create')->middleware('permission:Create Bandara');
-Route::post('master-bandara', 'Sistem\Master\BandaraController@store')->name('master-bandara.store')->middleware('permission:Create Bandara');
-Route::get('master-bandara/{id}/edit', 'Sistem\Master\BandaraController@edit')->name('master-bandara.edit')->middleware('permission:Update Bandara');
-Route::put('master-bandara/{id}', 'Sistem\Master\BandaraController@update')->name('master-bandara.update')->middleware('permission:Update Bandara');
-Route::delete('master-bandara/{id}', 'Sistem\Master\BandaraController@destroy')->name('master-bandara.destroy')->middleware('permission:Delete Bandara');
+Route::resource('master-bandara', 'Sistem\Master\BandaraController');
 // Route Master Lokasi Toilet
-Route::get('master-lokasiToilet', 'Sistem\Master\LokasiToiletController@index')->name('master-lokasiToilet.index')->middleware('permission:Link Lokasi Toilet');
-Route::get('master-lokasiToilet/create', 'Sistem\Master\LokasiToiletController@create')->name('master-lokasiToilet.create')->middleware('permission:Create Lokasi Toilet');
-Route::post('master-lokasiToilet', 'Sistem\Master\LokasiToiletController@store')->name('master-lokasiToilet.store')->middleware('permission:Create Lokasi Toilet');
-Route::get('master-lokasiToilet/{id}/edit', 'Sistem\Master\LokasiToiletController@edit')->name('master-lokasiToilet.edit')->middleware('permission:Update Lokasi Toilet');
-Route::put('master-lokasiToilet/{id}', 'Sistem\Master\LokasiToiletController@update')->name('master-lokasiToilet.update')->middleware('permission:Update Lokasi Toilet');
-Route::delete('master-lokasiToilet/{id}', 'Sistem\Master\LokasiToiletController@destroy')->name('master-lokasiToilet.destroy')->middleware('permission:Delete Lokasi Toilet');
+Route::resource('master-lokasiToilet', 'Sistem\Master\LokasiToiletController');
 //Master Data
-Route::get('KontrakPekerjaan', 'Sistem\Master\KontrakPekerjaanController@index')->name('KontrakPekerjaan.index');
-Route::get('KontrakPekerjaan/create', 'Sistem\Master\KontrakPekerjaanController@create')->name('KontrakPekerjaan.create');
-Route::post('KontrakPekerjaan', 'Sistem\Master\KontrakPekerjaanController@store')->name('KontrakPekerjaan.store');
-Route::post('KontrakPekerjaan/{id}/edit', 'Sistem\Master\KontrakPekerjaanController@edit')->name('KontrakPekerjaan.edit');
-Route::delete('KontrakPekerjaan/{id}', 'Sistem\Master\KontrakPekerjaanController@destroy')->name('KontrakPekerjaan.destroy');
-
+Route::resource('KontrakPekerjaan', 'Sistem\Master\KontrakPekerjaanController');
 // Master Karyawan
-Route::get('data_karyawan','Sistem\Master\KaryawanController@index')->name('data_karyawan.index')->middleware('permission:Link Karyawan');
-Route::get('data_karyawan/create','Sistem\Master\KaryawanController@create')->name('data_karyawan.create')->middleware('permission:Create Karyawan');
-Route::post('master-karyawan', 'Sistem\Master\KaryawanController@store')->name('master-karyawan.store')->middleware('permission:Create Karyawan');
-Route::get('master-karyawan/{id}/edit', 'Sistem\Master\KaryawanController@edit')->name('master-karyawan.edit')->middleware('permission:Update Karyawan');
-Route::put('master-karyawan/{id}', 'Sistem\Master\KaryawanController@update')->name('master-karyawan.update')->middleware('permission:Update Karyawan');
-Route::delete('master-karyawan/{id}', 'Sistem\Master\KaryawanController@destroy')->name('master-karyawan.destroy')->middleware('permission:Delete Karyawan');
-
+Route::resource('master-karyawan', 'Sistem\Master\KaryawanController');
 // Master Peralatan
-Route::get('master-peralatan', 'Sistem\Master\PeralatanController@index')->name('master-peralatan.index');
-Route::get('master-peralatan/create', 'Sistem\Master\PeralatanController@create')->name('master-peralatan.create');
-Route::post('master-peralatan', 'Sistem\Master\PeralatanController@store')->name('master-peralatan.store');
-Route::get('master-peralatan/{id}/edit', 'Sistem\Master\PeralatanController@edit')->name('master-peralatan.edit');
-Route::put('master-peralatan/{id}', 'Sistem\Master\PeralatanController@update')->name('master-peralatan.update');
-Route::delete('master-peralatan/{id}', 'Sistem\Master\PeralatanController@destroy')->name('master-peralatan.destroy');
-
+Route::resource('master-peralatan', 'Sistem\Master\PeralatanController');
 // Master Kondisi Peralatan
-Route::get('master-kondisi-peralatan', 'Sistem\Master\PeralatanKondisiController@index')->name('master-kondisi-peralatan.index');
-Route::get('master-kondisi-peralatan/create', 'Sistem\Master\PeralatanKondisiController@create')->name('master-kondisi-peralatan.create');
-Route::post('master-kondisi-peralatan', 'Sistem\Master\PeralatanKondisiController@store')->name('master-kondisi-peralatan.store');
-Route::get('master-kondisi-peralatan/{id}/edit', 'Sistem\Master\PeralatanKondisiController@edit')->name('master-kondisi-peralatan.edit');
-Route::put('master-kondisi-peralatan/{id}', 'Sistem\Master\PeralatanKondisiController@update')->name('master-kondisi-peralatan.update');
-Route::delete('master-kondisi-peralatan/{id}', 'Sistem\Master\PeralatanKondisiController@destroy')->name('master-kondisi-peralatan.destroy');
+Route::resource('master-kondisi-peralatan', 'Sistem\Master\PeralatanKondisiController');
+// End Master
 
+// Ceklist
 // Ceklist Toilet
-Route::get('laporanCeklist-toilet','Sistem\LaporanCekList\Toilet\CeklistToiletController@index')->name('laporanCeklist-toilet.index');
-Route::get('laporanCeklist-toilet/create','Sistem\LaporanCekList\Toilet\CeklistToiletController@create')->name('laporanCeklist-toilet.create');
-Route::post('laporanCeklist-toilet', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@store')->name('laporanCeklist-toilet.store');
-Route::get('laporanCeklist-toilet/{id}', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@show')->name('laporanCeklist-toilet.show');
+Route::resource('laporanCeklist-toilet','Sistem\LaporanCekList\Toilet\CeklistToiletController');
 Route::get('laporanCeklist-toilet/print/{id}', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@print')->name('laporanCeklist-toilet.print');
 Route::get('laporanCeklist-toilet/checklist/{id}', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@checklist')->name('laporanCeklist-toilet.checklist');
 Route::post('laporanCeklist-toilet/checklist', 'Sistem\LaporanCekList\Toilet\CeklistToiletController@checklistStore')->name('laporanCeklist-toilet.checklistStore');
-
 // Ceklist Peralatan
-Route::get('laporanCeklist-peralatan', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@index')->name('laporanCeklist-peralatan.index');
-Route::get('laporanCeklist-peralatan/create', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@create')->name('laporanCeklist-peralatan.create');
-Route::post('laporanCeklist-peralatan', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@store')->name('laporanCeklist-peralatan.store');
-Route::get('laporanCeklist-peralatan/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@show')->name('laporanCeklist-peralatan.show');
+Route::resource('laporanCeklist-peralatan', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController');
 Route::get('laporanCeklist-peralatan/print/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@print')->name('laporanCeklist-peralatan.print');
 Route::get('laporanCeklist-peralatan/checklist/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@checklist')->name('laporanCeklist-peralatan.checklist');
 Route::post('laporanCeklist-peralatan/checklist', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@checklistStore')->name('laporanCeklist-peralatan.checklistStore');
-Route::delete('laporanCeklist-peralatan/{id}', 'Sistem\LaporanCeklist\Peralatan\CeklistPeralatanController@destroy')->name('laporanCeklist-peralatan.destroy');
-
-//Laporan Ceklist Automactic Scrubber
-Route::get('laporanCeklist-AutomacticScrubber','Sistem\LaporanCekList\Peralatan\AutomacticScrubberController@index')->name('laporanCeklist-AutomacticScrubber.index');
-Route::get('laporanCeklist-AutomacticScrubber/create','Sistem\LaporanCekList\Peralatan\AutomacticScrubberController@create')->name('laporanCeklist-AutomacticScrubber.create');
-Route::post('laporanCeklist-AutomacticScrubber/store','Sistem\LaporanCekList\Peralatan\AutomacticScrubberController@store')->name('laporanCeklist-AutomacticScrubber.store');
+// Ceklist SCA
+Route::resource('laporanCeklist-sca', 'Sistem\LaporanCeklist\SCA\CeklistScaController');
+// End Ceklist
 
 //UserAdmin
-Route::get('UserAdmin','Sistem\UserAdminController@index')->name('UserAdmin.index')->middleware('permission:Link UserAdmin');
-Route::get('UserAdmin/create','Sistem\UserAdminController@create')->name('UserAdmin.create')->middleware('permission:Create UserAdmin');
-Route::post('UserAdmin','Sistem\UserAdminController@store')->name('UserAdmin.store')->middleware('permission:Create UserAdmin');
-Route::get('UserAdmin/{id}/edit','Sistem\UserAdminController@edit')->name('UserAdmin.edit')->middleware('permission:Update UserAdmin');
-Route::put('UserAdmin{id}','Sistem\UserAdminController@update')->name('UserAdmin.update')->middleware('permission:Update UserAdmin');
-Route::delete('UserAdmin/{id}','Sistem\UserAdminController@destroy')->name('UserAdmin.destroy')->middleware('permission:Delete UserAdmin');
-
+Route::resource('UserAdmin','Sistem\UserAdminController');
 // Report Toilet
 Route::get('report-toilet', 'Sistem\Report\ReportToiletController@index')->name('report-toilet.index');
 Route::get('report-toilet/report/', 'Sistem\Report\ReportToiletController@store')->name('report-toilet.store');

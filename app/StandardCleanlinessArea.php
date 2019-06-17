@@ -14,4 +14,9 @@ class StandardCleanlinessArea extends Model
     return $this->belongsTo(AreaSca::class);
   }
 
+  public function uploadCeklistSca()
+  {
+    return $this->hasMany(UploadCeklistSca::class);
+  }
+
 }

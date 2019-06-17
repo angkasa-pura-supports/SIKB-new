@@ -65,23 +65,23 @@
                     <tr>
                       <td>{{ $no=$no+1 }}</td>
                       <td>{{ $value->bandara->nama_bandara }}</td>
-                      <td>{{ $value->peralatan->nama_peralatan }}</td>
+                      <td>{{ $value->area->nama_area }}</td>
                       <td>{{ $value->pengawas->nama_karyawan }}</td>
                       <td>{{ $value->petugas }}</td>
                       <td>{{ $value->shift }}</td>
                       <td>{{ date("d-m-Y", strtotime($value->tanggal_input)) }}</td>
                       <td>
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          @php
-                            $cek = App\UploadCeklistPeralatan::where('ceklist_peralatan_id', $value->id)->first();
+                          {{-- @php
+                            $cek = App\UploadCeklistSca::where('ceklist_peralatan_id', $value->id)->first();
                           @endphp
                           @if ($cek === NULL)
-                            <a href="{{ route('laporanCeklist-peralatan.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
+                            <a href="{{ route('laporanCeklist-sca.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
                           @else
-                            {!! Form::open(['route'=>['laporanCeklist-peralatan.destroy', $value->id], 'method'=>'DELETE']) !!}
+                            {!! Form::open(['route'=>['laporanCeklist-sca.destroy', $value->id], 'method'=>'DELETE']) !!}
                               {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
                             {!! Form::close() !!}
-                          @endif
+                          @endif --}}
 
                           {{-- <a href="{{ route('laporanCeklist-peralatan.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
                           <a href="{{ route('laporanCeklist-peralatan.print', $value->id) }}" class="btn btn-warning" title="Print"><i class="fa fa-print"></i></a> --}}

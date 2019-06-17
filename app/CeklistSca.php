@@ -23,4 +23,9 @@ class CeklistSca extends Model
   {
     return $this->belongsTo(karyawan::class);
   }
+
+  public function uploadCeklistSca()
+  {
+    return $this->hasMany(UploadCeklistSca::class);
+  }
 }

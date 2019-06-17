@@ -13,4 +13,9 @@ class AreaSca extends Model
   {
     return $this->hasMany(StandardCleanlinessArea::class);
   }
+
+  public function ceklistSca()
+  {
+    return $this->hasMany(CeklistSca::class);
+  }
 }

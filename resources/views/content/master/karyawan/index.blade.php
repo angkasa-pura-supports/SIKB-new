@@ -24,7 +24,7 @@
         <div class="card">
           <div class="card-body">
             <div class="form-actions">
-              <a href="{{ route('data_karyawan.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Data</a>
+              <a href="{{ route('master-karyawan.create') }}" class="btn btn-info"><i class="fa fa-plus-circle"></i> Data</a>
             </div>
           </div>
         </div>

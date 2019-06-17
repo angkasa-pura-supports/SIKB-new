@@ -17,4 +17,8 @@ class Bandara extends Model
     {
       return $this->hasMany(CeklistPeralatant::class);
     }
+    public function ceklistSca()
+    {
+      return $this->hasMany(CeklistSca::class);
+    }
 }
