@@ -72,19 +72,16 @@
                       <td>{{ date("d-m-Y", strtotime($value->tanggal_input)) }}</td>
                       <td>
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          {{-- @php
-                            $cek = App\UploadCeklistSca::where('ceklist_peralatan_id', $value->id)->first();
+                          @php
+                            $jumlahCeklist = App\UploadCeklistSca::where('ceklist_sca_id', $value->id)->count();
+                            $jumlahSca = App\StandardCleanlinessArea::where('area_id', $value->area_id)->count();
                           @endphp
-                          @if ($cek === NULL)
-                            <a href="{{ route('laporanCeklist-sca.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
+                          @if ($jumlahCeklist == $jumlahSca)
                           @else
-                            {!! Form::open(['route'=>['laporanCeklist-sca.destroy', $value->id], 'method'=>'DELETE']) !!}
-                              {!! Form::submit('Delete', ['class'=>'btn btn-danger btn-xs']) !!}
-                            {!! Form::close() !!}
-                          @endif --}}
-
-                          {{-- <a href="{{ route('laporanCeklist-peralatan.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
-                          <a href="{{ route('laporanCeklist-peralatan.print', $value->id) }}" class="btn btn-warning" title="Print"><i class="fa fa-print"></i></a> --}}
+                            <a href="{{ route('laporanCeklist-sca.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
+                          @endif
+                          <a href="{{ route('laporanCeklist-sca.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
+                          <a href="{{ route('laporanCeklist-sca.print', $value->id) }}" class="btn btn-warning" title="Print" target="_blank"><i class="fa fa-print"></i></a>
                         </div>
                       </td>
                     </tr>

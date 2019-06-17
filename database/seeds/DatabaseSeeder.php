@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PeralatanSeeder::class);
         $this->call(KondisiPeralatanSeeder::class);
         $this->call(AreaScaSeeder::class);
+        $this->call(StandardCleanlinessAreaSeeder::class);
     }
 }
