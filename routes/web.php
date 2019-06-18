@@ -37,6 +37,10 @@ Route::resource('master-peralatan', 'Sistem\Master\PeralatanController');
 Route::resource('master-kondisi-peralatan', 'Sistem\Master\PeralatanKondisiController');
 // End Master
 
+//Monitoring
+//Consumable
+Route::resource('monitoring-penggunaan-consumable', 'Sistem\Monitoring\ConsumableController');
+
 // Ceklist
 // Ceklist Toilet
 Route::resource('laporanCeklist-toilet','Sistem\LaporanCekList\Toilet\CeklistToiletController');

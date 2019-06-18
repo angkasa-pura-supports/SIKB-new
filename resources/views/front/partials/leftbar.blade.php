@@ -66,6 +66,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="#">Penggunaan Peralatan</a></li>
                         <li><a href="#">Penggunaan Chemical</a></li>
+                        <li><a href="{{ route('monitoring-penggunaan-consumable.index') }}">Penggunaan Consumable</a></li>
                         <li><a href="#">Peralatan Facility Service</a></li>
                     </ul>
                 </li>
