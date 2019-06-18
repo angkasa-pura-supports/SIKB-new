@@ -29,7 +29,6 @@ class AreaScaSeeder extends Seeder
         ['nama_area'=>'Koridor Luar Kedatangan', 'created_at'=>Carbon::now(), 'updated_at'=>Carbon::now()],
         ['nama_area'=>'Koridor Dalam Kedatangan', 'created_at'=>Carbon::now(), 'updated_at'=>Carbon::now()],
         ['nama_area'=>'Ruang Kedatangan', 'created_at'=>Carbon::now(), 'updated_at'=>Carbon::now()]
-
       ];
       DB::table('areasca')->insert($data);
     }

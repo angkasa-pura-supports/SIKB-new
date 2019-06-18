@@ -9,6 +9,8 @@ use App\Bandara;
 use App\AreaSca;
 use App\karyawan;
 use Alert;
+use App\UploadCeklistSca;
+use Carbon\Carbon;
 class CeklistScaController extends Controller
 {
     /**
@@ -111,4 +113,41 @@ class CeklistScaController extends Controller
       Alert::success('Data berhasil dihapus!');
       return redirect('laporanCeklist-sca');
     }
+
+    public function checklist($id)
+    {
+      $idCeklist = CeklistSca::findOrFail($id);
+      return view('content.laporanCeklist.sca.checklist', compact('idCeklist'));
+    }
+
+    public function checklistStore(Request $request){
+      $this->validate($request, [
+        'ceklist_sca_id' => 'required',
+        'sca_id' => 'required',
+        'kode' => 'required',
+        'penjelasan' => '',
+        'tindak_lanjut' => '',
+        'oleh' => '',
+        'waktu' => '',
+        'hasil' => '',
+      ]);
+      $data = new UploadCeklistSca;
+      $data->ceklist_sca_id = $request->ceklist_sca_id;
+      $data->sca_id = $request->sca_id;
+      $data->kode = $request->kode;
+      $data->penjelasan = $request->penjelasan;
+      $data->tindak_lanjut = $request->tindak_lanjut;
+      $data->oleh = $request->oleh;
+      $data->waktu = Carbon::now();
+      $data->hasil = $request->hasil;
+      $data->save();
+      Alert::success('Data berhasil diupload!');
+      return redirect('laporanCeklist-sca');
+    }
+
+    public function print($id)
+    {
+      // code...
+    }
+
 }
