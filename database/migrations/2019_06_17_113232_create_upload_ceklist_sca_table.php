@@ -23,7 +23,7 @@ class CreateUploadCeklistScaTable extends Migration
             $table->longText('penjelasan')->nullable();
             $table->longText('tindak_lanjut')->nullable();
             $table->longText('oleh')->nullable();
-            $table->longText('waktu')->nullable();
+            $table->dateTime('waktu')->nullable();
             $table->longText('hasil')->nullable();
             $table->timestamps();
         });

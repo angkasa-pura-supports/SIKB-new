@@ -8,6 +8,15 @@
   font-family: "Arial";
   font-size: 16px;
 }
+.judul-sca{
+  text-align: center;
+  font-weight: bold;
+  font-family: "Arial";
+  font-size: 16px;
+}
+.area{
+  font-size: 16px;
+}
 .tabel{
   margin-top: 10px;
 }
