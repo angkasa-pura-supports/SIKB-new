@@ -15,6 +15,13 @@ class CreatePenggunaanConsumableTable extends Migration
     {
         Schema::create('penggunaan_consumable', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('tanggal_input');
+            $table->string('nama_consumable');
+            $table->string('pengguna');
+            $table->string('shift');
+            $table->string('qty');
+            $table->string('petugas');
+            $table->string('team_leader');
             $table->timestamps();
         });
     }
