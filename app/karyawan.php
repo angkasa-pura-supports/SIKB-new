@@ -22,4 +22,9 @@ class karyawan extends Model
   {
     return $this->hasMany(CeklistSca::class);
   }
+
+  public function ceklistSla()
+  {
+    return $this->hasMany(CeklistSla::class);
+  }
 }

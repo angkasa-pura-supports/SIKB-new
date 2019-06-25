@@ -57,6 +57,8 @@ Route::resource('laporanCeklist-sca', 'Sistem\LaporanCeklist\SCA\CeklistScaContr
 Route::get('laporanCeklist-sca/print/{id}', 'Sistem\LaporanCeklist\SCA\CeklistScaController@print')->name('laporanCeklist-sca.print');
 Route::get('laporanCeklist-sca/checklist/{id}', 'Sistem\LaporanCeklist\SCA\CeklistScaController@checklist')->name('laporanCeklist-sca.checklist');
 Route::post('laporanCeklist-sca/checklist', 'Sistem\LaporanCeklist\SCA\CeklistScaController@checklistStore')->name('laporanCeklist-sca.checklistStore');
+// Ceklist SLA
+Route::resource('laporanCeklist-sla', 'Sistem\LaporanCeklist\SLA\CeklistSlaController');
 // End Ceklist
 
 //UserAdmin
