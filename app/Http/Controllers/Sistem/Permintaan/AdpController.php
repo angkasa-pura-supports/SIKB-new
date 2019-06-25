@@ -14,7 +14,7 @@ class AdpController extends Controller
      */
     public function index()
     {
-        //
+        return view('content.permintaan.adp.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class AdpController extends Controller
      */
     public function create()
     {
-        //
+      return view('content.permintaan.adp.create');
     }
 
     /**
