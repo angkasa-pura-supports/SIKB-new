@@ -37,6 +37,11 @@ Route::resource('master-peralatan', 'Sistem\Master\PeralatanController');
 Route::resource('master-kondisi-peralatan', 'Sistem\Master\PeralatanKondisiController');
 // End Master
 
+//Permintaan
+Route::resource('request-adp', 'Sistem\Permintaan\AdpController');
+
+
+
 //Monitoring
 //Consumable
 Route::resource('monitoring-penggunaan-consumable', 'Sistem\Monitoring\ConsumableController');

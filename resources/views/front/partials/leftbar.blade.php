@@ -43,6 +43,8 @@
                         <li><a href="{{ route('Standard-Cleanliness-Area.index')}}">Standard Cleanliness Area</a></li>
                         <li><a href="{{ route('Consumable.index') }}">List Peralatan</a></li>
                         <li><a href="{{ route('Chemical.index') }}">Chemical</a></li>
+                        <li><a href="#">Alat Perlindungan Diri</a></li>
+
                     </ul>
                 </li>
                 {{-- <li>
@@ -98,9 +100,10 @@
                 </li>
                   <li><a class="waves-effect waves-dark" href="{{ route('komplain.create') }}"><i class="ti-pie-chart"></i><span>Komplain</span></a></li>
                 <li><a class="waves-effect waves-dark" href="#"><i class="ti-layout-accordion-merged"></i><span>Laporan Kerusakan</span></a></li>
+
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-layout-accordion-merged"></i><span class="hide-menu">Permintaan</span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="#">Alat Pelindung Diri (APD)</a></li>
+                        <li><a href="{{ route('request-adp.create')}}">Alat Pelindung Diri (APD)</a></li>
                     </ul>
                 </li>
 
