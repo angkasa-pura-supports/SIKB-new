@@ -49,21 +49,6 @@
                         @endif
                       @endforeach
                     </select>
-                    {{-- {!! Form::select('nama_ceklist', [
-                      'Keharuman'=>'Keharuman',
-                      'Lantai'=>'Lantai',
-                      'Toilet Bowl'=>'Toilet Bowl',
-                      'Dinding'=>'Dinding',
-                      'Tempat Sampah'=>'Tempat Sampah',
-                      'Cermin'=>'Cermin',
-                      'Washbasin'=>'Washbasin',
-                      'Sabun Cuci Tangan'=>'Sabun Cuci Tangan',
-                      'Kloset'=>'Kloset',
-                      'Tissue Roll'=>'Tissue Roll',
-                      'Urinal'=>'Urinal',
-                      'Handdryer'=>'Handdryer',
-                      'Pintu'=>'Pintu',
-                      'Janitor'=>'Janitor'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...', 'id'=>'pilihValue']);!!} --}}
                     @if ($errors->has('nama_ceklist'))
                       <small class="form-control-feedback">
                         {{ $errors->first('nama_ceklist') }}

@@ -147,7 +147,9 @@ class CeklistScaController extends Controller
 
     public function print($id)
     {
-      // code...
+      $data = CeklistSca::findOrFail($id);
+      $ceklist = UploadCeklistSca::where('ceklist_sca_id', $data->id)->get();
+      return view('content.laporanCeklist.sca.print', compact('data', 'ceklist'));
     }
 
 }

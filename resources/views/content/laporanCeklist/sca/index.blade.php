@@ -80,7 +80,6 @@
                           @else
                             <a href="{{ route('laporanCeklist-sca.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
                           @endif
-                          <a href="{{ route('laporanCeklist-sca.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
                           <a href="{{ route('laporanCeklist-sca.print', $value->id) }}" class="btn btn-warning" title="Print" target="_blank"><i class="fa fa-print"></i></a>
                         </div>
                       </td>

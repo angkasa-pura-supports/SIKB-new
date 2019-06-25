@@ -34,28 +34,31 @@
                     <select class="select2 form-control custom-select" name="sca_id" id="pilihValue" placeholder="Masukkan sesuatu...">
                       <option selected disabled>--Pilih--</option>
                       @php
-                        $sudahDipilih = App\UploadCeklistSca::where('sca_id', $idCeklist->id)->get();
+                        $sudahDipilih = App\UploadCeklistSca::where('ceklist_sca_id', $idCeklist->id)->get();
                         $listUpload = [];
                         foreach ($sudahDipilih as $pilih) {
-                          $listUpload[]=$pilih->nama_ceklist;
+                          $listUpload[]=$pilih->sca_id;
                         }
                         $material = App\StandardCleanlinessArea::where('area_id', $idCeklist->area_id)->get();
+                        $isiMaterial = [];
+                        foreach ($material as $value) {
+                          $isiMaterial[]=$value->id;
+                        }
                       @endphp
                       @foreach ($material as $value)
-                        @if (in_array($value, $listUpload))
+                        @if (in_array($value->id, $listUpload))
                         @else
                           <option value="{{ $value->id }}">{{ $value->material }}</option>
                         @endif
                       @endforeach
                     </select>
-                    @if ($errors->has('nama_ceklist'))
+                    @if ($errors->has('sca_id'))
                       <small class="form-control-feedback">
-                        {{ $errors->first('nama_ceklist') }}
+                        {{ $errors->first('sca_id') }}
                       </small>
                     @endif
                   </div>
                 </div>
-
               </div>
 
               <div id="pilihan">
