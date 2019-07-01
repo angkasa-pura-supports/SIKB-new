@@ -43,7 +43,7 @@
                                     <div class="col-md-6">
                                       <div class="form-group{{ $errors->has('jenis') ? ' has-danger' : '' }}">
                                         {!! Form::label('jenis', 'jenis', ['class'=>'control-label']) !!}
-                                        {!! Form::select('jenis', ['Consumable'=>'Consumable', 'Peralatan Facility Service'=>'Peralatan Facility Service'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                                        {!! Form::select('jenis', ['Consumable'=>'Consumable', 'Peralatan Facility Service'=>'Peralatan Facility Service','Alat Perlindungan Diri'=>'Alat Perlindungan Diri',], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
                                         @if ($errors->has('jenis'))
                                           <small class="form-control-feedback">
                                             {{ $errors->first('jenis') }}
