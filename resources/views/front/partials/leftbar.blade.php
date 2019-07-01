@@ -36,8 +36,8 @@
                         <li><a href="{{ route('master-karyawan.index')}}">Karyawan</a></li>
                         {{-- <li><a href="{{ route('master-roles.index') }}">Roles</a></li>
                         <li><a href="{{ route('master-permission.index') }}">Permission</a></li> --}}
-                        <li><a href="{{ route('master-peralatan.index') }}">Peralatan</a></li>
-                        <li><a href="{{ route('master-kondisi-peralatan.index') }}">Kondisi Peralatan</a></li>
+                        <li><a href="{{ route('master-peralatan.index') }}">Peralatan Mesin</a></li>
+                        <li><a href="{{ route('master-kondisi-peralatan.index') }}">Kondisi Peralatan Mesin</a></li>
                         <li><a href="{{ route('Plan-Cleaning-Program.index') }}">Plan Cleaning Program</a></li>
                         <li><a href="{{ route('Area-Sca.index') }}">Area (SCA)</a></li>
                         <li><a href="{{ route('Standard-Cleanliness-Area.index')}}">Standard Cleanliness Area</a></li>
@@ -60,7 +60,7 @@
                 <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-email"></i><span class="hide-menu"> Ceklist</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="{{ route('laporanCeklist-toilet.index') }}">Toilet</a></li>
-                        <li><a href="{{ route('laporanCeklist-peralatan.index') }}">Peralatan</a></li>
+                        <li><a href="{{ route('laporanCeklist-peralatan.index') }}">Perawatan Mesin</a></li>
                         <li><a href="{{ route('laporanCeklist-sca.index') }}">Standard Cleanliness Area</a></li>
                         <li><a href="{{ route('laporanCeklist-sla.index') }}">Landscape Maintenance</a></li>
                         <li><a href="#">Pemeriksaan Gondola</a></li>
@@ -75,7 +75,7 @@
                     <ul aria-expanded="false" class="collapse">
                         <li><a href="#">Penggunaan Peralatan</a></li>
                         <li><a href="#">Penggunaan Chemical</a></li>
-                        <li><a href="{{ route('monitoring-penggunaan-consumable.index') }}">Penggunaan Consumable</a></li>
+                        <li><a href="{{ route('monitoring-penggunaan-consumable.index') }}">Penggunaan Consumable Goods</a></li>
                         <li><a href="#">Peralatan Facility Service</a></li>
 
                     </ul>
