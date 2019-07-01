@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CeklistSla extends Model
 {
     protected $table = 'ceklist_sla';
-    protected $fillable = ['bandara_id', 'pengawas_id', 'tanggal_input'];
+    protected $fillable = ['bandara_id', 'tanggal_input'];
 
     public function bandara()
     {
@@ -17,5 +17,10 @@ class CeklistSla extends Model
     public function pengawas()
     {
       return $this->belongsTo(karyawan::class);
+    }
+
+    public function uploadCeklistSla()
+    {
+      return $this->hasMany(UploadCeklistSla::class);
     }
 }

@@ -4,7 +4,12 @@ namespace App\Http\Controllers\Sistem\LaporanCeklist\SLA;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use App\Bandara;
+use App\karyawan;
+use App\CeklistSla;
+use App\UploadCeklistSla;
+use Alert;
+use Illuminate\Support\Facades\File;
 class CeklistSlaController extends Controller
 {
     /**
@@ -14,7 +19,8 @@ class CeklistSlaController extends Controller
      */
     public function index()
     {
-        //
+        $data = CeklistSla::all();
+        return view('content.laporanCeklist.sla.index', compact('data'));
     }
 
     /**
