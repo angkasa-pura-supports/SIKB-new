@@ -89,27 +89,67 @@
       "<option value='Baik'>Baik</option>"+
       "<option value='Kurang'>Kurang</option>"+
       "</select>"+
+      "</div>"+
       "</div>";
     });
     $("#pilihan").change(function(){
      // alert("Selected value is : " + document.getElementById("pilihValue").value);
      var pilih = document.getElementById("kondisi").value;
      if (pilih == "Baik") {
-       alert('aaa');
-     }else{
-       alert('bbb');
-     }
 
-     // document.getElementById("pilihKondisi").innerHTML="<div class='row'>"+
-     // "<div class='col-md-6'>"+
-     // "<select class='select2 form-control custom-select' name='kondisi'>"+
-     // "<option selected disabled>--Pilih--</option>"+
-     // "<option value='AAA'>AAA</option>"+
-     // "<option value='BBB'>BBB</option>"+
-     // "</select>"+
-     // "</div>";
+     }else{
+       document.getElementById("pilihKondisi").innerHTML="<div class='row'>"+
+       "<div class='col-md-4'>"+
+       "<label class='control-label'>Jadwal Penyiraman</label>"+
+       "<select class='select2 form-control custom-select' name='jadwal_penyiraman'>"+
+       "<option selected disabled>--Pilih--</option>"+
+       "<option value='Pagi'>Pagi</option>"+
+       "<option value='Siang'>Siang</option>"+
+       "</select>"+
+       "</div>"+
+       "<div class='col-md-4'>"+
+       "<label class='control-label'>Jadwal Pemupukan</label>"+
+       "<select class='select2 form-control custom-select' name='jadwal_penyiraman'>"+
+       "<option selected disabled>--Pilih--</option>"+
+       "<option value='1x/bln'>1x/bln</option>"+
+       "<option value='2x/bln'>2x/bln</option>"+
+       "</select>"+
+       "</div>"+
+       "<div class='col-md-4'>"+
+       "<label class='control-label'>Manpower</label>"+
+       "<select class='select2 form-control custom-select' name='jadwal_penyiraman'>"+
+       "<option selected disabled>--Pilih--</option>"+
+       "<option value='Lengkap'>Lengkap</option>"+
+       "<option value='Tidak'>Tidak</option>"+
+       "</select>"+
+       "</div>"+
+       "<div class='col-md-6'>"+
+       "<label class='control-label'>Temuan</label>"+
+       "<input type='text' class='form-control' name='desk_temuan'/>"+
+       "</div>"+
+       "<div class='col-md-6'>"+
+       "<label class='control-label'>Rencana Tindak Lanjut (RTL)</label>"+
+       "<input type='text' class='form-control' name='desk_rtl'/>"+
+       "</div>"+
+       "<div class='col-md-4'>"+
+       "<label class='control-label'>Gambar</label>"+
+       "<input type='file' class='form-control' name='berkas_ceklist'/>"+
+       "</div>"+
+       "<div class='col-md-4'>"+
+       "<label class='control-label'>PIC</label>"+
+       "<input type='text' class='form-control' name='desk_rtl'/>"+
+       "</div>"+
+       "<div class='col-md-4'>"+
+       "<label class='control-label'>Target Penyelesaian</label>"+
+       "<input type='text' class='form-control' name='desk_rtl' id='mdate' placeholder='yyyy-mm-dd'/>"+
+       "</div>"+
+       "</div>";
+     }
    });
    });
 
   </script>
+@endsection
+@section('jsAssets')
+  @include('front.partials.js.jsForm')
 @endsection
