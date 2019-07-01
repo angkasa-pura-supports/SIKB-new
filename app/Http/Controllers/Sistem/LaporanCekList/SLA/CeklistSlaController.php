@@ -30,7 +30,8 @@ class CeklistSlaController extends Controller
      */
     public function create()
     {
-        //
+      $bandara = Bandara::pluck('nama_bandara', 'id');
+      return view('content.laporanCeklist.sla.create', compact('bandara'));
     }
 
     /**
@@ -41,7 +42,34 @@ class CeklistSlaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+          'bandara_id' => 'required',
+          'tanggal_input' => 'required'
+        ]);
+        CeklistSla::create($request->all());
+        Alert::success('Data berhasil disimpan!');
+        return redirect('laporanCeklist-sla');
+    }
+
+    public function checklist($id)
+    {
+      $idCeklist = CeklistSla::findOrFail($id);
+      return view('content.laporanCeklist.sla.checklist', compact('idCeklist'));
+    }
+
+    public function checklistStore(Request $request){
+      $this->validate($request, [
+        'ceklist_sla_id' => 'required',
+        'lokasi' => '',
+        'kondisi' => '',
+        'jadwal_penyiraman' => '',
+        'jadwal_pemupukan' => '',
+        'manpower' => '',
+        'desk_temuan' => '',
+        'desk_rtl' => '',
+        'desk_pic' => '',
+        'desk_target_penyelesaian' => ''
+      ]);
     }
 
     /**

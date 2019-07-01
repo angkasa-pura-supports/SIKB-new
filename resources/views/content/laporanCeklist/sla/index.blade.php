@@ -56,18 +56,12 @@
                     <tr>
                       <td>{{ $no=$no+1 }}</td>
                       <td>{{ $value->bandara->nama_bandara }}</td>
-                      <td>{{ date("m", strtotime($value->tanggal_input)) }}</td>
+                      <td>{{ date("M", strtotime($value->tanggal_input)) }}</td>
                       <td>
                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                          {{-- @php
-                            $jumlahCeklist = App\UploadCeklistToilet::where('ceklist_toilet_id', $value->id)->count();
-                          @endphp
-                          @if ($jumlahCeklist == 14)
-                          @else
-                            <a href="{{ route('laporanCeklist-toilet.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
-                          @endif
-                          <a href="{{ route('laporanCeklist-toilet.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
-                          <a href="{{ route('laporanCeklist-toilet.print', $value->id) }}" class="btn btn-warning" title="Print" target="_blank"><i class="fa fa-print"></i></a> --}}
+                          <a href="{{ route('laporanCeklist-sla.checklist', $value->id) }}" class="btn btn-success" title="Upload"><i class="fa fa-upload"></i></a>
+                          <a href="{{ route('laporanCeklist-sla.show', $value->id) }}" class="btn btn-info" title="Detail"><i class="fa fa-search"></i></a>
+                          <a href="{{ route('laporanCeklist-sla.print', $value->id) }}" class="btn btn-warning" title="Print" target="_blank"><i class="fa fa-print"></i></a>
                         </div>
                       </td>
                     </tr>
