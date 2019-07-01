@@ -17,8 +17,6 @@ class CreateCeklistSlaTable extends Migration
             $table->increments('id');
             $table->integer('bandara_id')->unsigned();
             $table->foreign('bandara_id')->references('id')->on('bandara')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('pengawas_id')->unsigned();
-            $table->foreign('pengawas_id')->references('id')->on('karyawan')->onDelete('cascade')->onUpdate('cascade');
             $table->date('tanggal_input');
             $table->timestamps();
         });
