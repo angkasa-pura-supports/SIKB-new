@@ -1,7 +1,7 @@
 @extends('front.layouts.front')
 @section('title', 'Ceklist Peralatan')
 @section('cssAssets')
-  @include('front.partials.css.cssForm')
+@include('front.partials.css.cssForm')
 @endsection
 @section('content')
 <div class="page-wrapper">
@@ -48,28 +48,24 @@
                     {!! Form::label('bandara_id', 'Bandara', ['class'=>'control-label']) !!}
                     {!! Form::select('bandara_id', $bandara, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
                     @if ($errors->has('bandara_id'))
-                      <small class="form-control-feedback">
-                        {{ $errors->first('bandara_id') }}
-                      </small>
-                    @endif
-                  </div>
-                </div>
-                {{-- <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('threeletter') ? ' has-danger' : '' }}">
-                    {!! Form::label('nama konsumable goods', 'Nama Consumable Goods', ['class'=>'control-label']) !!}
-                  {!! Form::select('bandara_id', $bandara, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
-                    @if ($errors->has('nama konsumable goods'))
                     <small class="form-control-feedback">
-                      {{ $errors->first('nama konsumable goods') }}
+                      {{ $errors->first('bandara_id') }}
                     </small>
                     @endif
                   </div>
                 </div>
-              </div>
-            </div>--}}
 
-            <div class="form-body">
-              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group{{ $errors->has('bandara_id') ? ' has-danger' : '' }}">
+                    {!! Form::label('bandara_id', 'Jenis', ['class'=>'control-label']) !!}
+                    {!! Form::select('bandara_id', $list, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                    @if ($errors->has('bandara_id'))
+                    <small class="form-control-feedback">
+                      {{ $errors->first('bandara_id') }}
+                    </small>
+                    @endif
+                  </div>
+                </div>
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('pengguna') ? ' has-danger' : '' }}">
                     {!! Form::label('pengguna', 'Pengguna', ['class'=>'control-label']) !!}
@@ -92,11 +88,6 @@
                     @endif
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="form-body">
-              <div class="row">
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('Qty') ? ' has-danger' : '' }}">
                     {!! Form::label('Qty', 'Qty', ['class'=>'control-label']) !!}
@@ -119,11 +110,6 @@
                     @endif
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="form-body">
-              <div class="row">
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('Team Leader') ? ' has-danger' : '' }}">
                     {!! Form::label('Team Leader', 'Team Leader', ['class'=>'control-label']) !!}
@@ -137,12 +123,12 @@
                 </div>
               </div>
             </div>
-
             <div class="form-actions">
               <button type="submit" class="btn btn-success">Tambah</button>
             </div>
-            {!! Form::close() !!}
           </div>
+
+          {!! Form::close() !!}
         </div>
       </div>
     </div>
@@ -150,5 +136,5 @@
 </div>
 @endsection
 @section('jsAssets')
-  @include('front.partials.js.jsForm')
+@include('front.partials.js.jsForm')
 @endsection

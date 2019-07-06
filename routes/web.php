@@ -44,7 +44,7 @@ Route::resource('request-adp', 'Sistem\Permintaan\AdpController');
 
 //Monitoring
 //Consumable
-Route::resource('monitoring-penggunaan-consumable', 'Sistem\Monitoring\ConsumableController');
+Route::resource('monitoring-penggunaan-consumable', 'Sistem\Monitoring\MonitoringConsumableController');
 
 // Ceklist
 // Ceklist Toilet

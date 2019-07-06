@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Sistem\Monitoring;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class ConsumableController extends Controller
+use App\Bandara;
+use App\Consumable;
+class MonitoringConsumableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +25,10 @@ class ConsumableController extends Controller
      */
     public function create()
     {
-        return view('content.monitoring.consumable.create');
+        $bandara = Bandara::pluck('nama_bandara', 'id');
+        $jenis = ['Alat Perlindungan Diri'];
+        $list = Consumable::whereIn('jenis', $jenis)->pluck('nama_consumable', 'id');
+        return view('content.monitoring.consumable.create', compact('bandara', 'list'));
     }
 
     /**
