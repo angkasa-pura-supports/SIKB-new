@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Sistem\Master;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Consumable;
+use App\Bandara;
 use Alert;
+use Illuminate\Support\Facades\File;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ConsumableController extends Controller
 {
@@ -27,7 +30,10 @@ class ConsumableController extends Controller
      */
     public function create()
     {
-        return view('content.master.consumable.create');
+        $bandara = Bandara::pluck('nama_bandara', 'id');
+        $jenis = ['Consumable', 'Peralatan Facility Service', 'Alat Perlindungan Diri'];
+        $list = Consumable::whereIn('jenis', $jenis)->pluck('jenis', 'id');
+        return view('content.master.consumable.create', compact('bandara','list'));
     }
 
     /**
