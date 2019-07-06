@@ -9,6 +9,7 @@ use Alert;
 use Illuminate\Support\Facades\File;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Consumable;
 
 class ConsumableController extends Controller
 {

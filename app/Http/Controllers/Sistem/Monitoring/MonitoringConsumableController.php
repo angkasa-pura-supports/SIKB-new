@@ -4,11 +4,8 @@ namespace App\Http\Controllers\Sistem\Monitoring;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Bandara;
-use Alert;
-use Illuminate\Support\Facades\File;
 
-class MonitoringConsumableController extends Controller
+class ConsumableController extends Controller
 {
     /**
      * Display a listing of the resource.
