@@ -1,5 +1,5 @@
 @extends('front.layouts.front')
-@section('title', 'Ceklist Peralatan')
+@section('title', 'Monitoring Consumable ')
 @section('cssAssets')
 @include('front.partials.css.cssForm')
 @endsection
@@ -27,22 +27,10 @@
             <h4 class="m-b-0 text-white">Tambah Bandara</h4>
           </div>
           <div class="card-body">
-            {!! Form::open(['route'=>'master-bandara.store']) !!}
+            {!! Form::open(['route'=>'monitoring-penggunaan-consumable.store']) !!}
             {{ csrf_field() }}
             <div class="form-body">
               <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('tanggal_input') ? ' has-danger' : '' }}">
-                    {!! Form::label('tanggal_input', 'Tanggal Input', ['class'=>'control-label']) !!}
-                    {!! Form::text('tanggal_input', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd']) !!}
-                    @if ($errors->has('tanggal_input'))
-                    <small class="form-control-feedback">
-                      {{ $errors->first('tanggal_input') }}
-                    </small>
-                    @endif
-                  </div>
-                </div>
-
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('bandara_id') ? ' has-danger' : '' }}">
                     {!! Form::label('bandara_id', 'Bandara', ['class'=>'control-label']) !!}
@@ -56,8 +44,21 @@
                 </div>
 
                 <div class="col-md-6">
+                  <div class="form-group{{ $errors->has('tanggal_input') ? ' has-danger' : '' }}">
+                    {!! Form::label('tanggal_input', 'Tanggal Input', ['class'=>'control-label']) !!}
+                    {!! Form::text('tanggal_input', null, ['class'=>'form-control', 'id'=>'mdate', 'placeholder'=>'yyyy-mm-dd']) !!}
+                    @if ($errors->has('tanggal_input'))
+                    <small class="form-control-feedback">
+                      {{ $errors->first('tanggal_input') }}
+                    </small>
+                    @endif
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
                   <div class="form-group{{ $errors->has('bandara_id') ? ' has-danger' : '' }}">
-                    {!! Form::label('bandara_id', 'Jenis', ['class'=>'control-label']) !!}
+                    {!! Form::label('Nama Consumable Goods', 'Nama Consumable Goods', ['class'=>'control-label']) !!}
                     {!! Form::select('bandara_id', $list, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
                     @if ($errors->has('bandara_id'))
                     <small class="form-control-feedback">
@@ -77,13 +78,16 @@
                     @endif
                   </div>
                 </div>
+              </div>
+
+              <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('Shift') ? ' has-danger' : '' }}">
-                    {!! Form::label('Shift', 'Shift', ['class'=>'control-label']) !!}
-                    {!! Form::text('shift', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                    @if ($errors->has('Shift'))
+                  <div class="form-group{{ $errors->has('shift') ? ' has-danger' : '' }}">
+                    {!! Form::label('shift', 'Shift', ['class'=>'control-label']) !!}
+                    {!! Form::select('shift', ['Shift 1'=>'Shift 1', 'Shift 2'=>'Shift 2', 'Shift 3'=>'Shift 3'], null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                    @if ($errors->has('shift'))
                     <small class="form-control-feedback">
-                      {{ $errors->first('Shift') }}
+                      {{ $errors->first('shift') }}
                     </small>
                     @endif
                   </div>
@@ -100,23 +104,23 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('Petugas') ? ' has-danger' : '' }}">
-                    {!! Form::label('Petugas', 'Petugas', ['class'=>'control-label']) !!}
-                    {!! Form::text('petugas', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                    @if ($errors->has('Petugas'))
+                  <div class="form-group{{ $errors->has('pengawas_id') ? ' has-danger' : '' }}">
+                    {!! Form::label('pengawas_id', 'Pengawas', ['class'=>'control-label']) !!}
+                    {!! Form::select('pengawas_id', $pengawas, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
+                    @if ($errors->has('pengawas_id'))
                     <small class="form-control-feedback">
-                      {{ $errors->first('Petugas') }}
+                      {{ $errors->first('pengawas_id') }}
                     </small>
                     @endif
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('Team Leader') ? ' has-danger' : '' }}">
-                    {!! Form::label('Team Leader', 'Team Leader', ['class'=>'control-label']) !!}
-                    {!! Form::text('team_leader', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                    @if ($errors->has('Team Leader'))
+                  <div class="form-group{{ $errors->has('catatan') ? ' has-danger' : '' }}">
+                    {!! Form::label('catatan', 'Ket (opsional)', ['class'=>'control-label']) !!}
+                    {!! Form::textarea('catatan', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...', 'rows'=>3]);!!}
+                    @if ($errors->has('catatan'))
                     <small class="form-control-feedback">
-                      {{ $errors->first('Team Leader') }}
+                      {{ $errors->first('catatan') }}
                     </small>
                     @endif
                   </div>
