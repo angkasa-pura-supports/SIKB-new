@@ -8,13 +8,13 @@
   <div class="container-fluid">
     <div class="row page-titles">
       <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor">Bandara</h4>
+        <h4 class="text-themecolor">Consumable Goods</h4>
       </div>
       <div class="col-md-7 align-self-center text-right">
         <div class="d-flex justify-content-end align-items-center">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Master Data</a></li>
-            <li class="breadcrumb-item">Bandara</li>
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Monitoring</a></li>
+            <li class="breadcrumb-item">Consumable Goods</li>
             <li class="breadcrumb-item active">Tambah</li>
           </ol>
         </div>
@@ -24,7 +24,7 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header bg-info">
-            <h4 class="m-b-0 text-white">Tambah Bandara</h4>
+            <h4 class="m-b-0 text-white">Tambah Data</h4>
           </div>
           <div class="card-body">
             {!! Form::open(['route'=>'monitoring-penggunaan-consumable.store']) !!}
@@ -57,16 +57,22 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('bandara_id') ? ' has-danger' : '' }}">
+                  <div class="form-group{{ $errors->has('consumable_id') ? ' has-danger' : '' }}">
                     {!! Form::label('Nama Consumable Goods', 'Nama Consumable Goods', ['class'=>'control-label']) !!}
-                    {!! Form::select('bandara_id', $list, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...']);!!}
-                    @if ($errors->has('bandara_id'))
+                    {!! Form::select('consumable_id', $list, null, ['class'=>'select2 form-control custom-select', 'placeholder'=>'Masukkan sesuatu...', 'id'=>'pilihValue']);!!}
+                    @if ($errors->has('consumable_id'))
                     <small class="form-control-feedback">
-                      {{ $errors->first('bandara_id') }}
+                      {{ $errors->first('consumable_id') }}
                     </small>
                     @endif
                   </div>
                 </div>
+                <div id="pilihan">
+
+                </div>
+              </div>
+
+              <div class="row">
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('pengguna') ? ' has-danger' : '' }}">
                     {!! Form::label('pengguna', 'Pengguna', ['class'=>'control-label']) !!}
@@ -78,9 +84,6 @@
                     @endif
                   </div>
                 </div>
-              </div>
-
-              <div class="row">
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('shift') ? ' has-danger' : '' }}">
                     {!! Form::label('shift', 'Shift', ['class'=>'control-label']) !!}
@@ -88,17 +91,6 @@
                     @if ($errors->has('shift'))
                     <small class="form-control-feedback">
                       {{ $errors->first('shift') }}
-                    </small>
-                    @endif
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group{{ $errors->has('Qty') ? ' has-danger' : '' }}">
-                    {!! Form::label('Qty', 'Qty', ['class'=>'control-label']) !!}
-                    {!! Form::text('qty', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
-                    @if ($errors->has('Qty'))
-                    <small class="form-control-feedback">
-                      {{ $errors->first('Qty') }}
                     </small>
                     @endif
                   </div>
@@ -141,4 +133,21 @@
 @endsection
 @section('jsAssets')
 @include('front.partials.js.jsForm')
+<script type="text/javascript">
+  $(document).ready(function(){
+   $("#pilihValue").change(function(){
+    // alert("Selected value is : " + document.getElementById("pilihValue").value);
+    var pilih = document.getElementById("pilihValue").value;
+    var qty = <?php echo "<script>document.writeln(pilih);</script>" ?>;
+    alert("Selected value is : " + qty);
+    // document.getElementById("pilihan").innerHTML="<div class='col-md-6'>"+
+    //   "<div class='form-group'>"+
+    //   "<label class='control-label'>Qty</lab el>"+
+    //   "<input type='number' class='form-control' name='qty' max='1'/>"+
+    //   "</div>"+
+    // "</div>";
+   });
+  });
+
+</script>
 @endsection

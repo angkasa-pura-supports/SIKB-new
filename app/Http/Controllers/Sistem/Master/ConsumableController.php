@@ -9,7 +9,6 @@ use Alert;
 use Illuminate\Support\Facades\File;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-use App\Consumable;
 
 class ConsumableController extends Controller
 {
@@ -48,7 +47,12 @@ class ConsumableController extends Controller
         'jenis' => 'required',
         'stok' => 'required'
       ]);
-      Consumable::create($request->all());
+      $data = new Consumable;
+      $data->nama_consumable = $request->nama_consumable;
+      $data->jenis = $request->jenis;
+      $data->stok = $request->stok;
+      $data->sisa_stok = $request->stok;
+      $data->save();
       Alert::success('Data berhasil disimpan!');
       return redirect('Consumable');
     }
@@ -90,7 +94,12 @@ class ConsumableController extends Controller
         'jenis' => 'required',
         'stok' => 'required'
       ]);
-      Consumable::findOrFail($id)->update($request->all());
+      $data = Consumable::findOrFail($id);
+      $data->nama_consumable = $request->nama_consumable;
+      $data->jenis = $request->jenis;
+      $data->stok = $request->stok;
+      $data->sisa_stok = $request->stok;
+      $data->update();
       Alert::success('Data berhasil diUbah!');
       return redirect('Consumable');
     }

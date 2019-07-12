@@ -15,13 +15,17 @@ class CreatePenggunaanConsumableTable extends Migration
     {
         Schema::create('penggunaan_consumable', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('bandara_id')->unsigned();
+            $table->foreign('bandara_id')->references('id')->on('bandara')->onDelete('cascade')->onUpdate('cascade');
             $table->string('tanggal_input');
-            $table->string('nama_consumable');
+            $table->integer('consumable_id')->unsigned();
+            $table->foreign('consumable_id')->references('id')->on('consumable')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('qty');
             $table->string('pengguna');
             $table->string('shift');
-            $table->string('qty');
-            $table->string('petugas');
-            $table->string('team_leader');
+            $table->integer('petugas_id')->unsigned();
+            $table->foreign('petugas_id')->references('id')->on('karyawan')->onDelete('cascade')->onUpdate('cascade');
+            $table->longText('ket');
             $table->timestamps();
         });
     }

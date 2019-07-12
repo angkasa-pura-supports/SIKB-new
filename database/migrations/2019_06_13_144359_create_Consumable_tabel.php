@@ -18,6 +18,7 @@ class CreateConsumableTabel extends Migration
             $table->string('nama_consumable');
             $table->string('jenis');
             $table->string('stok');
+            $table->string('sisa_stok')->nullable;
             $table->timestamps();
         });
     }

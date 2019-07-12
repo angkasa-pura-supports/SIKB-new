@@ -27,4 +27,9 @@ class karyawan extends Model
   {
     return $this->hasMany(CeklistSla::class);
   }
+
+  public function penggunaanConsumable()
+  {
+    return $this->hasMany(PenggunaanConsumable::class);
+  }
 }
