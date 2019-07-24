@@ -70,6 +70,9 @@ class CeklistSlaController extends Controller
         'desk_pic' => '',
         'desk_target_penyelesaian' => ''
       ]);
+      if ($request->kondisi == "Baik") {
+        // code...
+      }
     }
 
     /**

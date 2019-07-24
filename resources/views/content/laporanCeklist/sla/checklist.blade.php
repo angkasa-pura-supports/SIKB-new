@@ -8,7 +8,7 @@
   <div class="container-fluid">
     <div class="row page-titles">
       <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor">Ceklist Toilet</h4>
+        <h4 class="text-themecolor">Ceklist SLA</h4>
       </div>
       <div class="col-md-7 align-self-center text-right">
         <div class="d-flex justify-content-end align-items-center">
@@ -28,6 +28,17 @@
               {{ csrf_field() }}
               <div class="row">
                 <input type="hidden" name="ceklist_sla_id" value="{{ $idCeklist->id }}">
+                <div class="col-md-6">
+                  <div class="form-group{{ $errors->has('nama_ceklist') ? ' has-danger' : '' }}">
+                    {!! Form::label('lokasi', 'Lokasi', ['class'=>'control-label']) !!}
+                    {!! Form::text('lokasi', null, ['class'=>'form-control', 'placeholder'=>'Masukkan sesuatu...']) !!}
+                    @if ($errors->has('lokasi'))
+                      <small class="form-control-feedback">
+                        {{ $errors->first('lokasi') }}
+                      </small>
+                    @endif
+                  </div>
+                </div>
                 <div class="col-md-6">
                   <div class="form-group{{ $errors->has('nama_ceklist') ? ' has-danger' : '' }}">
                     {!! Form::label('kondisi', 'Jenis Kondisi', ['class'=>'control-label']) !!}
@@ -96,7 +107,7 @@
      // alert("Selected value is : " + document.getElementById("pilihValue").value);
      var pilih = document.getElementById("kondisi").value;
      if (pilih == "Baik") {
-
+       document.getElementById("pilihKondisi").innerHTML="";
      }else{
        document.getElementById("pilihKondisi").innerHTML="<div class='row'>"+
        "<div class='col-md-4'>"+
@@ -125,11 +136,11 @@
        "</div>"+
        "<div class='col-md-6'>"+
        "<label class='control-label'>Temuan</label>"+
-       "<input type='text' class='form-control' name='desk_temuan'/>"+
+       "<input type='text' class='form-control' name='desk_temuan' placeholder='Masukkan sesuatu...'/>"+
        "</div>"+
        "<div class='col-md-6'>"+
        "<label class='control-label'>Rencana Tindak Lanjut (RTL)</label>"+
-       "<input type='text' class='form-control' name='desk_rtl'/>"+
+       "<input type='text' class='form-control' name='desk_rtl' placeholder='Masukkan sesuatu...'/>"+
        "</div>"+
        "<div class='col-md-4'>"+
        "<label class='control-label'>Gambar</label>"+
@@ -137,7 +148,7 @@
        "</div>"+
        "<div class='col-md-4'>"+
        "<label class='control-label'>PIC</label>"+
-       "<input type='text' class='form-control' name='desk_rtl'/>"+
+       "<input type='text' class='form-control' name='desk_rtl' placeholder='Masukkan sesuatu...'/>"+
        "</div>"+
        "<div class='col-md-4'>"+
        "<label class='control-label'>Target Penyelesaian</label>"+
