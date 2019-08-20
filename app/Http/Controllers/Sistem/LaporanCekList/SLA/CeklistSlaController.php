@@ -71,7 +71,11 @@ class CeklistSlaController extends Controller
         'desk_target_penyelesaian' => ''
       ]);
       if ($request->kondisi == "Baik") {
-        // code...
+        $data = new UploadCeklistSla;
+        $data->ceklist_sla_id = $request->ceklist_sca_id;
+        $data->lokasi = $request->lokasi;
+        $data->kondisi = $request->kondisi;
+
       }
     }
 
